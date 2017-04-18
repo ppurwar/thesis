@@ -1,0 +1,68 @@
+%% ----------------------------------------------------------------------------
+% BIWI SA/MA thesis template
+%
+% Created 09/29/2006 by Andreas Ess
+% Extended 13/02/2009 by Jan Lesniak - jlesniak@vision.ee.ethz.ch
+%% ----------------------------------------------------------------------------
+\newpage
+\chapter{Related Work}
+
+\section{Non-gridded convolution: use of figtree library}
+The forward problem transforms to evaluating PSF function at each pixel position in object space. As we are estimating PSF in terms of convex combination of gaussian kernels, this needs computing gaussian kernel at each pixel position and thus, is a non-gridded convolution. Non-gridded convolution is not effecient to calculate, as it computes exponential of squared distance at each pixel. We use figtree library to effeciently compute this non-gridded convolution. The figtree computes the exponential effectively using method described in Yang et al.(2003). The library tends to compute radial basis function given different centres and query postions. The computation of gaussian kernel with given mean and variance is converted to variables required by figtree library. As, the image created by a point sources with the psf as gaussian kernel can be computed as follow:
+\begin{equation}
+\begin{split}
+\bar{I_j} = T_a\|P_j\|\phi \ f(x_j - x_{source} | \mu,\sigma^2) \\
+with \quad f(x\,|\,\mu,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\, exp\Bigg(\frac{-[x-\mu]^2}{2\,\sigma^2}\Bigg)
+\end{split}
+\end{equation}
+where $\bar{I_j}$ is expected image value at each pixel $j$.\newline
+With the following relacements,
+\begin{equation}
+m\, =\, x_{source} + \mu ; \quad s\, =\, \sigma; \quad \phi'\, = \,T_a\|P_j\|\phi \, \frac{1}{\sqrt{2\pi\, s^2}}\\
+\end{equation}
+The above formula can be rewritten as radial basis function as follows: 
+\begin{equation}
+\bar{I_j} = \phi' \, exp\Bigg(\frac{-[x_j -m]^2} {2\, s^2}\Bigg)
+\end{equation}
+The point sources are present in 3-D object space, converting this to a multivariate gaussian:
+\begin{equation}
+\begin{split}
+\Sigma\, =\, \begin{bmatrix}
+    \sigma_x & 0 & 0 \\
+    0 & \sigma_y & 0 \\
+    0 & 0 & \sigma_z  
+\end{bmatrix}\\
+\phi'\, =\,T_a\|P_j\|\phi \, \frac{1}{\sqrt{(2\pi)^3\,det(\Sigma)}}\\
+\bar{I_j} = \,\phi' \, exp\Bigg(\frac{-[x_j -m]^T\,\Sigma^{-1}\,[x_j -m]} {2}\Bigg)
+\end{split}
+\end{equation}
+The figtree library computes radial basis function as follows as: 
+\begin{equation}
+output(y_j) = \,q \, exp\Bigg(\frac{-\|y_j -z\|^2} {h^2}\Bigg)
+\end{equation}
+For diagonal covariance matrices, transforming and re-writing  the exponential term,
+\begin{flalign}
+\begin{split}
+[x_j -m]^T\,\Sigma^{-1}\,[x_j -m] \\
+= [(x_j -m)^T*\Sigma^{-1/2}]*[\Sigma^{-1/2}*(x_j -m)] \\
+= [(x_j -m)*\Sigma^{-1/2}]^T*[\Sigma^{-1/2}*(x_j -m)]  \\
+= \|\Sigma^{-1/2}*(x_j -m)\|^2 \\
+\end{split}
+\end{flalign}
+Comparing these to variables for figtree function, results in: 
+\begin{equation}
+\begin{split}
+h = \sqrt{2}\\
+q = \phi\\
+y_j = \Sigma^{-1/2}*x_j\\
+z = \Sigma^{-1/2}*m
+\end{split}
+\end{equation}
+Describe the other's work in the field, with the following purposes in mind: 
+
+\begin{itemize}
+ \item \textit{Is the overview concise?} Give an overview of the most relevant work to the needed extent. Make sure the reader can understand your work without referring to other literature.
+ \item \textit{Does the compilation of work help to define the ``niche'' you are working in?} Another purpose of this section is to lay the groundwork for showing that you did significant work. The selection and presentation of the related work should enable you to name the implications, differences and similarities sufficiently in the ``discussion'' section.
+\end{itemize}
+
+

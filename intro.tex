@@ -1,0 +1,29 @@
+%% ----------------------------------------------------------------------------
+% BIWI SA/MA thesis template
+%
+% Created 09/29/2006 by Andreas Ess
+% Extended 13/02/2009 by Jan Lesniak - jlesniak@vision.ee.ethz.ch
+%% ----------------------------------------------------------------------------
+
+
+\chapter{Introduction}
+
+\section{Focus of this Work}
+The task of image segmentation into binary classes is very useful in different cases in biomedical tasks. It can be used for detection of diseases, shape analysis etc. The methods to solve the segmentation problem has evolved among two lines: 1) level of interaction: from semi-interactive to fully automatic, and 2) level of classification: pixels to complete images. Nowadays, with the use of fully-convolutional networks, the segmentation can be obtained for complete image. This helps in using the local as well as contextual information for segmentation and significantly, improves performance in terms of speed. This speeds up the task of segmentation especially for huge images in cases such as electron microscopic images, 3-D images etc. Currently, the benchmark performance in terms of accuracy is achieved by the use of deep-neural networks. Deep neural networks such as U-net are specially designed for task of segmentation.
+\par The only limitation with use of convolutional neural networks is need of huge training data for training these networks. Earlier networks solved the segmentation problem by training a neural network for classifying each pixel into corresponding classes. These networks were trained using a patch around training pixels. These networks faced problem of speed for cases of huge images where we have to run neural network for total number of pixels. Also, we get limited by the local information provided by the patch surrounding training pixels. This problem gets solved by use of fully-convolutional networks which produces segmentation for the whole input image at once. But we require fully annotated ground truth images for training such networks i.e. label for each pixel in the input image.  
+
+\subsection{Dataset}
+The dataset or the images which we are trying to segment are electron microscopic images. The microscopic images are huge in size i.e. order of 450x512x512. This poses a huge problem of creating a fully annotated ground truth. In addition to huge size of images, the images may contain multiple instances of objects to be annotated. For example, the liver tissue contain many vesicles. This makes the task of creating ground truth dataset hard and time consuming. The argument that the annotated dataset can be used again as for object segmentation in natural images also fails here as the objects to be segmented in microscopic images differ completely. This inhibits the experts to invest time to create fully annotated dataset. Further, the manual annotations for a single microscopic image may differ for each expert or even different for a single expert. This arise due to arbitrary shapes and sizes of objects to be segmented. This influences us to design a approach with semi-interactivity possible so that the experts can modify/add information according to their needs. In summary, we have to consider following scenarios before developing a method to solve our segmentation task, 
+\begin{itemize}
+\item High variability between images: The images to be segmented may be entirely different for example of liver and neuron tissue. It is not same as case for natural images.
+\item High variability between objects to segment: The objects to be segmented may differ completely from being smooth (round vesicles) to branched (neurons)
+\item High variability between goals: 
+\end{itemize}
+
+Therefore, we plan to use an approach that can be modified easily to new images/objects to be segmented. This influences us to use hybrid of data and model driven approach. We decided to use an semi-supervised approach using Maximum-aposteriori inference. The idea is to propagate segmentation label from labeled to unlabeled pixels using an prediction model and a prior, as shown in figure 1.1. The prediction model and prior are combined using Variational image processing methods. As shown in figure 1.1, this can be used to generate segmentation or can be used to train other prediction model if needed.
+We can observe that the limitation on availability of fully annotated ground truth images inspires us to observe the trade-off between partially labeled data and accuracy of segmented images. This will enable the experts to use their annotation budget i.e. the pixels labeled by experts for training, efficiently giving best results. In addition, we observe effect of different ways of introducing maximum-likelihood and different regularisation parameter for total variation.
+
+\section{Thesis Organization}
+The thesis is described in detail in the following chapters. The existing research work or projects related to image segmentation using different methods are described in the \emph{Chapter 2}. Following this chapter, the formulation of optimization problem and algorithm used to solve the problem is illustrated in \emph{Chapter 3}. The testing of algorithm designed for different datasets and the results obtained is presented in the \emph{Chapter 4}. The thesis ends with the discussion and conclusion of this project in \emph{Chapter 5}.
+
+

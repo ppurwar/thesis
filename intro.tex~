@@ -1,0 +1,60 @@
+%% ----------------------------------------------------------------------------
+% BIWI SA/MA thesis template
+%
+% Created 09/29/2006 by Andreas Ess
+% Extended 13/02/2009 by Jan Lesniak - jlesniak@vision.ee.ethz.ch
+%% ----------------------------------------------------------------------------
+
+
+\chapter{Introduction}
+
+\section{Focus of this Work}
+The goal of this project is to develop algorithm for generating realistic synthetic microscopy images. The main challenge in this attempt is to properly account for the distortions in the image formation process, in particular the blurring resulting from optical distortions. Samuylov et al. developed a general framework (the virtual source framework) for computing the convolution of arbitrary object models formulated in physical space with point spread function (PSF) to generate synthetic images. The objects are represented as conical combinations of computational point sources irregularly positioned in physical space and carrying an effective light intensity and thus, the computation requires non-gridded convolution.\par
+Unfortunately, fast convolution algorithms (based on the fast Fourier transform, FFT) cannot be used in such a case because they exploit the fact that digital signals and filters are regularly sampled. Nonetheless, Samuylov et al. demonstrated that the convolution can be efficiently carried out when the point spread function (PSF) is Gaussian by using the improved fast Gaussian transform, IFGT (Yang et al., 2003). \par
+The main scope of this project is to extend the applicability of the virtual microscope framework to experimentally-generated PSF kernels. The classical approach is to represent the PSF using single Gaussian. This approach do not work well for experimentally-generated PSF, as they are rarely close to a Gaussian PSF. Therefore, in this project, we propose to represent an arbitrary PSF by a convex combination of Gaussian kernels, and to carry out the convolution by many independent IFGTs, as described in Samuylov et al. In addition, we propose to learn an optimal sparse convex combination of Gaussian kernels in order to minimize the number of IFGTs. This helps in achieving the optimal trade-off between accuracy (in representing the experimental PSF) and efficiency (number of Gaussian and hence IFGTs).
+\subsection{Formulation of forward problem}
+The estimation of PSF and object parameters i.e. intensity and position of point sources is known as inverse problem. The first necessary modeling step to solve inverse problem is formulation of forward problem.  The formulation to synthesize images using virtual point sources, located arbitarily in 3-dimensional real world, is known as forward problem. Modeling the image formation process spans three spaces: the object space where the sample resides i.e. 3-dimensional real world, the pixel space where light is collected, and the image space where images data are represented. The image space consist of stack of 2-dimensional image planes.\par
+The photon flux in space and time is obtained by convolution of point sources with PSF(gaussain kernel in our case). The pixel intensity at each pixel is calculated by integration over time and pixel area. Finally, effect of shot noise is considered to generate real images, . The noise in real images comes due to electron multiplier, spurious electron and quantum efficiency (Hirsch et. al, 2013).
+The flow form object space to image space is modeled as following:
+\begin{enumerate}
+\item Point source to photon flux\newline
+The process of collecting photons can be evaluated using PSF, $\fPSF$, ($\funop{f}$). For a point source with constant intensity, $\phi$, located at $x_0 \in \R^3$, the photon flux is convolution of source with PSF: 
+\begin{equation}
+Photon\,flux\,(x,t) =  f(x) \ast \phi \ \delta_{x_0} = \phi \ f(x-x_0)
+\end{equation}
+
+\item Sampling over a pixel area\newline
+The number of photons are measured for a time period by discretely counting the number in a particular area. This leads to integration over time,$T_a$ and region of interest, $A$.
+\begin{equation}
+Photons\,in\,region\,A = \int_{0}^{T_a} \int_{A}  \phi \ f(x-x_0) \,dxdt
+\end{equation}
+
+The integral over time is removed as source intensity and source location is considered fixed in time. The intensity at each pixel is accumulation of photon flux over pixel area. As the size of pixel is very small, we assume a constant photon flux in a pixel are and this simplifies the integration to:
+\begin{equation}
+\bar{I_k} = T_a\|P_k\|\phi \ f(x_k - x_0)
+\end{equation}
+where $\bar{I_k}$ is expected number of Photons in a pixel $k$, $x_k$ is centre of pixel and $|P_k|$ is area of the pixel.
+
+\item Effect of shot noise \newline
+The final intensity in each pixel is considered as poisson distribution as function of expected intensity and background intensity:
+\begin{equation}
+ = Poisson\,noise(\bar{I_k}\,+\,background\,intensity) 
+\end{equation}
+The image generated for singe point source and PSF represented by 1 gaussian kernel is shown in Figure PP
+\end{enumerate}
+\begin{figure}[h!]
+\includegraphics[width=1.0\linewidth]{figures/sample_image.pdf}
+\caption{Image with no background noise and with SNR = 10}
+\end{figure}
+
+\section{Thesis Organization}
+
+Give an introduction to the topic you have worked on:
+
+\begin{itemize}
+ \item \textit{What is the rationale for your work?} Give a sufficient description of the problem, e.g. with a general description of the problem setting, narrowing down to the particular problem you have been working on in your thesis. Allow the reader to understand the problem setting. 
+ \item \textit{What is the scope of your work?} Given the above background, state briefly the focus of the work, what and how you did.
+ \item \textit{How is your thesis organized?} It helps the reader to pick the interesting points by providing a small text or graph which outlines the organization of the thesis. The structure given in this document shows how the general structuring shall look like. However, you may fuse chapters or change their names according to the requirements of your thesis.
+\end{itemize}
+
+

@@ -1,0 +1,56 @@
+%% ----------------------------------------------------------------------------
+% BIWI SA/MA thesis template
+%
+% Created 09/29/2006 by Andreas Ess
+% Extended 13/02/2009 by Jan Lesniak - jlesniak@vision.ee.ethz.ch
+%% ----------------------------------------------------------------------------
+\newpage
+\chapter{Method for image segmentation}
+\section{Bayesian Formulation}
+We model our image segmentation problem as a Bayesian inference problem.
+Let us cosider an observed image, \mat{I} and labeled or segmented groud truth, \mat{S}, the joint probabilty can be defined as:
+\begin{equation*}
+\p(\mat{I}, \mat{S}) = \p(\mat{S}) \p(\mat{I}|\mat{S}) \eqcont
+\end{equation*}
+and applying Bayes theorem,
+\begin{align*}
+\p(\mat{S}|\mat{I}) \, & = \frac{{\p(\mat{S}) \p(\mat{I}|\mat{S})}{\p(\mat{I})}}
+						& \alpha {\p(\mat{S}) \p(\mat{I}|\mat{S})}
+\end{align*}
+The left hand side is the probability of \mat{S} given the image \mat{I}, is called the
+posterior probability. \p\mat{S} is the prior probability of \mat{S}. The Maximum a posteriori (MAP) estimate, $\mat{S^*}$ can be calculated as follow:
+\begin{equation*}
+\mat{S^*} = \arg\max_{\S}{\p(\mat{S}) \p(\mat{I}|\mat{S})} \eqend
+\end{equation*}
+
+The above problem can as well be stated as an energy minimization problem by
+writing Equation 2.3 in terms of energy:
+\begin{align*}
+\funop{E}(\mat{S}) &= − \log(\p(\mat{I}, \mat{S}))
+
+&= − \log(\p(\mat{I}|\mat{S})) − \log(\p(\mat{S}))
+&= \funop{E_d}(\mat{I}, \mat{S}) + \funop{E_r} (\mat{S})
+\end{align*}
+The total energy, \funop{E}, that we want to minimize can be considered as linear combination of data term, \funop{E_d} and prior term (or regularization), \funop{E_r}. This modifies calculating MAP estimate to:
+\begin{equation*}
+\mat{S^*} = \arg\min_{\S}{\funop{E_d}(\mat{I}, \mat{S}) + \funop{E_r} (\mat{S})} \eqend
+\end{equation*}
+
+\section{Data energy term or Maximum likelihood cost function}
+Explain different cost functions
+
+\section{Prediction models}
+\subsection{Random Forests}
+Explain random forests
+\subsection{Convolutional Neural Networks}
+Neural networks
+Explain transfer learning also.
+
+\subsection{Prior energy term: Variational Image Processing}
+Explain total variation regularisation term.
+
+
+\chapter{Implementation}
+\section{Solving variational problem using ASB}
+\section{Random Forest}
+\section{CNN using VGG-16}

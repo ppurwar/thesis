@@ -1,0 +1,288 @@
+%% ----------------------------------------------------------------------------
+% BIWI SA/MA thesis template
+%
+% Created 09/29/2006 by Andreas Ess
+% Extended 13/02/2009 by Jan Lesniak - jlesniak@vision.ee.ethz.ch
+%% ----------------------------------------------------------------------------
+\newpage
+\chapter{Materials and Methods}
+As described earlier, the use of virtual source framework to generate realistic synthetic images requires PSF to be represented in terms of Gaussian kernels. This requires formulation of inverse problem to estimate PSF and source parameters. The stack of images generated using complex PSF generators or real microscopic images for point source forms dataset for our estimation problem. The image value at each pixel along with location of pixel grid in real world co-ordinate system is available to us. Given the dataset, we model our problem as \textit{Bayesian inverse problem}. 
+\par The Bayesian perspective make use of Bayes theorem for inference, and focuses on posterior probability i.e. probability distribution of the parameters/model after considering the observed data. The posterior probability is calculated as follows:
+\begin{align*}
+posterior\,=\,\frac{likelihood\,x\,prior}{evidence} \quad.
+\end{align*}
+The prior is probability of model even before any data is observed i.e. $P(model)$, while the evidence is probability of data observed. The likelihood is probability of observed data given a specific model i.e. $P(data | model)$. The calcualtion of posterior probability is quite complex because of difficulty in computing evidence. Due to this reason, we do not try to solve full Bayesian inverse problem. Instead, for a given stack of images, the evidence is fixed and can be dropped to get Maximum a posteriori(MAP) estimate of the model. This modifies posterior being directly propotional to likelihood and prior. The prior is introduced by restricting our choice of models to multivariate Gaussian kernels with isotropic covariance. This is in coherence with use of IFGT for computing convolution Let $M$ to be set of Gaussian kernels, the MAP estimate, $m*$, for model is calculated as follow:
+\begin{align*}
+m*\,=\,\arg\max_{m\in M}{P(data | model)} \quad.
+\end{align*}
+The negative log of likelihood of R.H.S., $nll$ converts it into a minimization problem. The inverse problem for estimating PSF and source parameters modifies to a optimization problem for minimizing $nll$, as given below:
+\begin{align*}
+m*\,=\,\arg\inf_{m\in M}{nll(data | model)}\quad.
+\end{align*}
+Later in this section, we formulate the $nll$ function for our dataset, model the estimation of background intensity and finally, an algorithm is designed to represent PSF as sparse convex combination of gaussian kernels.
+\section{Negative log-likelihood}
+The modeling of $nll$ function makes use of forward problem (equation number) to get expected image value for a given PSF model.
+Since, the PSF in our inverse problem is estimated using Gaussian kernels, we can formulate $nll$ for a single gaussian for simplification. Also, we try to make $nll$ function dependent on a single parameter in the Gaussian kernel by assuming source intensity and position to be known, and the kernel with zero mean ([0 0 0]) and isotropic covariance, $\sigma^2 I$. This helps to visualize various effects on our optimiation problem eg. effect of quality of obseverved data(SNR). The expected image value at each pixel can be calculated for any $\sigma$. The probabilty of observing a value at each pixel is respresented by Poisson distribution, with mean equivalent to expected image value as function of $\sigma$. Assuming the probabilty for image value at each pixel to be independent , the joint probability for all pixels in the stack of images can be written as:
+\begin{equation*}
+P(S) = \prod_{i_k \in S} P(i_k) \quad,
+\end{equation*}
+where $S\,=\,\{i_1, i_2......i_K\}$, set of image value at all pixels and $k\in \mathcal{P}$, $\mathcal{P}$ being set of all pixels.
+The probabitlity of observing image value, $i_k$, at pixel k is:
+\begin{equation*}
+P(i_k) = \frac{{I_k}^{i_k}}{i_k!}.\exp(-{I_k}) \quad,
+\end{equation*}
+where ${I_k}$ is expected image value at each pixel. The ${I_k}$ is dependent on $\sigma$ of gaussian kernel. Taking negative log of joint probability, we get $nll$ as:
+\begin{equation*}
+nll(S|\sigma) = -\,\log\,(P(S|\sigma)) = \sum_{k\in\,\mathcal{P}}{[\log(i_k!)\,+\,{I_k(\sigma)}\,-\,i_k\,\log({I_k(\sigma)})]}\quad.
+\end{equation*}
+In equation above, the first term in summation do not depend on model parameter, $\sigma$, and thus, is constant for a given image. Thus, for obtaining optimal value of $\sigma$, first term can be ignored. This reduces the function to normalized $nll$ : 
+\begin{equation*}
+nll(S|\sigma) = \sum_{k\in\,\mathcal{P}}{[\,{I_k(\sigma)}\,-\,i_k\,\log({I_k(\sigma)})]}\quad.
+\end{equation*}
+The formulation gives us $nll$ of a particular data as a function of $\sigma$. In general, the position and intensity of point source are not known and the PSF can be represented by convex summation of gaussian kernels. Considering a model, M, consisiting of different parameters, the general equation becomes:
+\begin{equation}
+nll(S|{M}) = \sum_{k\in\,\mathcal{P}}{[\,{I_k({M})}\,-\,i_k\,\log({I_k({M})})]}\quad.
+\end{equation}
+
+\subsection{Effect of image quality}
+The quality of image we observe, can be measured in terms of signal-to-noise ratio (SNR). We can visualize this effect by generating realistic synthetic images using single Gaussian kernel with isotropic covariance. The high value of SNR is simulated using high value of source intensity in comparison to background noise. The image generated for different SNR are shown in figure \ref{fig:snr1}. Single slide is generated keeping source in image plane to have better visualization of effect of SNR.
+\begin{figure}[h!] \label{fig:snr1}
+ \includegraphics[width=1.0\linewidth]{figures/synthetic_compare_SNR.pdf}
+\caption{Synthetic images for different SNR}
+\end{figure}
+Next, we plot $nll$ for different values of SNR in figure \ref{fig:snr2}(a). It can be observed that the curve gets flattened for low values of SNR. The other behaviour we observed was effect of $\sigma$ of Gaussian kernel with a fixed SNR. It can be observed that even with high SNR, the curve tends to become flat for higher values of $\sigma$, as shown in figure \ref{fig:snr2}(b).
+\begin{figure}[h!] \label{fig:snr2}
+\begin{tabular}{cc}
+ \includegraphics[width=0.5\linewidth]{figures/nll_diffSNR.pdf} & \includegraphics[width=0.5\linewidth]{figures/nll_diffsigma.pdf} \\
+  a) Effect of SNR & b) Effect of $\sigma$\\
+\end{tabular}
+\caption{Plot of $nll$ for different SNR and $sigma$}
+\end{figure}
+%\subsection{Effect of Prior}
+
+\section{Estimation of background intensity}
+The expected image value at each pixel is not only because of photons emitted by point sources, as seen in in equation NUMBER . In real images, even when there in not point source, the background is not absolutely dark i.e. the image value at each pixel is not zero. Thus, this background intensity, $\phi_{b}$ contribute to expected image value in addition to point sources. The expected image value, ${I_k}$ in $nll$ function is replaced by ${I_k} + \phi_{b}$. The normalized $nll$ modifies to:
+\begin{equation*}
+nll(S|{M},\phi_{b}) = \sum_{k\in\,\mathcal{P}}{[\,{I_k({M})}+\,\phi_{b}\,-\,i_k\,\log({I_k({M})}+\,\phi_{b})]}\quad.
+\end{equation*}
+Thus, for PSF to be represented by convex combination of gaussian kernels, the unknowns in the optimization problem are: a) position and intensity of point sources, b) means and covariance of multivariate gaussian kernels c) background intensity. The background intensity is optimized separately as it is independent of intensity of point sources. Equating the differential of $nll$ with respect to $\phi_{b}$ to zero, gives optimimal value of $\phi_{b}$ :
+\begin{equation*}
+\sum_{k\in\,\mathcal{P}}{[\,1\,-\,\frac{i_k}{{I_k({M})}+\phi_{b}}]} = 0 \quad.
+\end{equation*}
+For real images generated by point sources, the sources can be considered to be of compact support i.e. no effect of source at pixel far from point source. Assuming, the image value due to point source in such pixels will be approximately zero i.e. ${I_k({M})}\ \approx \ 0$. This simplifies estimation of  $\phi_{b}$ as follows:
+\begin{equation}
+\phi_{b} = \frac{1}{|\mathcal{P}'|} \,\sum_{k\in\,{\mathcal{P}'}}i_k \quad,
+\end{equation}
+where $\mathcal{P}'$ is set of pixels away from source.
+
+\section{Algorithm for optimization}
+The estimation of background intensity reduces the set of unknowns to parameters of point sources and Gaussian kernels. The algorithm is designed with the focus to obtain an optimal sparse convex combination to achieve a balance between accuracy and efficiency. The aim is to obtain a good approximation of PSF with limited number of kernels in affordable computational cost. The ideal solution for optimization is to use Expectation-Maximization (EM) algorithm. CHECK - But this is highly computationally expensive for stack of microscopic images, which are huge in size. In addition, the algorithm tries to estimate exact means and covariance matrices of gaussian kernels. The solution space for the algorithm is not restricted. The algorithm needs the number of gaussians to be specified.\par
+Instead of searching for means and covariance in complete solution space, we propose to use quantized solution space in form of a \textbf{dictionary}. We construct a \textbf{dictionary} of expected means and covariances and try to represent PSF as sparse convex combination of kernels present in the \textbf{dictionary}. The optimization problem reduces to find optimal value of intensity/location of point source and weight vector for convex combination of kernels in \textbf{dictionary}. The solution to optimization problem is developed in stages with use of synthetic generated PSF. Initially, the commonly used optimization algorithms such as gradient descent, are used to estimate PSF in terms of a single gaussian. This gives an estmation of point source location and upper bound on value of covariance matrix. Finally, the ADMM algorithm is used to optimize for sparse weight vector representation of PSF. The complete implemenatation of forward and inverse problem is done in \textit{Python}.
+\subsection{Gradient descent with multiple starts}
+The \textit{Optimize} library from \textit{SciPy} supports various methods for optimization, with or without knowledge of gradients of objective function. The \textit{Optimize} library provides options to use various methods for minimization. For single gaussian case, the problem tries to find optimal value for 6 parameters: position of point source in 3-d object space ($x_s$, $y_s$, $z_s$), intensity of point source($\phi$), and covariance matrix for Gaussian with only diagonal entries i.e. $\sigma_{xy}$, $\sigma_z$. The covariance matrix is chosen with symmetry in xy-plane. The library, \textit{lhs}(Latin-hypercube-sampling) is used to provide mutiple start points distributed evenly in hyperspace of these parameters. The gradient for the $nll$ function is calculated using \textit{theano} library. The gradient is provided as a argument to \textit{Optimize} to increase speed of convergence. 
+\subsection{CMA-ES: A black-box optimization algorithm}
+The functionality from \textit{Optimize} tries to solve local optimization problem, where as \textit{CMA-ES} tries to solve global optimization problem. The \textit{CMA-ES} (Covariance Matrix Adaptation Evolution Strategy) is an evolutionary algorithm for difficult non-linear, non-convex black-box optimisation problems in continuous domain (Hansen et al., 2001, 2004). In addition, \textit{CMA-ES} is a second order approach, which shall produce results better than \textit{Optimize}. The optimization is tried to get optimal values of same 6 parameters defined above.The functionality from \textit{CMA-ES} is tried with an image produced using single Gaussian with isotropic covariance. The image and sources are taken to be in same plane. The result of the optimization for 4 different starting points is: \newline
+\begin{center}
+ \begin{tabular}{||c c c c c c c||} 
+ \hline
+ Start & $\sigma_{xy}$ & {$\sigma_z$} & $\phi$ & $x_s$ & $y_s$ & $z_s$ \\ [0.5ex] 
+ \hline\hline
+ 1 & 2.01 &  1.84 & 42.23 & 37.12 & 34.87 &  4.46\\
+ \hline
+ 2 & 2.01 &  1.68 & 38.76 & 37.12 & 34.87 &  5.52\\
+ \hline
+ 3 & 2.01 &  1.53 & 37.17 & 37.12 & 34.87 &  5.67\\
+ \hline
+ 4 & 2.01 &  3.63 & 97.48 & 37.12 & 34.87 &  2.71\\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+The \textit{CMA-ES} shows different results for different starting points. The reason for this result is use of single slide of image for optimization. The image data does not provide any information about variation in z-direction and therefore, $\sigma_z$ and $z_s$ depend on starting points. The variation of $\sigma_z$ is compensated by corresponding change in $\phi$. This also shows that stack of images to be used for better results. The use of \textit{CMA-ES} for single gaussian tends to perform fine as we optimize for only 6 parameters. The extension to multiple gaussians increases the number of unknown parameters substanitially. The estimation with 100 gaussian requires optimization for 600 parameters for given stack of images. This is really slow and depends heavily on starting points. Beacause of this reason, the approximation of PSF is done by use of \textbf{dictionary}. \newline
+
+\subsection{Use of multiple Gaussians}
+For \textbf{dictionary} of $N$ Gaussian kernels with means, $[m_1, m_2 ...... m_n]$ and covariance matrices, $[\Sigma_1, \Sigma_2 ...... \Sigma_n]$, let $[w_1, w_2 ...... w_n]$ be the weights for convex combiantion of kernels, forming weight vector,$\mathbf{w}$, the PSF approximated using $N$ Gaussian kernels, $PSF_N$ can be written as:
+\begin{equation}
+PSF_N(x)\,=\,\sum_{k=1}^N\,w_k\,f_k(x) \quad where\, f_k(x) =\,c_k\, \exp\Bigg(\frac{-(x -m_k)^T\,\Sigma^{-1}\,(x -m_k)} {2}\Bigg) \quad.
+\end{equation}
+For convex combination of kernels, the weights should belong to probability simplex, $\Delta$. This introduces constaint on weight vector as:
+\begin{equation}
+\mathbf{w} \in \Delta \implies w_k\geqslant 0 \quad \text{and}\quad \sum_{k=1}^N\,w_k=1 \quad.
+\end{equation}
+For image, $\mu$, of $M$ pixels, the expected image value at each pixel ($x_q$), given source intensity, $\phi$ and position, $x_s$, becomes :
+\begin{align}
+\mu(x_q)\, & = C_0\,\phi\, PSF_N(x_q-x_s)\quad with \quad\, C_0\,=\,T_a\,A \quad for\, q\,=\,{1,2....M}  \\
+                 & =  C_0\,\phi\,\sum_{k=1}^N\,w_k\,f_k(x_q-x_s) \quad.
+\end{align}
+For a given image, $\mathbf{I}$, taking $i_q$ as value at each pixel in $\mathbf{I}$, $nll$ function becomes:
+\begin{equation}
+\begin{split}
+nll(.) &=  \sum_{x_q}\,[\mu(x_q) - i_q\,\log(\mu(x_q))] \\
+ &= \sum_{x_q}\,\Big[C_0\,\phi\,\sum_{k=1}^N\,w_k\,f_k(x_q-x_s)\, -\,i_q\,\log\big(C_0\,\phi\,\sum_{k=1}^N\,w_k\,f_k(x_q-x_s)\big)\Big] \quad.
+\end{split}
+\end{equation}
+The equation for $nll$ can be rewritten in matrix form. Let $\mathbf{F_q}$ be a $N\times1$ column vector, with elements as contribution of $N$ kernel at pixel, $x_q$, the expected image, $\mu$, value can be re-written as:
+\begin{align}
+\begin{split}
+ & \mathbf{(F_q)_k}=\,C_0\,\phi\,f_k(x_q-x_s) \\
+ & \mu(x_q) = C_0\,\phi\,\sum_{k=1}^N\,w_k\,f_k(x_q-x_s) \,= \phi\,\mathbf{F_q^T}\,\mathbf{w} \quad.
+\end{split}
+\end{align}
+Arranging $\mu$ as a $M\times1$ column vector, with elements as $\mu(x_q)$ and replacing $\mu(x_q)$ from equation above, the expected image can be computed as:
+\begin{align}
+\begin{split}
+ \mu = &
+\phi \begin{bmatrix}
+    \mathbf{F_1^T}\\
+    \mathbf{F_2^T}\\
+    .\\
+    .\\
+    \mathbf{F_M^T}
+\end{bmatrix}\mathbf{w}
+= \phi \mathbf{Dw} \quad.
+\end{split}
+\end{align}
+The dictionary matrix, $\mathbf{D}$, is a $M\times N$ matrix, which contains contribution of each kernel for all pixels. The $nll$ equation can be rewritten in terms of observed image, $\mathbf{I}$ and $\mathbf{Dw}$ as follows:
+\begin{equation}\label{eq:nll_ng}
+nll(\phi,\, \mathbf{w})\, = \sum_{x_q}\Big(\phi \mathbf{Dw} - \mathbf{I}.\log(\phi \mathbf{Dw})\Big) \quad.
+\end{equation}
+
+\subsection{Sparse representation of PSF}
+In this project, the main target is to obtain a sparse representation of PSF for reasons explained at start of Section 3.3. The sparse representation can be obtatined in various ways by introducing a cost for cardinality of weight vector. The optimization can be formulated as minimizing the cardinality of weight vector with a upper bound on $nll$-
+\begin{align*}
+\inf_{\substack{nll(\phi,\, \mathbf{w})\leqslant \epsilon \\
+ \mathbf{w}\in \Delta \\
+ \phi \in \rm I\!R^+}} \mathbf{card(w)} \quad,
+\end{align*}
+Or, minimizing the $nll$ with a upper bound on cardinality of weight vector-
+\begin{align*}
+\inf_{\substack{\mathbf{card(w)}\leqslant \mathcal{K}\\
+ \mathbf{w}\in \Delta \\
+ \phi \in \mathcal{R}^+}} nll(\phi,\, \mathbf{w}) \quad,
+\end{align*}
+Or, adding a regulariser for cardinality of weight vector  while minimizing $nll$-
+\begin{align*}
+\inf_{\substack{ \mathbf{w}\in \Delta \\
+ \phi \in \mathcal{R}^+}} nll(\phi,\, \mathbf{w})\,+\,\lambda\,\mathbf{card(w)} \quad,
+\end{align*}
+All the objective functions defined above are non-convex optimization problems. These function are relaxed to convert them to convex optimization problems. We use the last formulation with convex relaxation of $\mathbf{card(w)}$ to $\mathbf{L}$-1 norm. The objective cost function, $\mathrm{S}$, for sparse optimization becomes:
+\begin{equation}
+\begin{split}
+\mathrm{S}(\phi,\,\mathbf{w}) = {nll}(\phi,\,\mathbf{w}) + \lambda\,\|\mathbf{w}\|_1 \quad.
+\end{split}
+\end{equation}
+The cost function $\mathrm{S}$ is optimized under constraints on $\mathbf{w}$ and $\phi$. The optimization is difficult to solve using \textit{CMA-ES} because it is not simple to accomodate probabilistic simplex constraint on $\mathbf{w}$ with in cost function. Also, the algorithm to be used shall have flexibility to use other definitions. The use of other definition shall not have major effect on flow of algorithm. \par 
+Keeping these things is mind, the above optimization problem is solved using Alternating Direction Method of Multipliers (ADMM), an algorithm that is well suited for convex optimization. The ADMM is also known to converge toward optimal solution from starting iterations only. It works in the form of a \textit{decomposition-coordination} procedure, in which the solutions to small local subproblems are coordinated to find a solution to a large global problem. ADMM attempts to blend the benefits of dual decomposition and augmented Lagrangian methods for constrained optimization. The algorithm is designed assuming $\phi$ to be known, and is generalized later. According to ADMM, the minimizaion of cost function, $\mathrm{S}$, is modified in following steps:
+\begin{enumerate}
+\item Introduction of indicator function for simplex constraint
+\begin{align*}
+\begin{split}
+&\inf_{\mathbf{w}\in \Delta} \mathrm{S}(\mathbf{w})\,=\,\inf_{\mathbf{w}}\,{nll}(\mathbf{w}) + \lambda\,\|\mathbf{w}\|_1 + \mathrm{i}_{\Delta}(\mathbf{w}) \\ 
+&\text{where}, \quad  \mathrm{i}_{\Delta}(\mathbf{w}) =
+\begin{cases}
+  0, & \text{if}\ \mathbf{w}\in \Delta \\
+  \infty, & \text{otherwise}
+\end{cases}
+\end{split}
+\end{align*}
+
+\item Splitting the cost function \newline
+The three parts of the cost function are made independent with introduction of new variables: 
+\begin{align*}
+&{v_1}\,=\, \mathbf{Dw} \implies \, \mathrm{S}_1(v_1) = {nll}(v_1) \quad,\\
+&{v_2}\,=\, \mathbf{w} \implies \, \mathrm{S}_2(v_2) = \lambda\,\|v_2\|_1 \quad,\\
+&{v_3}\,=\, \mathbf{w} \implies \, \mathrm{S}_3(v_3) = \mathrm{i}_{\Delta}(v_3) \quad.\\
+\end{align*}
+For given equality contraints, the optimization problem changes to:
+\begin{align*}
+\inf_{\substack{v_1,v_2,v_3 \\ 
+{v_1}=\mathbf{Dw}\\
+{v_2}= \mathbf{w},\,{v_3}= \mathbf{w}}}  \mathrm{S}_1(v_1)+\mathrm{S}_2(v_2)+\mathrm{S}_3(v_3) \quad.
+\end{align*}
+\item Augmented Lagrangian \newline
+Introducing regularisation using dual variables $b_1$, $b_2$ and $b_3$ to accomodate equality constraints:
+\begin{equation*}
+\begin{split}
+\mathrm{AS}(\mathbf{w},\,v,\,b) = &\,\, \mathrm{S}_1(v_1)+\mathrm{S}_2(v_2)+\mathrm{S}_3(v_3)+ \\
+& \frac{1}{2\gamma}\,\|b_1 + \mathbf{Dw} - v_1\|^2_2+\frac{1}{2\gamma}\,\|b_2 + \mathbf{w} - v_2\|^2_2+ \frac{1}{2\gamma}\,\|b_3 + \mathbf{w} - v_3\|^2_2 \quad.
+\end{split}
+\end{equation*}
+
+\item  ADMM or Alternating Split Bregmann\newline
+The steps below are iterated to obtain an optimal solution. \newline
+\textbf{Primal updates}:
+\begin{equation}\label{eq:betaSub}
+\mathbf{w}^{k+1}\,=\,\arg\inf_{w}{\mathrm{AS}(\mathbf{w},v^k_1,v^k_2,v^k_3,b^k)} 
+\end{equation}
+\begin{equation}\label{eq:v1Sub}
+v_1^{k+1}\,=\,\arg\inf_{v_1}{\mathrm{AS}(\mathbf{w}^{k+1},v_1,v^k_2,v^k_3,b^k)} 
+\end{equation}
+\begin{equation}\label{eq:v2Sub}
+v_2^{k+1}\,=\,\arg\inf_{v_2}{\mathrm{AS}(\mathbf{w}^{k+1},v^{k+1}_1,v_2,v^k_3,b^k)} 
+\end{equation}
+\begin{equation}\label{eq:v3Sub}
+v_3^{k+1}\,=\,\arg\inf_{v_3}{\mathrm{AS}(\mathbf{w}^{k+1},v^{k+1}_1,v^{k+1}_2,v_3,b^k)} 
+\end{equation}
+\textbf{Dual updates}:
+\begin{align*}
+& b_1^{k+1}\,=\,b_1^k + \mathbf{Dw}^{k+1} - v_1^{k+1} \\
+& b_2^{k+1}\,=\,b_2^k + \mathbf{w}^{k+1} - v_2^{k+1} \\
+& b_3^{k+1}\,=\,b_3^k + \mathbf{w}^{k+1} - v_3^{k+1}
+\end{align*}
+\end{enumerate}
+\subsection{Solution for subproblems}
+The optimization problems, equation \ref{eq:betaSub} to \ref{eq:v3Sub} in primal update step are treated as local subproblems. The subproblems are solved independently considering other variables to be constant for that subproblem. This other advantage with ADMM is that, even if each subproblem is not solved exactly, the algorithm still converges. Also, the order of primal updates does not matter for convergence of algorithm.\newline
+\textbf{$\mathbf{w}$ subproblem:} The equation \ref{eq:betaSub} finds the optimal value of $\mathbf{w}$ independently, and thus the equation \ref{eq:betaSub} modifies to - 
+\begin{multline*}
+\mathbf{w}^{k+1}\,=\,\arg\inf_{\mathbf{w}}{\frac{1}{2\gamma}\,\|{b_1}^k + \mathbf{Dw} - {v_1}^k\|^2_2+\frac{1}{2\gamma}\,\|{b_2}^k + \mathbf{w} - {v_2}^k\|^2_2+ \frac{1}{2\gamma}\,\|{b_3}^k + \mathbf{w} - {v_3}^k\|^2_2 }
+\end{multline*}
+The equation is similar to regularised least squares. Differentiating the equation w.r.t. $\mathbf{w}$ and equating to zero for optimal solution:
+\begin{align*}
+& \mathbf {D}^T\,({b_1}^k + \mathbf{Dw} - {v_1}^k)+({b_2}^k + \mathbf{w} - {v_2}^k)+ ({b_3}^k + \mathbf{w} - {v_3}^k)\,=\,0\\
+& \implies\,\mathbf{w}^{k+1}\,=\,\big[\mathbf{D}^T\mathbf{D}+2*\mathbf{I}\big]^{-1}\,\big[\mathbf{D}^T\,({b_1}^k - {v_1}^k)+({b_2}^k - {v_2}^k)+ ({b_3}^k - {v_3}^k)\big]
+\end{align*}
+\textbf{$v_1$ subproblem:} The equation \ref{eq:v1Sub} finds the optimal value of $v_1$ independently, and thus the equation \ref{eq:v1Sub} reduces to - 
+\begin{align*}
+v_1^{k+1}\,=\,\arg\inf_{v_1}{\mathrm{S}_1(v_1) + \frac{1}{2\gamma}\,\|{b_1}^k + \mathbf{Dw}^{k+1} - {v_1}\|^2_2}
+\end{align*}
+After replacing $\mathrm{S}_1(v_1)$ by ${nll}(v_1)$, it can be observed that both first and second term in R.H.S. are summation over all pixels. Thus solving for each pixel, $q$, separately, simplifies the above equation to a scalar equation. Let $v_q$ be $q^th$ element of $v_1$, the scalar equation is as follows:
+\begin{align*}
+\arg\inf_{v_q} \,{nll(v_q) + \frac{1}{2\gamma}\,[({b_1}^k)_q + (\mathbf{Dw}^{k+1})_q - v_q]^2}
+\end{align*}
+Using equation NUMBER, we replace $nll(v_q)$ by $v_q-i_q\,\log(v_q)$ and differentiate w.r.t. $v_q$ to obtain optimal value. The differentiation leads to following quadratic equation:
+\begin{align*}
+(v_q)^2 + (\gamma-({b_1}^k)_q-(\mathbf{Dw}^{k+1})_q).v_q-\gamma.i_q = 0
+\end{align*}
+The quadratic equation above gives two possible solutions for $v_q$, one positive and other negative. The image value at each pixel can only be positive and thus, only positive solution is used as optimal value.\newline
+\textbf{$v_2$ subproblem:} The equation \ref{eq:v2Sub} finds the optimal value of $v_2$ independently, and thus the equation \ref{eq:v2Sub} reduces to - 
+\begin{align*}
+v_2^{k+1}\,=\,\arg\inf_{v_2}{\mathrm{S}_2(v_2) + \frac{1}{2\gamma}\,\|{b_2}^k + \mathbf{w}^{k+1} - {v_2}\|^2_2}
+\end{align*}
+After replacing $\mathrm{S}_2(v_2)$ by $\lambda\,\|v_2\|_1$, it can be observed that both first and second term in R.H.S. are summation over all Gaussian kernels. Thus solving for each kernel, $n$, separately, simplifies the above equation to a scalar equation. Let $v_n$ be $n^th$ element of $v_2$, the scalar equation is as follows:
+\begin{align*}
+\arg\inf_{v_n} \,{\lambda\,\|v_n\| + \frac{1}{2\gamma}\,[({b_2}^k)_n + (\mathbf{w}^{k+1})_n - v_n]^2}
+\end{align*}
+Using sub-gradient of absolute, above equation gives solution as follows:
+\begin{align*}
+v_n = 
+\begin{cases}
+  \Big(1-\frac{\lambda'}{\|x_n\|}\Big), \quad & \forall\,\, \|x_n\| \leqslant \lambda'\\
+  0, & \text{else}
+\end{cases}
+\end{align*}
+where $x_n$ equals $({b_2}^k)_n + (\mathbf{w}^{k+1})_n$ and $\lambda'$ is equal to ($\lambda.\gamma$). The above solution works in same way as soft-shrinkage oprator.\newline
+\textbf{$v_3$ subproblem:}The equation \ref{eq:v3Sub} finds the optimal value of $v_3$ independently, and thus the equation \ref{eq:v3Sub} reduces to - 
+\begin{align*}
+v_3^{k+1}\,=\,\arg\inf_{v_3}{\mathrm{S}_3(v_3) + \frac{1}{2\gamma}\,\|{b_3}^k + \mathbf{w}^{k+1} - {v_3}\|^2_2}
+\end{align*}
+After replacing $\mathrm{S}_3(v_3)$ by $\mathrm{i}_{\Delta}(v_3)$, the equation can be re-written as:
+\begin{align*}
+\arg\inf_{v_3\in \Delta} \,\|{b_3}^k + \mathbf{w}^{k+1} - {v_3}\|^2_2
+\end{align*}
+The constraint of probability simplex on $v_3$ solves the above equation as projection of vector, ${b_3}^k + \mathbf{w}^{k+1}$ on simplex space.
+
+\subsection{Modifying algorithm for unknown $\phi$}
+The actual unknowns in our optimization problem are weight vector, $\mathbf{w}$ and source intensity, $\phi$. It can be observed in equation NUMBER that, $\mathbf{w}$ is getting multiplied with scalar $\phi$ for computation of expected image. Using this to our benefit, we combine $\phi$ and $\mathbf{w}$ as $\mathbf{w'}$ and replace this to get $nll$ as:
+\begin{equation}
+nll(\mathbf{w'})\, = \sum_{x_q}\Big(\mathbf{Dw'} - \mathbf{I}.\log(\mathbf{Dw'})\Big)
+\end{equation}
+We do not require $\phi$ to compute an approximation of PSF. The complete algorithm for the following change remains same except the simplex constraint on $\mathbf{w}$ is relaxed. The weights for combiantion need to be non-negative only, changing the convex combination to conic combination of kernels. This changes the $v_3$ subproblem to projection on $\mathcal{R}^+$, which is easily obtained by making the non-negative weights to zero.

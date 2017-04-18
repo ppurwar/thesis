@@ -1,0 +1,94 @@
+\newcommand{\littleo}{o\mathopen{}}
+\newcommand{\bigO}{O\mathopen{}}
+
+
+\newcommand\foreign[1]{\emph{#1}}
+\newcommand\eg{\foreign{e.g.}\xspace}
+\newcommand\ie{\foreign{i.e.}\xspace}
+\newcommand\vs{\foreign{vs.}\xspace} 
+\newcommand\apriori{\textit{a priori}\xspace}
+\newcommand\aposteriori{\textit{a posteriori}\xspace}
+
+%real line
+\newcommand*\R{\mathbb{R}}
+
+% \diff : differential operator
+\newcommand{\diff}{\mathop{\mathrm{{}d}}\mathopen{}}
+
+
+% \vec, \mat : typesetting vectors and matrices
+\renewcommand{\vec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\mat}[1]{\ensuremath{\boldsymbol{#1}}}
+
+
+% \transpose, adjoint : transpose, adjoint of a matrix/operator
+\newcommand{\transpose}[1]{\ensuremath{#1^{T}}\xspace}
+\newcommand{\adjoint}[1]{\ensuremath{\transpose{#1}}\xspace}
+
+% \crossprod : typesetting cross product
+\newcommand\crossprod{\mathbin{\times}}
+
+
+
+% \funop : define symbols representing functions, for correctly
+% handling spacing
+%\newcommand\funop[1]{\mathop{{}#1}}
+\newcommand\funop[1]{\mathop{{}#1}}
+
+\newcommand\LHS{\mathrm{L.H.S.}}
+\newcommand\RHS{\mathrm{R.H.S.}}
+
+%variables
+\newcommand*\x{\ensuremath{\vec{x}}\xspace}
+\newcommand*\dx{\diff \x}
+
+\newcommand*\p{\ensuremath{\vec{p}}\xspace}
+
+
+\newcommand*\y{\ensuremath{\vec{y}}\xspace}
+\newcommand*\dy{\diff \y}
+
+
+\newcommand*\dt{\diff t}
+
+\newcommand*\dl{\diff l}
+
+\newcommand*\du{\diff u}
+\newcommand*\dv{\diff v}
+
+
+\newcommand*\PSF{\ensuremath{K}\xspace}
+\newcommand*\fPSF{\funop{\PSF}}
+
+
+\newcommand*\PhotonFlux{\ensuremath{\Phi}\xspace}
+\newcommand*\fPhotonFlux{\funop{\PhotonFlux}}
+
+\newcommand\ConvSymbol{*}
+\newcommand\conv{\mathbin{\ConvSymbol}}
+
+\newcommand*\dirac{\delta}
+\newcommand{\fdirac}[1]{\funop{\delta_{#1}}}
+
+\newcommand*\Pixel{\ensuremath{\mathcal{P}}\xspace}
+\newcommand*\T{\ensuremath{T}}
+\newcommand*\TInterval{\ensuremath{\intervalcc{0}{T}}\xspace}
+
+% This new command ensure right spacing
+\newcommand{\interval}[4]{\mathopen{#1}#2 \mathclose{}\mathpunct{}, #3\mathclose{#4}} 
+\newcommand{\intervalcc}[2]{\interval{[}{#1}{#2}{]}} % interval close close : [ , ]
+
+\newcommand*\eqend{\quad .}
+\newcommand*\eqcont{\quad ,}
+
+\newcommand*\m{\vec{m}}
+\newcommand*\matS{\mat{\Sigma}}
+
+\newcommand*\cma{\textit{CMA-ES} }
+\newcommand*\dic{\textbf{dictionary} }
+
+\newcommand{\nll}{\mathop{\mathrm{{}nll}}\mathopen{}}
+
+\newcommand*\w{\ensuremath{\vec{w}}\xspace}
+\newcommand*\vb{\ensuremath{\vec{b}}\xspace}
+\newcommand*\vv{\ensuremath{\vec{v}}\xspace}

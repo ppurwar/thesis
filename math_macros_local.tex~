@@ -1,0 +1,66 @@
+\newcommand{\littleo}{o\mathopen{}\paren}
+\newcommand{\bigO}{O\mathopen{}\paren}
+
+
+\newcommand\foreign[1]{\emph{#1}}
+\newcommand\eg{\foreign{e.g.}\xspace}
+\newcommand\ie{\foreign{i.e.}\xspace}
+\newcommand\vs{\foreign{vs.}\xspace} 
+\newcommand\apriori{\textit{a priori}\xspace}
+\newcommand\aposteriori{\textit{a posteriori}\xspace}
+
+%real line
+\newcommand*\R{\mathbb{R}}
+
+% \diff : differential operator
+\newcommand{\diff}{\mathop{\mathrm{{}d}}\mathopen{}}
+
+
+% \vec, \mat : typesetting vectors and matrices
+\renewcommand{\vec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\mat}[1]{\ensuremath{\boldsymbol{\MakeUppercase #1}}}
+
+
+% \transpose, adjoint : transpose, adjoint of a matrix/operator
+\newcommand{\transpose}[1]{\ensuremath{#1^{T}}\xspace}
+\newcommand{\adjoint}[1]{\ensuremath{\transpose{#1}}\xspace}
+
+% \crossprod : typesetting cross product
+\newcommand\crossprod{\mathbin{\times}}
+
+
+
+% \funop : define symbols representing functions, for correctly
+% handling spacing
+%\newcommand\funop[1]{\mathop{{}#1}}
+\newcommand\funop[1]{\mathop{{}#1}}
+
+\newcommand\LHS{\mathrm{L.H.S.}}
+\newcommand\RHS{\mathrm{R.H.S.}}
+
+%variables
+\newcommand*\x{\ensuremath{\vec{x}}\xspace}
+\newcommand*\dx{\diff \x}
+
+\newcommand*\p{\ensuremath{\vec{p}}\xspace}
+
+
+\newcommand*\y{\ensuremath{\vec{y}}\xspace}
+\newcommand*\dy{\diff \y}
+
+
+\newcommand*\dt{\diff t}
+
+\newcommand*\dl{\diff l}
+
+\newcommand*\du{\diff u}
+\newcommand*\dv{\diff v}
+
+
+\newcommand*\PSF{\ensuremath{K}\xspace}
+\newcommand*\fPSF{\funop{\PSF}}
+
+
+\newcommand*\PhotonFlux{\ensuremath{\Phi}\xspace}
+\newcommand*\fPhotonFlux{\funop{\PhotonFlux}}
+

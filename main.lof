@@ -1,0 +1,23 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Image with no background noise and with SNR = 10}}{2}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Synthetic images for different SNR}}{8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Plot of $\mathop {\mathrm {{}nll}}\mathopen {}$ for different SNR and $sigma$}}{8}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Visualization and comparison of results}}{16}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Comparison of error,speed and sparsity for CMA-ES and ADMM for $\lambda $=1, 10}}{17}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Convergence speed for CMA and ADMM}}{18}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Results for single Gaussian approach: a) Input image b) Reconstructed image with estimated PSF c) Residual image}}{19}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Results of ADMM for different $\lambda $}}{20}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Results for ADMM ($\lambda $=1): a) Input image b) Reconstructed image with estimated PSF c) Residual image}}{20}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Error Vs No. of kernels with non-zero weight}}{21}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Results for single Gaussian model: a) Gibson and Lanni PSF input image b) Reconstructed image with estimated PSF c) Residual image}}{21}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Results of ADMM for different $\lambda $}}{22}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Residual Image for $\lambda $=1}}{23}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Error Vs No. of kernels with non-zero weight}}{23}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Results for single Gaussian model: a) Real bead image b) Reconstructed image with estimated PSF c) Residual image}}{24}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Residual Image}}{24}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Illustration of the TASEP-LK model \cite {proteincase}. Proteins attach to and detach from the filaments}}{25}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Image for TASEP-LK model with single (left) and multiple Gaussian (right)}}{25}
+\addvspace {10\p@ }

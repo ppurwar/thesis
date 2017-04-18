@@ -1,0 +1,28 @@
+% This file was created with JabRef 2.3.
+% Encoding: ISO-8859-1
+
+@BOOK{day2006wap,
+  title = {{How to Write and Publish a Scientific Paper}},
+  publisher = {Cambridge University Press},
+  year = {2006},
+  author = {Day, R.A. and Gastel, B.}
+}
+
+
+@BOOK{temp,
+  title = {{a document preparation system}},
+  publisher = {Cambridge University Press},
+  year = {2006},
+  author = {Leslie Lamport}
+}
+
+\begin{thebibliography}{9}
+
+\bibitem{faceDet}
+  Leslie Lamport,
+  \emph{\LaTeX: a document preparation system},
+  Addison Wesley, Massachusetts,
+  2nd edition,
+  1994.
+
+\end{thebibliography}

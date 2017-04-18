@@ -1,0 +1,270 @@
+\usepackage{mathtools}
+\usepackage{xspace}
+\usepackage{etoolbox}
+\preto\subequations{\ifhmode\unskip\fi}
+%-- TODO: MOVE OUTSIDE THIS FILE
+% Latin abbreviations 
+\makeatletter
+\newcommand\ensuresingleperiod{\@ifnextchar.{}{.\@\xspace}}
+\makeatother
+
+\newcommand\foreign[1]{\emph{#1}}
+\newcommand\eg{\foreign{e.g.}\xspace}
+\newcommand\ie{\foreign{i.e.}\xspace}
+\newcommand\vs{\foreign{vs.}\xspace} 
+\newcommand\cf{\foreign{cf.}\xspace} 
+\newcommand\etc{\foreign{etc}\ensuresingleperiod}
+\newcommand\apriori{\textit{a priori}\xspace}
+\newcommand\aposteriori{\textit{a posteriori}\xspace}
+\newcommand\invivo{\textit{in vivo}\xspace}
+\newcommand\insilico{\textit{in silico}\xspace}
+\newcommand\invitro{\textit{in vitro}\xspace}
+\newcommand\denovo{\textit{de novo}\xspace}
+%-- TODO: MOVE OUTSIDE THIS FILE
+
+
+% Number Fields
+% Reals
+\newcommand*\R{\mathbb{R}}
+
+% \eqdef, \defeq (equal by definition) : :=, =:
+\newcommand{\defeq}{\coloneqq}
+\newcommand{\eqdef}{\eqqcolon}
+
+% \indicator : indicator of a set
+\newcommand{\indicator}{\ensuremath{\mathbf{1}}}
+
+
+% \diff : differential operator
+\newcommand{\diff}{\mathop{\mathrm{{}d}}\mathopen{}}
+
+% \set, \set*, \set[\big] etc. (see mathtools): typesetting sets
+%\DeclarePairedDelimiter{\set}{\lbrace}{\rbrace}
+%\DeclarePairedDelimiter{\paren}{\lparen}{\rparen}
+% \DeclarePairedDelimiter{\bars}{\lvert}{\rvert}
+% \DeclarePairedDelimiter{\dbars}{\lVert}{\rVert}
+% \makeatletter
+% \newcommand\@normStar[1]{\dbars*{#1}}
+% \newcommand\@normNoStar[2][]{\dbars[#1]{#2}}
+% \newcommand\norm{\@ifstar\@normStar\@normNoStar}
+% \makeatother
+
+
+
+
+% This new command ensure right spacing
+\newcommand{\interval}[4]{\mathopen{#1}#2 \mathclose{}\mathpunct{}, #3\mathclose{#4}} 
+\newcommand{\intervalcc}[2]{\interval{[}{#1}{#2}{]}} % interval close close : [ , ]
+\newcommand{\intervaloc}[2]{\interval{]}{#1}{#2}{]}} % interval open close : ] , ]
+\newcommand{\intervalco}[2]{\interval{[}{#1}{#2}{[}} % interval close open : [ , [
+\newcommand{\intervaloo}[2]{\interval{]}{#1}{#2}{[}} % interval open open : ] , [
+
+% \smallo, \bigO : small/big o/O Landau notation for asymptotic equivalents
+% \mathopen removes a spurious space induced by the opening of the parenthesis
+
+\newcommand{\littleo}{o\mathopen{}\paren}
+\newcommand{\bigO}{O\mathopen{}\paren}
+
+
+
+% \abs, \card and \norm: absolute value, cardinal and norm
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\card}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+% \norm
+
+% \vec, \mat : typesetting vectors and matrices
+\renewcommand{\vec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\mat}[1]{\ensuremath{\boldsymbol{\MakeUppercase #1}}}
+
+
+% \transpose, adjoint : transpose, adjoint of a matrix/operator
+\newcommand{\transpose}[1]{\ensuremath{#1^{T}}\xspace}
+\newcommand{\adjoint}[1]{\ensuremath{\transpose{#1}}\xspace}
+
+% \crossprod : typesetting cross product
+\newcommand\crossprod{\mathbin{\times}}
+
+
+
+% \funop : define symbols representing functions, for correctly
+% handling spacing
+%\newcommand\funop[1]{\mathop{{}#1}}
+\newcommand\funop[1]{\mathop{{}#1}}
+
+
+%-- Paper Specific Macros
+
+% Operators and operations
+\DeclareMathOperator{\dgrad}{D}
+\DeclareMathOperator{\PSFop}{K}
+
+\newcommand\ConvSymbol{*}
+\newcommand\conv{\mathbin{\ConvSymbol}}
+
+\newcommand\LHS{\mathrm{L.H.S.}}
+\newcommand\RHS{\mathrm{R.H.S.}}
+
+
+% Variables
+
+% \Tu, \Tv: Tangent vectors to a surface 
+%\newcommand*\Tu{\vec{T}_{\!u}}
+%\newcommand*\Tv{\vec{T}_{\!v}}
+\newcommand*\x{\ensuremath{\vec{x}}\xspace}
+\newcommand*\dx{\diff \x}
+
+\newcommand*\p{\ensuremath{\vec{p}}\xspace}
+
+
+\newcommand*\y{\ensuremath{\vec{y}}\xspace}
+\newcommand*\dy{\diff \y}
+
+
+\newcommand*\dt{\diff t}
+
+\newcommand*\dl{\diff l}
+
+\newcommand*\du{\diff u}
+\newcommand*\dv{\diff v}
+
+
+\newcommand*\PSF{\ensuremath{K}\xspace}
+\newcommand\fPSF{\funop{\PSF}\paren}
+
+
+
+\newcommand*\Curve{\ensuremath{\mathcal{C}}\xspace}
+\newcommand*\Surf{\ensuremath{\mathcal{S}}\xspace}
+\newcommand*\Manifold{\ensuremath{\mathcal{M}}\xspace}
+\newcommand*\Manifoldt{\ensuremath{\mathcal{M}_{t}}\xspace}
+\newcommand*\ParamDomain{\ensuremath{\mathcal{D}}\xspace}
+
+\newcommand*\PhysDomain{\ensuremath{\Omega}\xspace}
+
+\newcommand*\Pixel{\ensuremath{\mathcal{P}}\xspace}
+\newcommand*\TInterval{\ensuremath{\intervalcc{0}{T}}\xspace}
+
+\newcommand*\PhotonFlux{\ensuremath{\Phi}\xspace}
+\newcommand*\fPhotonFlux{\funop{\PhotonFlux}\paren}
+
+\newcommand\PhotonFluxE[1]{\ensuremath{\Phi_{\mathrm{E}_{#1}}}\xspace}
+
+\newcommand\Photo{\ensuremath{\phi}\xspace}
+%\newcommand\fPhoto{\funop{\Photo}\paren}
+
+\providecommand\given{}
+%\DeclarePairedDelimiterXPP{\fPhoto}[1]{\funop{\Photo}}(){}{\renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}}#1}
+\DeclarePairedDelimiterXPP{\fPhoto}[1]{\funop{\Photo}}(){}{\renewcommand\given{\delimsize\vert\mathopen{}}#1}
+
+\newcommand\Photok{\ensuremath{\phi_k}\xspace}
+\newcommand\fPhotok{\funop{\Photok}\paren}
+
+\newcommand\VarPhoto{\ensuremath{\varphi}\xspace}
+% \newcommand\fVarPhoto{\funop{\VarPhoto}\paren}
+
+\DeclarePairedDelimiterXPP{\fVarPhoto}[1]{\funop{\VarPhoto}}(){}{\renewcommand\given{\delimsize\vert\mathopen{}}#1}
+
+\newcommand\VarPhotok{\ensuremath{\varphi_k}\xspace}
+\newcommand\fVarPhotok{\funop{\VarPhoto_k}\paren}
+
+
+\newcommand\PhotoE[1]{\ensuremath{\phi_{\mathrm{E}_{#1}}}\xspace}
+\newcommand\fPhotoE[1]{\funop{\PhotoE{#1}}\paren}
+
+\newcommand\VarPhotoE[1]{\ensuremath{\varphi_{\mathrm{E}_{#1}}}\xspace}
+\newcommand\fVarPhotoE[1]{\funop{\VarPhotoE{#1}}\paren}
+
+
+
+
+\newcommand*\PhotoM{\ensuremath{\Photo_{\!\Manifold}}\xspace}
+\newcommand\fPhotoM{\funop{\PhotoM}\paren}
+
+\newcommand*\PhotoMt{\ensuremath{\Photo_{\!\Manifoldt}}\xspace}
+\newcommand\fPhotoMt{\funop{\PhotoMt}\paren}
+
+
+\newcommand*\Param{\ensuremath{\vec{\sigma}}\xspace}
+\newcommand\fParam{\funop{\Param}\paren}
+
+\newcommand*\Paramt{\ensuremath{\vec{\sigma}_{\!t}}\xspace}
+\newcommand\fParamt{\funop{\Paramt}\paren}
+
+
+\newcommand*\dirac{\delta}
+\newcommand{\fdirac}[1]{\funop{\delta_{#1}}\paren}
+
+\newcommand{\tangent}[1]{\ensuremath{\vec{\theta}_{#1}}\xspace}
+\newcommand{\ftangent}[1]{\vec{\theta}_{#1}\paren}
+
+
+\newcommand{\1}[1]{\funop{\indicator_{\!#1}}\paren}
+
+\newcommand\unitInterval{\ensuremath{\intervalcc{0}{1}}\xspace}
+
+\newcommand*\metric{\ensuremath{g}\xspace}
+\newcommand*\metrict{\ensuremath{\metric_t}\xspace}
+\newcommand{\fmetric}[1]{\funop{\metric_{#1}}\paren}
+\newcommand{\fmetrict}{\funop{\metric_{t}}\paren}
+
+\newcommand*\I{\ensuremath{I}\xspace}
+\newcommand*\It{\ensuremath{\I_t}\xspace}
+\newcommand{\fI}[1]{\funop{\I_{#1}}\paren}
+\newcommand{\fIt}{\funop{\It}\paren}
+
+\newcommand\jacobian{\ensuremath{\mat{J}}\xspace}
+\newcommand\fjacobiant{\funop{\jacobian_{\!\Paramt}}\paren}
+
+\newcommand*\measure{\ensuremath{\mu}\xspace}
+%\newcommand*\fmeasure{\funop{\mu}\paren}
+%\DeclarePairedDelimiterXPP{\fmeasure}[1]{\funop{\measure}}(){}{\renewcommand\given{\delimsize\vert\mathopen{}}#1}
+
+\newcommand\f{\funop{f}\paren}
+
+\newcommand\wquad{\ensuremath{w^{\mathrm{quad}}}\xspace}
+\newcommand\fwquad{\funop{\wquad}\paren}
+
+\newcommand\wgeom{\ensuremath{w^{\mathrm{geom}}}\xspace}
+\newcommand\fwgeom{\funop{\wgeom}\paren}
+
+\newcommand\VS{\ensuremath{\mathcal{VS}}\xspace}
+\newcommand\RS{\ensuremath{\mathcal{RS}}\xspace}
+
+\newcommand\w{\ensuremath{w}\xspace}
+\newcommand\fw{\funop{w}\paren}
+
+\newcommand\Npixel{\ensuremath{N_\mathrm{pixel}}\xspace}
+\newcommand\Nsource{\ensuremath{N_\mathrm{source}}\xspace}
+
+
+
+
+%-- Theorems
+\newtheorem*{proposition}{Proposition}
+
+\theoremstyle{remark}
+\newtheorem*{example1}{Example 1}
+\newtheorem*{example2}{Example 2}
+
+\theoremstyle{theorem}
+\newtheorem*{thm}{Theorem}
+
+%-- Examples
+% \[\funop{\left(\PSF \conv_\Manifold \Photo\right)}\paren{\vx} \defeq \int_\Manifold
+% \fPSF{\vx-\vy} \fPhoto{\vy} \dvy \]
+
+% \[\int_\Surf
+% \fPSF{\vx-\vy} \fPhoto{\vy} \dvy = \int_\ParaDomain \fPSF{\vx-\fParam{u,v}}
+% \fPhoto{u,v} \norm{\Tu \crossprod \Tv} \du \dv\]
+
+
+% \[\left(K *_\mathcal{S} \phi\right)(\boldsymbol{x}) \defeq \int K(\boldsymbol{x}-\boldsymbol{\sigma}(u,v))
+% \phi(u,v) \norm{\boldsymbol{T}_u \times \boldsymbol{T}_v} du dv \]
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "vm"
+%%% End: 

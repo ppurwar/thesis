@@ -1,0 +1,9 @@
+\newcommand\foreign[1]{\emph{#1}}
+\newcommand\eg{\foreign{e.g.}\xspace}
+\newcommand\ie{\foreign{i.e.}\xspace}
+\newcommand\vs{\foreign{vs.}\xspace} 
+\newcommand\apriori{\textit{a priori}\xspace}
+\newcommand\aposteriori{\textit{a posteriori}\xspace}
+
+
+\newcommand*\R{\mathbb{R}}
