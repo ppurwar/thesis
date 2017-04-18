@@ -36,7 +36,11 @@ The total energy, $\funop{E}$, that we want to minimize can be considered as lin
 \end{equation*}
 
 \section{Data energy term or Maximum likelihood cost function}
-Explain different cost functions
+The data term can be related to the likelihood of getting a label (foreground) at each pixel using any prediction model. The prediction model will provide a value between 0 and 1, corresponding to probability of that pixel being foreground. The data term is generally used as a pixelwise product of expected mask and some pixelwise function of probablility. In general, there is use of a linear function of probability mask obtained from prediction model as given below:
+\begin{equation*}
+\funop(E_d)(\p, \vec{u}) = u(1-2\p) \eqcont
+\end{equation*}
+which ensures a negative cost for foreground pixels. 
 
 \section{Prediction models}
 \subsection{Random Forests}
