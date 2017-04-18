@@ -1,33 +1,18 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Focus of this Work}{1}
-\contentsline {subsection}{\numberline {1.1.1}Formulation of forward problem}{1}
-\contentsline {subsection}{\numberline {1.1.2}Use of IFGT for non-gridded convolution}{3}
-\contentsline {section}{\numberline {1.2}Thesis Organization}{4}
-\contentsline {chapter}{\numberline {2}Related Work}{5}
-\contentsline {chapter}{\numberline {3}Bayesian Inverse Problem}{6}
-\contentsline {section}{\numberline {3.1}Negative log-likelihood}{7}
-\contentsline {subsection}{\numberline {3.1.1}Effect of image quality}{7}
-\contentsline {section}{\numberline {3.2}Structure of solution space}{8}
-\contentsline {section}{\numberline {3.3}Formulation of optimization problem}{9}
-\contentsline {section}{\numberline {3.4}Sparse approximation of PSF}{10}
-\contentsline {subsection}{\numberline {3.4.1}Single Gaussian PSF model}{10}
-\contentsline {subsection}{\numberline {3.4.2}Multiple Gaussian PSF model}{11}
-\contentsline {section}{\numberline {3.5}Estimation of background intensity}{11}
-\contentsline {section}{\numberline {3.6}Solving optimization problem for single Gaussian PSF model}{12}
-\contentsline {subsection}{\numberline {3.6.1}Gradient descent with multiple starts}{12}
-\contentsline {subsection}{\numberline {3.6.2}CMA-ES: A black-box optimization algorithm}{12}
-\contentsline {section}{\numberline {3.7}Solving optimization problem for multiple Gaussian PSF model}{12}
-\contentsline {subsection}{\numberline {3.7.1}Solution for subproblems}{14}
-\contentsline {chapter}{\numberline {4}Experiments and Results}{16}
-\contentsline {section}{\numberline {4.1}CMA-ES vs ADMM}{17}
-\contentsline {section}{\numberline {4.2}Estimation results for synthetic data generated using Gaussian PSF}{18}
-\contentsline {subsection}{\numberline {4.2.1}Use of single Gaussian}{18}
-\contentsline {subsection}{\numberline {4.2.2}Use of multiple Gaussians}{19}
-\contentsline {section}{\numberline {4.3}Estimation results for synthetic data generated using non-gaussian psf}{20}
-\contentsline {subsection}{\numberline {4.3.1}Use of single Gaussian}{21}
-\contentsline {subsection}{\numberline {4.3.2}Use of multiple Gaussians}{22}
-\contentsline {section}{\numberline {4.4}Estimation results for real bead images}{22}
-\contentsline {subsection}{\numberline {4.4.1}Use of single Gaussian}{23}
-\contentsline {subsection}{\numberline {4.4.2}Use of multiple Gaussians}{24}
-\contentsline {section}{\numberline {4.5}Use case: TASEP-LK model}{25}
-\contentsline {chapter}{\numberline {5}Conclusion}{26}
+\contentsline {subsection}{\numberline {1.1.1}Dataset}{1}
+\contentsline {section}{\numberline {1.2}Thesis Organization}{2}
+\contentsline {chapter}{\numberline {2}Related Work}{3}
+\contentsline {chapter}{\numberline {3}Method for image segmentation}{4}
+\contentsline {section}{\numberline {3.1}Bayesian Formulation}{4}
+\contentsline {section}{\numberline {3.2}Data energy term or Maximum likelihood cost function}{4}
+\contentsline {section}{\numberline {3.3}Prediction models}{5}
+\contentsline {subsection}{\numberline {3.3.1}Random Forests}{5}
+\contentsline {subsection}{\numberline {3.3.2}Convolutional Neural Networks}{5}
+\contentsline {section}{\numberline {3.4}Prior energy term using Total Variation}{5}
+\contentsline {chapter}{\numberline {4}Implementation}{6}
+\contentsline {section}{\numberline {4.1}Solving variational problem using ASB}{6}
+\contentsline {section}{\numberline {4.2}Random Forest}{6}
+\contentsline {section}{\numberline {4.3}Architecture of CNN used}{6}
+\contentsline {chapter}{\numberline {5}Experiments and Results}{7}
+\contentsline {chapter}{\numberline {6}Conclusion}{8}

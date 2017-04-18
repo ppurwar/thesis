@@ -1,121 +1,33 @@
 \relax 
-\citation{proteincase}
-\citation{fwdprob}
-\citation{ifgt}
-\citation{shotnoise}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Focus of this Work}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Formulation of forward problem}{1}}
-\citation{ifgt}
-\newlabel{eq:fwdProb}{{1.1}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Image with no background noise and with SNR = 10}}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Use of IFGT for non-gridded convolution}{3}}
-\newlabel{eq:psf_ifgt}{{1.2}{3}}
-\newlabel{eq:ifgt}{{1.3}{3}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Thesis Organization}{4}}
-\citation{cole}
-\citation{aguet2008}
-\citation{kishner}
-\citation{gauss}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Related Work}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Dataset}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Thesis Organization}{2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Related Work}{3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Bayesian Inverse Problem}{6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Method for image segmentation}{4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Negative log-likelihood}{7}}
-\newlabel{eq:nll_gen}{{3.1}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Effect of image quality}{7}}
-\newlabel{fig:snr1}{{3.1.1}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Synthetic images for different SNR}}{8}}
-\newlabel{fig:snr2}{{3.1.1}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Plot of $\mathop {\mathrm  {{}nll}}\mathopen {}$ for different SNR and $sigma$}}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Structure of solution space}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Formulation of optimization problem}{9}}
-\newlabel{eq:nll_ng}{{3.4}{10}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Sparse approximation of PSF}{10}}
-\newlabel{eq:min_eqn}{{3.5}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Single Gaussian PSF model}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Multiple Gaussian PSF model}{11}}
-\newlabel{eq:yesphi}{{3.7}{11}}
-\newlabel{eq:no_phi}{{3.8}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Estimation of background intensity}{11}}
-\citation{lbfgs}
-\citation{cmaes}
-\citation{admm}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Solving optimization problem for single Gaussian PSF model}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Gradient descent with multiple starts}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}CMA-ES: A black-box optimization algorithm}{12}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Solving optimization problem for multiple Gaussian PSF model}{12}}
-\newlabel{eq:betaSub}{{3.10}{13}}
-\newlabel{eq:v1Sub}{{3.11}{13}}
-\newlabel{eq:v2Sub}{{3.12}{13}}
-\newlabel{eq:v3Sub}{{3.13}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}Solution for subproblems}{14}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Experiments and Results}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Bayesian Formulation}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Data energy term or Maximum likelihood cost function}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Prediction models}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Random Forests}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Convolutional Neural Networks}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Prior energy term using Total Variation}{5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementation}{6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Visualization and comparison of results}}{16}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}CMA-ES vs ADMM}{17}}
-\newlabel{fig:cmaAdmm}{{4.1}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Comparison of error,speed and sparsity for CMA-ES and ADMM for $\lambda $=1, 10}}{17}}
-\newlabel{fig:exp1inp}{{4.1}{18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Convergence speed for CMA and ADMM}}{18}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Estimation results for synthetic data generated using Gaussian PSF}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Use of single Gaussian}{18}}
-\citation{kishner}
-\newlabel{fig:exp1inp}{{4.2.1}{19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Results for single Gaussian approach: a) Input image b) Reconstructed image with estimated PSF c) Residual image}}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Use of multiple Gaussians}{19}}
-\newlabel{fig:exp1inp}{{4.2.2}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Results of ADMM for different $\lambda $}}{20}}
-\newlabel{fig:exp1inp}{{4.2.2}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Results for ADMM ($\lambda $=1): a) Input image b) Reconstructed image with estimated PSF c) Residual image}}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Estimation results for synthetic data generated using non-gaussian psf}{20}}
-\newlabel{fig:exp1inp}{{4.2.2}{21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Error Vs No. of kernels with non-zero weight}}{21}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Use of single Gaussian}{21}}
-\newlabel{fig:exp1inp}{{4.3.1}{21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Results for single Gaussian model: a) Gibson and Lanni PSF input image b) Reconstructed image with estimated PSF c) Residual image}}{21}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Use of multiple Gaussians}{22}}
-\newlabel{fig:exp1inp}{{4.3.2}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Results of ADMM for different $\lambda $}}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Estimation results for real bead images}{22}}
-\newlabel{fig:exp1inp}{{4.3.2}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Residual Image for $\lambda $=1}}{23}}
-\newlabel{fig:exp1inp}{{4.3.2}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Error Vs No. of kernels with non-zero weight}}{23}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Use of single Gaussian}{23}}
-\citation{fwdprob}
-\newlabel{fig:exp1inp}{{4.4.1}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Results for single Gaussian model: a) Real bead image b) Reconstructed image with estimated PSF c) Residual image}}{24}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Use of multiple Gaussians}{24}}
-\newlabel{fig:exp1inp}{{4.4.2}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Residual Image}}{24}}
-\citation{proteincase}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Use case: TASEP-LK model}{25}}
-\newlabel{fig:exp1inp}{{4.5}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces Illustration of the TASEP-LK model \cite  {proteincase}. Proteins attach to and detach from the filaments}}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Image for TASEP-LK model with single (left) and multiple Gaussian (right)}}{25}}
-\citation{bach}
-\citation{sls}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Solving variational problem using ASB}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Random Forest}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Architecture of CNN used}{6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Experiments and Results}{7}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
 \bibstyle{unsrt}
 \bibdata{references}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{26}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\bibcite{proteincase}{1}
-\bibcite{fwdprob}{2}
-\bibcite{ifgt}{3}
-\bibcite{shotnoise}{4}
-\bibcite{cole}{5}
-\bibcite{aguet2008}{6}
-\bibcite{kishner}{7}
-\bibcite{gauss}{8}
-\bibcite{lbfgs}{9}
-\bibcite{cmaes}{10}
-\bibcite{admm}{11}
-\bibcite{bach}{12}
-\bibcite{sls}{13}

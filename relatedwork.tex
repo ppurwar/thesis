@@ -6,10 +6,3 @@
 %% ----------------------------------------------------------------------------
 \newpage
 \chapter{Related Work}
-Accurate knowledge of an imaging system’s PSF is crucial for generation of synthetic images. For fluorescence microscopy, various methods for PSF estimations based on either
-theoretical models or experimental measurements are available. These methods range from estimation in digital to analog domain. The estimation in digital domain is relatively easy and efficient due to gridded convolution. The methods in analog domain are also divided into parametric and non-parametric approaches. \par
-The method by Cole et al. \cite{cole} is based on a non-parametric approach by recording the 3-D image of sub-resolution point sources. The research outlines a procedure for collecting and analyzing PSFs. It describes how to prepare fluorescent micro-sphere samples, set up a confocal microscope to properly collect 3D confocal image data and perform PSF measurements.
-A vast number of methods use a certain model for PSF and try to fit the data to estimate parameters of the model. 
-The research by Aguet et al. \cite{aguet2008} uses a theoretical model for PSF, based on systems' optical parameters and properties or measures 3D PSF experimentally. Due to shortcomings in both approaches, this paper proposes a combination of both approaches that aims at providing a theoretical representation of actual experimental conditions. This is achieved by fitting a parametric theoretical model to experimental measurements. They use a
-reduced-parameter version of the scalar model proposed by Gibson and Lanni. They use a Maximum-likelihood formulation for estimation of parameters. A similar approach is used by Kirshner et al. \cite{kishner}. They also utilize the Gibson and Lanni model but use a least squares PSF fitting framework, instead of Maximum-likelihood. \par
-Similar to our approach, the method described in Zhang et al \cite{gauss} also use Gaussian approximations to model fluorescence microscope point spread functions.
