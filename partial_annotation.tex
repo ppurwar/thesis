@@ -1,0 +1,69 @@
+%% ----------------------------------------------------------------------------
+% BIWI SA/MA thesis template
+%
+% Created 09/29/2006 by Andreas Ess
+% Extended 13/02/2009 by Jan Lesniak - jlesniak@vision.ee.ethz.ch
+%% ----------------------------------------------------------------------------
+\newpage
+\chapter{Semi-supervised image segmentation}
+The philosophy behind semi-supervised learning is to propagate label information from labelled to unlabelled data. Image segmentation can be seen as a classification problem which consists of assigning a class label to each pixel. For our task of binary segmentation, this means classifying each pixel as foreground or background. For our task of image segementaion, we make use of partial annotations as \textit{scribbles}. Scribbles are pixels in image annotated by experts as foreground or background. We use example-based methods to learn from these scribbles annotated by experts. In contrast to having different images for training and testing, we use same image for training and testing as the samples used for training are pixels and not images.
+
+\section{Random Forest}
+In this section, we make use of RF as semi-supervised learning algorithm. The advantages and details of using RF can be found in Dominic[cite]. For training RF, we compute set  of features in Python. We compute different features ranging from simple Sobel edge detectors to higher level Gabor filters.The choice of features was made according to WEKA[cite] toolset of FIJI[cite] plugin. These are set of 2D features and perform well medical images. We compute different type of features for a range of sigmas, which gives 65 feature maps for a single image. The details of features computed can be found in Appendix[cite]. In thesis by Dominic, we can find details and effect of feature selection for training Random forests. Here, we focus on how to get best results for given annotation budget and thus, use all features computed and sufficient number of trees to get best results. As shown in figure 4, we can observe that the segmentation measure saturates for more than 50 trees. We try to answer the question of where to scribble and how to make best use of our annotation budget and time.
+
+\subsection{Where to scribble?}
+In general, we believe that the more training data we provide, more we can improve the results. Does this hold for partial annotation such as scribbles? If we go on increasing the pixels annotated arbitatrily, will it improve the segmentation mask or we have to use our labelling effort intelligently to improve results? We conducted an experiment by dividing our set of foreground and background scribbles into 2 classes: easy and hard. We classified scribbles as "easy" and "hard" depending on effort required to annotate these pixels. For example, pixels are difficult to annotate near boundary of foreground and background, and we classify these pixels as "hard", as shown in figure 4. First, we trained and tested RF on one image by increasing scribbles belonging to "easy" foreground and background class. The result can be observed in figure 5. \par
+
+We can observe that after [cite] pixels selected from "easy" foreground and background, the segmentation measure do not improve significantly. An improvement can be 
+
+\section{Bayesian Formulation}
+We model our image segmentation problem as a Bayesian inference problem.
+Let us cosider an observed image, \mat{I} and labeled or segmented groud truth, \mat{S}, the joint probabilty can be defined as:
+\begin{equation*}
+\p(\mat{I}, \mat{S}) = \p(\mat{S}) \p(\mat{I}|\mat{S}) \eqcont
+\end{equation*}
+and applying Bayes theorem,
+\begin{align*}
+\p(\mat{S}|\mat{I}) \, & = \frac{\p(\mat{S}) \p(\mat{I}|\mat{S})}{\p(\mat{I})} \\
+						& \alpha \, {\p(\mat{S}) \p(\mat{I}|\mat{S})}
+\end{align*}
+The left hand side is the probability of \mat{S} given the image \mat{I}, is called the
+posterior probability. \p(\mat{S}) is the prior probability of \mat{S}. The Maximum a posteriori (MAP) estimate, $\mat{S^*}$ can be calculated as follow:
+\begin{equation}
+\mat{S^*} = \arg\max_{\mat{S}}({\p(\mat{S}) \p(\mat{I}|\mat{S})}) \eqend
+\end{equation}
+
+The above problem can as well be stated as an energy minimization problem by
+writing Equation 3.1 in terms of energy:
+\begin{align*}
+\funop{E}(\mat{S}) &=\, - \, \log(\p(\mat{I}, \mat{S})) \\
+&= -\, \log(\p(\mat{I}|\mat{S})) - \log(\p(\mat{S})) \\
+&= \funop{E_d}(\mat{I}, \mat{S}) + \funop{E_r} (\mat{S})
+\end{align*}
+The total energy, $\funop{E}$, that we want to minimize can be considered as linear combination of data term, $\funop{E_d}$ and prior term (or regularization), $\funop{E_r}$. This modifies calculating MAP estimate to:
+\begin{equation*}
+\mat{S^*} = \arg\min_{\mat{S}}({\funop{E_d}(\mat{I}, \mat{S}) + \funop{E_r} (\mat{S})}) \eqend
+\end{equation*}
+
+\section{Data energy term or Maximum likelihood cost function}
+Explain different cost functions
+
+\section{Prediction models}
+\subsection{Random Forests}
+Explain random forests
+\subsection{Convolutional Neural Networks}
+Neural networks \newline
+Explain transfer learning also.
+
+\section{Prior energy term using Total Variation}
+Explain total variation regularisation term.
+
+
+\chapter{Implementation}
+\section{Solving variational problem using ASB}
+Solution of ASB problem
+\section{Random Forest}
+Feature selection and training of Random forests.
+\section{Architecture of CNN used}
+Training of CNN \newline
+Loss function for scribbles
