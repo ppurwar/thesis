@@ -9,61 +9,81 @@
 The philosophy behind semi-supervised learning is to propagate label information from labelled to unlabelled data. Image segmentation can be seen as a classification problem which consists of assigning a class label to each pixel. For our task of binary segmentation, this means classifying each pixel as foreground or background. For our task of image segementaion, we make use of partial annotations as \textit{scribbles}. Scribbles are pixels in image annotated by experts as foreground or background. We use example-based methods to learn from these scribbles annotated by experts. In contrast to having different images for training and testing, we use same image for training and testing as the samples used for training are pixels and not images.
 
 \section{Random Forest}
-In this section, we make use of RF as semi-supervised learning algorithm. The advantages and details of using RF can be found in Dominic[cite]. For training RF, we compute set  of features in Python. We compute different features ranging from simple Sobel edge detectors to higher level Gabor filters.The choice of features was made according to WEKA[cite] toolset of FIJI[cite] plugin. These are set of 2D features and perform well medical images. We compute different type of features for a range of sigmas, which gives 65 feature maps for a single image. The details of features computed can be found in Appendix[cite]. In thesis by Dominic, we can find details and effect of feature selection for training Random forests. Here, we focus on how to get best results for given annotation budget and thus, use all features computed and sufficient number of trees to get best results. As shown in figure 4, we can observe that the segmentation measure saturates for more than 50 trees. We try to answer the question of where to scribble and how to make best use of our annotation budget and time.
+In this section, we make use of RF as semi-supervised learning algorithm. The advantages and details of using RF can be found in Dominic[cite]. For training RF, we compute set  of features in Python. We compute different features ranging from simple Sobel edge detectors to higher level Gabor filters.The choice of features was made according to WEKA[cite] toolset of FIJI[cite] plugin. These are set of 2D features and perform well medical images. We compute different type of features for a range of sigmas, which gives 69 feature maps for a single image. The details of features computed can be found in Appendix[cite]. In thesis by Dominic, we can find details and effect of feature selection for training Random forests. As shown in figure 4, we can observe that the segmentation measure saturates for more than 30 trees and for more than 20 features. Here, we focus on how to get best results for given annotation budget and thus, use 20 best features and sufficient number of trees (30) to get best results. We try to answer the question of where to scribble and how to make best use of our annotation budget and time.
 
 \subsection{Where to scribble?}
-In general, we believe that the more training data we provide, more we can improve the results. Does this hold for partial annotation such as scribbles? If we go on increasing the pixels annotated arbitatrily, will it improve the segmentation mask or we have to use our labelling effort intelligently to improve results? We conducted an experiment by dividing our set of foreground and background scribbles into 2 classes: easy and hard. We classified scribbles as "easy" and "hard" depending on effort required to annotate these pixels. For example, pixels are difficult to annotate near boundary of foreground and background, and we classify these pixels as "hard", as shown in figure 4. First, we trained and tested RF on one image by increasing scribbles belonging to "easy" foreground and background class. The result can be observed in figure 5. \par
+In general, we believe that the more training data we provide, more we can improve the results. Does this hold for partial annotation such as scribbles? If we go on increasing the pixels annotated arbitatrily, will it improve the segmentation mask or we have to use our labelling effort intelligently to improve results? We conducted an experiment by dividing our set of foreground and background scribbles into 2 classes: easy and hard. We classified scribbles as "easy" and "hard" depending on effort required to annotate these pixels. For example, pixels are difficult to annotate near boundary of foreground and background, and we classify these pixels as "hard", as shown in figure 5. We manually scribbled image for both "easy" and "hard" subclasses. Then, we trained and tested RF on one image by increasing percentage of scribbles belonging to "easy" foreground and background class. After, we have used all scribbles belonging to "easy"class, we added scribbles from "hard" class for both foreground and background. The increment was done w.r.t. total amount of scribbles we are having and also, for higher percentage of added scribbles, we maintained a ratio between foreground and background pixels. The result can be observed in figure 6a. \par
 
-We can observe that after [cite] pixels selected from "easy" foreground and background, the segmentation measure do not improve significantly. An improvement can be 
+We can observe that after [cite] pixels selected from "easy" foreground and background, the segmentation measure do not improve significantly. An improvement can be observed, once we started adding "hard" scribbles. This shows that the best results can be obtained by adding "hard" scribbles after addition of certain percentage of "easy" scribbles. Looking at the plot, one might think to start adding the "hard" scribbles after [cite] "easy" scribbles. We tried this and results can be observed in figure 6b. \par
+
+In figure 6b, as we started adding "hard" scribbles after [cite] percentage of "easy" scribbles, instead of observing a rise with additional scribbles., we observed a fall in perfomnace. This may be due to lack of enough "easy" scribbles and RF starts training its trees to focus more on "hard" scribbles. Thus, the question arises how to decide the point of addition of "hard" scribbles.
+
+\subsection{Iterative semi-interactive approach}
+In previous section, we showed need of using our annotation budget intelligently to get best performance. But, we observed the problem of deciding on how many "easy" and "hard" scribbles are needed to achieve best results. For our problem, we divided the scribbles as "easy" and "hard" according to labelling effort, but this division for scribbles may not be same from point of view of Random forest. Apriori, we don't know which pixels will be difficult for Random forest to classify correctly. The above mentioned two problems can be solved by annotating pixels iteratively to improve results, atleast once to understand which pixels are difficult for RF to classify. We show the improvement in result by doing one iteration in figure 7. We can observe the improvement in results from [cite] to [cite] for increasing the annotation budget from [cite] to [cite]. \par
+
+\subsection{Uncertainity of classifier}
+The use of iterative semi-interactivity gives best result for given annotation budget, but, the output of RF is noisy and uncertain. The uncertainity lies in inability to classify maximum of pixel as foreground and background, as shown in figure 8(a). In figure 8(b), we can observe different results for different threshold applied on output from RF. RF acts as an classifier and classifies each pixel but we need to group these pixels into objects for segmentation. In this thesis, we make use of prior information to compensate for lack of enough annotated data and for uncertainity of classifier.
 
 \section{Bayesian Formulation}
-We model our image segmentation problem as a Bayesian inference problem.
-Let us cosider an observed image, \mat{I} and labeled or segmented groud truth, \mat{S}, the joint probabilty can be defined as:
+To make use of prior, we model our image segmentation problem as a Bayesian inference problem.
+Let us cosider an observed image, $\mat{I}$ and labeled or segmented groud truth, $\mat{M}$, the joint probabilty can be defined as:
 \begin{equation*}
-\p(\mat{I}, \mat{S}) = \p(\mat{S}) \p(\mat{I}|\mat{S}) \eqcont
+\p(\mat{I}, \mat{M}) = \p(\mat{M}) \p(\mat{I}|\mat{M}) \eqcont
 \end{equation*}
 and applying Bayes theorem,
 \begin{align*}
-\p(\mat{S}|\mat{I}) \, & = \frac{\p(\mat{S}) \p(\mat{I}|\mat{S})}{\p(\mat{I})} \\
-						& \alpha \, {\p(\mat{S}) \p(\mat{I}|\mat{S})}
+\p(\mat{M}|\mat{I}) \, & = \frac{\p(\mat{M}) \p(\mat{I}|\mat{M})}{\p(\mat{I})} \\
+						& \alpha \, {\p(\mat{M}) \p(\mat{I}|\mat{M})}
 \end{align*}
-The left hand side is the probability of \mat{S} given the image \mat{I}, is called the
-posterior probability. \p(\mat{S}) is the prior probability of \mat{S}. The Maximum a posteriori (MAP) estimate, $\mat{S^*}$ can be calculated as follow:
+The left hand side is the probability of obtaining segmentation mask, $\mat{M}$ given the image $\mat{I}$, is called the
+posterior probability. $\p(\mat{M})$ is the prior probability of mask, $\mat{M}$. The Maximum a posteriori (MAP) estimate, $\mat{M^*}$ can be calculated as follow:
 \begin{equation}
-\mat{S^*} = \arg\max_{\mat{S}}({\p(\mat{S}) \p(\mat{I}|\mat{S})}) \eqend
+\mat{M^*} = \arg\max_{\mat{M}}({\p(\mat{M}) \p(\mat{I}|\mat{M})}) \eqend
 \end{equation}
 
 The above problem can as well be stated as an energy minimization problem by
 writing Equation 3.1 in terms of energy:
 \begin{align*}
-\funop{E}(\mat{S}) &=\, - \, \log(\p(\mat{I}, \mat{S})) \\
-&= -\, \log(\p(\mat{I}|\mat{S})) - \log(\p(\mat{S})) \\
-&= \funop{E_d}(\mat{I}, \mat{S}) + \funop{E_r} (\mat{S})
+\funop{E}(\mat{M}) &=\, - \, \log(\p(\mat{I}, \mat{M})) \\
+&= -\, \log(\p(\mat{I}|\mat{M})) - \log(\p(\mat{M})) \\
+&= \funop{E_d}(\mat{I}, \mat{M}) + \funop{E_r} (\mat{M})
 \end{align*}
-The total energy, $\funop{E}$, that we want to minimize can be considered as linear combination of data term, $\funop{E_d}$ and prior term (or regularization), $\funop{E_r}$. This modifies calculating MAP estimate to:
+The total energy, $\funop{E}$, that we want to minimize can be considered as linear combination of data or likelihood term, $\funop{E_d}$ and prior term (or regularization), $\funop{E_r}$. This modifies calculating MAP estimate to:
 \begin{equation*}
-\mat{S^*} = \arg\min_{\mat{S}}({\funop{E_d}(\mat{I}, \mat{S}) + \funop{E_r} (\mat{S})}) \eqend
+\mat{M^*} = \arg\min_{\mat{M}}({\funop{E_d}(\mat{I}, \mat{M}) + \funop{E_r} (\mat{M})}) \eqend
 \end{equation*}
+To obtain MAP estimate, we need to formulate likelihood term and prior term. We formulate the prior using Total variation(TV). We can find use of different TV priors such as Wulff shapes etc. In our thesis, as the objects we need to segment are smooth and shaped like a circle, we make use of isotropic total variation, $\funop{TV}$. Also, we try to use isotropic total variation in 2D and 3D as the data we are trying to segment is a 3D stack. For likelihood term, G. Paul et al.[cite] proposed an energy formulation which is not derived from a statistical model but learnt from training set. This gives the advantage of combining example-based and model-based approaches. Similar to Dominic[cite], we formulate the likelihood term as product term of a cost function, $\funop{C}$, of soft mask, $\mat{P}$(probability of each pixel being foreground) learnt from RF and optimal mask to be estimated, $\mat{M}$. The energy minimization problems becomes:
+\begin{align*}
+\funop{E}(\mat{M}) &= \funop{E_d}(\mat{I}, \mat{M}) + \funop{E_r} (\mat{M}) \\
+&= <\funop{C}(\mat{P}), \mat{M}> + \lambda\, \funop{TV}(\mat{M}) + \mathrm{i}_{[0,1]}(\mat{M}) \eqcont 
+\end{align*}
+where $\mathrm{i}_{[0,1]}(\mat{M})$ is an indicator function to ensure values of $\mat{M}$ remain in [0,1]. In addition to use of cost function, we enforce constraint of preserving the pixels annotated by experts as foreground and background in our energy minimization problem. We used an indicator function, $\mathrm{i}_{fg}(\mat{M})$, to ensure pixels in foreground scribbles have value of 1 in mask, and indicator function, $\mathrm{i}_{bg}(\mat{M})$, to ensure pixels in background scribbles have value of 0 in mask. Using discrete implementaion of TV, the final energy minimization problem is formulated as given below:
+\begin{align*}
+\funop{E}(\mat{M}) &= <\funop{C}(\mat{P}), \mat{M}> + \lambda\, \||\mat{D}\mat{M}|_2\|_1 + \mathrm{i}_{[0,1]}(\mat{M}) + \mathrm{i}_{fg}(\mat{M})  + \mathrm{i}_{bg}(\mat{M}) 
+\end{align*}
+The optimization problem is solved using Alternating Split Bregman method (ASB), as described in Dominic[cite]. The advantage of using ASB is that it splits the above problem into subproblems. Each subproblem is easy to solve and can be solved independently. The final solution to the problem is obtained by iterating updates. The details of implementation and solution can be obtained from Dominic[cite]. The results for RF with variational segmentation can be seen in figure 9. In the following section, we compare use of different cost functions in Variational segmentation methods.
 
-\section{Data energy term or Maximum likelihood cost function}
-Explain different cost functions
+\section{Different likelihhood formulations}
+In literature, people have formulated the cost function either directly using the soft mask ($\mat{P}$) obtained from RF or, some linear or non-linear function of the mask. Santner[cite] formulates likelihood term as linear function of mask, $\funop{C_l}$, as given below:
+\begin{align*}
+\funop{C_l}(\mat{P}) = -4\,(\mat{P}-0.5) \eqend
+\end{align*}
+We used, \textbf{\textit{anit-nll}} cost function, $\funop{C_{nll}}$, as given below:
 
-\section{Prediction models}
-\subsection{Random Forests}
-Explain random forests
-\subsection{Convolutional Neural Networks}
-Neural networks \newline
-Explain transfer learning also.
+\begin{align*}
+\funop{C_{nll}}(\mat{P}) =
+\begin{cases}
+  0, & \text{if}\ pixel \in Scribbles  \\
+  -\log \frac{\mat{P}}{1-\mat{P}}, & \text{else}
+\end{cases}
+\end{align*} 
+In addition to the cost function, Santner[cite] mentioned use of hard constraint for pixels in foreground or background scribbles i.e. using cost of $-\infty$ for foreground scribbles and $\infty$ for background scribbles. They didn't show a way to enforce this constraint. We enforced this constraint with use of indicator functions. \par
+We used different amount of annotated pixels, randomly selected from ground truth and generated segmentation mask using RF and TV. The results can be observed in figure 10. The plot compares the three cost functions: \textit{linear}, \textit{linear with constraints} and \textit{anti-nll (with constraints)}.  Figure 10: Add observations.
 
-\section{Prior energy term using Total Variation}
-Explain total variation regularisation term.
+\section{Effect of regularisation parameter}
+The use of prior information boosts up the performance
 
+\section{2D vs 3D Total Variation}
 
-\chapter{Implementation}
-\section{Solving variational problem using ASB}
-Solution of ASB problem
-\section{Random Forest}
-Feature selection and training of Random forests.
-\section{Architecture of CNN used}
-Training of CNN \newline
-Loss function for scribbles
+\chapter{Semi-interactive segmentation}
+\chapter{Training CNN from scribbles}
