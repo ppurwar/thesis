@@ -1,19 +1,17 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Electron Microscopy Images}{1}
 \contentsline {section}{\numberline {1.2}Focus of this thesis}{2}
-\contentsline {section}{\numberline {1.3}Thesis Organization}{3}
-\contentsline {chapter}{\numberline {2}Fully annotated segmentation masks}{4}
-\contentsline {section}{\numberline {2.1}Use of pre-trained models}{4}
-\contentsline {section}{\numberline {2.2}One shot Video object segmentation}{4}
-\contentsline {chapter}{\numberline {3}Semi-supervised image segmentation}{5}
-\contentsline {section}{\numberline {3.1}Random Forest}{5}
-\contentsline {subsection}{\numberline {3.1.1}Where to scribble?}{5}
-\contentsline {subsection}{\numberline {3.1.2}Iterative semi-interactive approach}{6}
-\contentsline {subsection}{\numberline {3.1.3}Uncertainity of classifier}{6}
-\contentsline {section}{\numberline {3.2}Bayesian Formulation}{6}
-\contentsline {section}{\numberline {3.3}Different likelihhood formulations}{8}
-\contentsline {section}{\numberline {3.4}Effect of regularisation parameter}{8}
-\contentsline {section}{\numberline {3.5}2D vs 3D Total Variation}{8}
-\contentsline {chapter}{\numberline {4}Semi-interactive segmentation}{9}
-\contentsline {chapter}{\numberline {5}Training CNN from scribbles}{10}
-\contentsline {chapter}{\numberline {6}Conclusion}{11}
+\contentsline {section}{\numberline {1.3}Thesis Organization}{5}
+\contentsline {chapter}{\numberline {2}Fully annotated segmentation masks}{6}
+\contentsline {section}{\numberline {2.1}One shot Video object segmentation (OSVOS)}{6}
+\contentsline {chapter}{\numberline {3}Semi-supervised image segmentation}{8}
+\contentsline {section}{\numberline {3.1}Random Forest}{8}
+\contentsline {subsection}{\numberline {3.1.1}Where to scribble?}{8}
+\contentsline {subsection}{\numberline {3.1.2}Iterative semi-interactive approach}{9}
+\contentsline {subsection}{\numberline {3.1.3}Uncertainity of classifier}{10}
+\contentsline {section}{\numberline {3.2}Bayesian Formulation}{11}
+\contentsline {subsection}{\numberline {3.2.1}Different likelihhood formulations}{13}
+\contentsline {subsection}{\numberline {3.2.2}Effect of regularisation parameter}{14}
+\contentsline {section}{\numberline {3.3}Semi-interactive segmentation}{15}
+\contentsline {chapter}{\numberline {4}Training CNN from scribbles}{18}
+\contentsline {chapter}{\numberline {5}Conclusion}{19}

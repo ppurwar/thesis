@@ -1,0 +1,173 @@
+\documentclass{article}
+
+\usepackage{natbib,bibentry}
+\bibliographystyle{apalike}
+
+\begin{document}
+\nobibliography{deep-vip.bib}
+
+\section{Coupling ML and VIP}
+
+\begin{itemize}
+
+\item \bibentry{santner:2009}
+This is one instance of using a random forest to parameterize a variational image segmentation model.
+
+\item \bibentry{ranftl:2014}
+The paper describes a method of combining CNN(5 layers) with a final variational/inference layer. The inference layer has a single neuron and tries to learn appropriate weight and lamda together. They work with changing the objective function for back propogation(little complex).
+
+
+\item \bibentry{taylor:2016}
+The paper describes training in neural networks using as iterations in ADMM. They split the loss function by introducing new variables and removing dependency of one layer on other. \textbf{This can be one of the approach to split CNN and VIP training.}
+
+\item \bibentry{gould:2016}
+The paper describes an approach to use gradient descent for bilevel optimisation problems, where the lower level problem is argmin/argmax problem. The approach need the objective function to be first and second order differentiable. 
+
+\item \bibentry{knobelreiter:2016}
+The CNN + VIP is modelled as a bilevel optimization problem. They derive an optimization algorithm usin Structured SVM and subgradient approximation to train joint CNN and VIP .
+
+\item \bibentry {riegler:2016}
+\item \bibentry {riegler1:2016}
+We combine a deep fully convolutional network with a non-local variational method in a deep primal-dual network. They consider the primal-dual network as an additional layer in CNN. They call the method ATGV-Net and train it end-to-end by unrolling the optimization procedure of the variational method.
+
+\item \bibentry {parikh:2014}
+Decription of proximal algorithm. The paper introduces Moreau envelope and its use to compute gradients of non-differentiable function.
+
+
+\item \bibentry{borgerding:2016}
+
+\item \bibentry{polson:2015}
+
+\item \bibentry{gal:2015}
+
+\item \bibentry{ochs:2015}
+
+\item \bibentry {calatroni:2015}
+
+
+\end{itemize}
+
+
+\section{Convolution Neural Networks}
+
+\begin{itemize}
+
+\item Introduction \newline
+"http://cs231n.github.io/neural-networks-2/"
+
+\item \bibentry {maninis:2016}
+This method is used for our imeplementaion of Image segmentation using CNN.
+
+\item \bibentry {long:2014}
+
+\item \bibentry{Gonda:2016}
+Interactive approach for training CNN using scribbles for segmentation purpose.
+
+\item \bibentry{Havaei:2015}
+They explore in particular differerent architectures based on Convolutional Neural Networks (CNN), i.e. DNNs specifically adapted to image data. 
+
+\item \bibentry{Xie:2015}
+This paper concerns automated cell counting in microscopy images. The approach we take is to adapt Convolutional Neural Networks (CNNs) to regress a cell spatial density map across the image.
+
+
+\item \bibentry{Lai:2015}
+Patch-based 3-D image segmentation. May be good for small training data-set. Good paper to understand basic tricks used in Neural networks and their reason.
+Example: use of patches, tri-planar patches, concept of pre-trainig
+
+\item \bibentry{turaga-sc:2010}
+3-D segmentation using graphCut methods. The affinity between pixels is generated using 3-D CNN. Uses Volumetric electron microscope data of neurons.
+CNN - 3 layers only using fully segmented images 
+
+\item \bibentry{DeepCell:2016}
+DeepCell is a program for segmenting individual cells in microscopy images using deep learning. Image segmentation is frequently the analysis bottleneck in single-cell live-cell imaging experiments. This program describes our efforts to approach this problem using deep learning. 
+Description in 
+http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005177
+
+\item \bibentry{Competition_ISBI1}
+http://people.idsia.ch/~juergen/deeplearningwinsbraincontest.html: Winner of contest uses Deep learning for automated segmentation.
+
+http://journal.frontiersin.org/article/10.3389/fnana.2015.00142/full
+
+
+
+
+\item \bibentry {parag:2015}
+
+\item \bibentry {masci:2013}
+
+\item \bibentry {ciresan:2012}
+
+\end{itemize}
+
+
+
+
+\section{Variational Image Processing}
+
+\begin{itemize}
+
+\item \bibentry {chambolle:2009}
+This paper formulates optimization problem for multi-class segmentation using Potts model and solves it using Primal-dual algo. Different options for convex relaxation of optimization problem.
+
+
+\item \bibentry {lefkimmiatis:2015}
+The proposed regularization family, termed as structure tensor total variation (STV), penalizes the eigenvalues of the structure tensor and is suitable for both grayscale and vector-valued images. It generalizes several existing variational penalties, including the total variation seminorm and vectorial extensions of it. Meanwhile, thanks to the structure tensor's ability to capture first-order information around a local neighborhood, the STV functionals can provide more robust measures of image variation. Further, we prove that the STV regularizers are convex while they also satisfy several invariance properties w.r.t. image transformations.
+
+
+\end{itemize}
+
+
+
+\section{Object detection}
+
+\begin{itemize}
+
+\item \bibentry {shaoqing:2015}
+
+\item \bibentry {girshick:2015}
+
+\item \bibentry {girshick:2013}
+
+\item \bibentry {uijlings:2013}
+
+\item Tensorflow implementation of Faster-RCNN \newline
+https://github.com/smallcorgi/Faster-RCNN\_TF \newline
+https://github.com/zplizzi/tensorflow-fast-rcnn
+
+\item Training on another dataset \newline
+https://github.com/rbgirshick/fast-rcnn/pull/21/files
+
+https://github.com/zeyuanxy/fast-rcnn/blob/master/help/train/README.md
+
+http://sgsai.blogspot.ch/2016/02/training-faster-r-cnn-on-custom-dataset.html
+
+https://github.com/sergeyk/selective\_search\_ijcv\_with\_python
+
+https://github.com/deboc/py-faster-rcnn/blob/master/help/Readme.md
+
+\end{itemize}
+
+
+\section{Random Forest}
+
+\begin{itemize}
+
+\item  Efficient Online Random Forests: \newline
+ https://github.com/balajiln/mondrianforest
+
+\item This is the original implementation of the Online Random Forest algorithm \newline
+https://github.com/amirsaffari/online-random-forests
+
+\item Adding new classes: \newline
+Incremental Learning of NCM Forests. \newline
+http://www.idiap.ch/~fleuret/SMLD/2014/SMLD2014\_-\_Marko\_Ristin-Kaufmann\_-\_Incremental\_Learning\_of\_NCM\_Forests\_for\_Large-Scale\_Image\_Classification.pdf
+
+https://bitbucket.org/markoristin/
+\end{itemize}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

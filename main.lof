@@ -1,6 +1,20 @@
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces A 3D image stack, output from a scanning electron microscope. The stacks contains 458 2D images with a resolution of 1890x1952 pixel each.}}{2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Cropped part of slice 15 and its ground truth annotation by an expert.}}{3}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Upper row: Annotation of an slice by different experts. Bottom row: Multiple annotations of an slice by same expert. One example of difference can be observed in bounding boxes.}}{4}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Grounth truth mask derived from multiple annotaions using 2 different methods}}{4}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Left image:- F-measure computed for different amount of training data; Right image: Predicted mask for one slice}}{7}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Plot of segmentation measure vs changing complexity of RF: (a) with features, (b) with trees}}{9}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Manual scribbles in "easy" and "hard" classes}}{10}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Plot of segmentation measure vs annotation budget: (a) Change in segmentation measure with increment of scribbles from "easy" class, and then from "hard" class. (b) Change in segmentation measure with increment of scribbles from "hard" class, starting with different fixed amount of "easy" class}}{11}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Semi-interactive segmentaion with one iteration}}{12}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces (a) Histogram of probabilities. (b) Precision-recall curve for varying thresholded RF mask. Different curves for different annotation budget}}{13}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget}}{14}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Boost obtained with VIP over RF Segmentation score with RF and prior(TV) for different annotation budget}}{15}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces VIP with different cost functions}}{15}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Segmentation mask for differnt $\lambda $ for 2 crops of image}}{16}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Semi-interactive segmentaion with one iteration (RF+VIP)}}{17}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

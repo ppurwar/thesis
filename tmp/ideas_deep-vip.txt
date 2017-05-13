@@ -1,0 +1,20 @@
+Ideas related to coupling DNN and VIP:
+	
+	1. Variational layer at last (after CNN) with neurons for different regularisation parameter, lamda 
+		Shall be easy to train, no change backpropagation
+	
+	2. As first layer: Output of VIP as an input to CNN
+
+	3. Using CNN for generating soft mask and bounding box around object(for shape priors)
+
+	4. Trying to learn mapping between fluoroscent images and non-fluoroscent images - photons produces and effect on cell physiology
+
+
+
+Improving/enhancing current pipeline:
+	
+	1. one more iteration of RF output using one-time segmented image
+	
+	2. multi-class segmentation
+
+	3. use of wulff shapes

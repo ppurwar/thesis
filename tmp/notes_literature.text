@@ -1,0 +1,42 @@
+1. Interactive Texture Segmentation using Random Forests and Total Variation:
+
+The paper describes a method to segment image with combination of Random forests and VIP. They compute soft segmentation mask using random forest for given image. 
+RF training: features set: intensity, basic HOG, image patches etc.
+			 Online learning
+			 Gini impurity function for splitting
+
+Segmentation model: 
+			data term - not L-1, instead used product term to parallelize computation
+			normalized primal dual gap as stopping criteria
+			use of scribbles to label fg/bg or use of bounding boxes
+Results:
+		compared with TVSeg and GrabCut
+Database : reference no. [17]
+
+2. A Deep Variational Model for Image Segmentation
+This paper combines CNN and VIP for image segmentation. The CNN is appended by a single neuron variational layer. The objective function for back-propogation gets changed. The whole network is trained to store optimal weights and lamda(regularization parameter for VIP). 
+
+Classical approach: Train CNN (local classifier) then train Conditional random fields with output of CNN.
+Only CNN - suffer from clutter (multiple objects) and misalignment to object boundaries. while VIP gives edge-aligned solutions ?
+
+Training: 
+		Use of raw images(no features). 
+		Train CNN to get unary and pairwise potenitials of Inference layer. 
+		Each layer produces a output map of full image size.
+		Use of convex and twice differentiable energy term to include it in back propogation.
+
+Dataset: Weizmann horses [4], Grazo3 dataset [27]
+
+
+3. A Convex Relaxation Approach for Computing Minimal Partitions
+This paper describes a method to optimize multi-class segemntation using Potts model in discrete setting. 
+DIfferent options for convex relaxation and dual represenatation of smoothness term.
+Optimization done using Primal-dual and paralle implementation.
+
+Representation of multiclass labels using vector binary functions. 
+Check [22]
+
+
+4. Convolutional networks can learn to generate affinity graphs for image segmentation
+3-D segmentation using graphCut methods. The affinity between pixels is generated using 3-D CNN. Uses Volumetric electron microscope data of neurons.
+CNN - 3 layers only using fully segmented images
