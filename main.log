@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.7.9)  17 MAY 2017 12:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.12)  17 MAY 2017 12:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
-Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
-File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+File: bk11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -33,12 +33,12 @@ Package: paralist 2013/06/09 v2.4 Extended list environments
 \pl@lab=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 137.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -127,10 +127,10 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
@@ -169,23 +169,23 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
-Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2014/07/16 v1.15 mathematical typesetting tools
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count101
 \calc@Bcount=\count102
 \calc@Adimen=\dimen114
 \calc@Bdimen=\dimen115
 \calc@Askip=\skip60
 \calc@Bskip=\skip61
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
 \calc@Ccount=\count103
 \calc@Cskip=\skip62
 )
-(/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
@@ -204,7 +204,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
-Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
@@ -578,14 +578,14 @@ File: figures/diff_features.pdf Graphic file (type pdf)
 
 <use figures/diff_features.pdf>
 Package pdftex.def Info: figures/diff_features.pdf used on input line 16.
-(pdftex.def)             Requested size: 211.38832pt x 139.46812pt.
+(pdftex.def)             Requested size: 234.8775pt x 154.96555pt.
 
 <figures/diff_trees.pdf, id=222, 425.95384pt x 281.0296pt>
 File: figures/diff_trees.pdf Graphic file (type pdf)
 
 <use figures/diff_trees.pdf>
 Package pdftex.def Info: figures/diff_trees.pdf used on input line 16.
-(pdftex.def)             Requested size: 258.36668pt x 170.46724pt.
+(pdftex.def)             Requested size: 234.8775pt x 154.96555pt.
 
 Overfull \hbox (23.99998pt too wide) in paragraph at lines 15--19
 [][] 
@@ -648,7 +648,13 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 
 pdfTeX warning: pdflatex (file ./figures/diff_trees.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->]
+>] <figures/semi_inter_rf.pdf, id=311, 715.41025pt x 551.35674pt>
+File: figures/semi_inter_rf.pdf Graphic file (type pdf)
+
+<use figures/semi_inter_rf.pdf>
+Package pdftex.def Info: figures/semi_inter_rf.pdf used on input line 49.
+(pdftex.def)             Requested size: 469.75502pt x 362.02887pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -667,12 +673,9 @@ pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figures/hard_fg.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
->] <figures/semi_inter_rf.pdf, id=405, 715.41025pt x 551.35674pt>
-File: figures/semi_inter_rf.pdf Graphic file (type pdf)
+>]
+Underfull \vbox (badness 1077) has occurred while \output is active []
 
-<use figures/semi_inter_rf.pdf>
-Package pdftex.def Info: figures/semi_inter_rf.pdf used on input line 49.
-(pdftex.def)             Requested size: 469.75502pt x 362.02887pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -681,9 +684,6 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [14 <./figures/rf_easy_hard.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -697,12 +697,12 @@ File: figures/hist.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/hist.pdf used on input line 58.
 (pdftex.def)             Requested size: 234.8775pt x 154.99127pt.
 
-<figures/pr_curve.pdf, id=518, 715.8494pt x 570.92514pt>
+<figures/pr_curve.pdf, id=518, 426.7694pt x 281.84514pt>
 File: figures/pr_curve.pdf Graphic file (type pdf)
 
 <use figures/pr_curve.pdf>
 Package pdftex.def Info: figures/pr_curve.pdf used on input line 58.
-(pdftex.def)             Requested size: 234.8775pt x 187.32564pt.
+(pdftex.def)             Requested size: 234.8775pt x 155.11421pt.
 
 Overfull \hbox (23.99998pt too wide) in paragraph at lines 57--61
 [][] 
@@ -712,6 +712,10 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 65.
+
+Underfull \vbox (badness 4353) has occurred while \output is active []
+
+
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -768,7 +772,7 @@ Package pdftex.def Info: figures/vip_boost.pdf used on input line 116.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3657) has occurred while \output is active []
 
 
 
@@ -788,27 +792,17 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [19 <./figures/rf_vip_easy_hard_full.pdf>]
-<figures/anti_nll.pdf, id=675, 715.85724pt x 570.21155pt>
+<figures/anti_nll.pdf, id=677, 715.85724pt x 570.21155pt>
 File: figures/anti_nll.pdf Graphic file (type pdf)
 
 <use figures/anti_nll.pdf>
 Package pdftex.def Info: figures/anti_nll.pdf used on input line 139.
 (pdftex.def)             Requested size: 375.80544pt x 299.34814pt.
 
-Underfull \vbox (badness 2608) has occurred while \output is active []
-
-
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[20 <./figures/rf_vip_easy_then_hard.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/linear.pdf, id=748, 715.85724pt x 570.21155pt>
+<figures/linear.pdf, id=678, 715.85724pt x 570.21155pt>
 File: figures/linear.pdf Graphic file (type pdf)
 
 <use figures/linear.pdf>
@@ -818,7 +812,7 @@ Package pdftex.def Info: figures/linear.pdf used on input line 146.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/linear_with_cons.pdf, id=749, 715.85724pt x 570.21155pt>
+<figures/linear_with_cons.pdf, id=679, 715.85724pt x 570.21155pt>
 File: figures/linear_with_cons.pdf Graphic file (type pdf)
 
 <use figures/linear_with_cons.pdf>
@@ -828,7 +822,7 @@ Package pdftex.def Info: figures/linear_with_cons.pdf used on input line 153.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/vip_diff.pdf, id=750, 715.84155pt x 570.92514pt>
+<figures/vip_diff.pdf, id=680, 715.84155pt x 570.92514pt>
 File: figures/vip_diff.pdf Graphic file (type pdf)
 
 <use figures/vip_diff.pdf>
@@ -839,13 +833,17 @@ Package pdftex.def Info: figures/vip_diff.pdf used on input line 161.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21 <./figures/vip_boost.pdf>]
-<figures/lamda_effect.pdf, id=807, 715.45988pt x 714.1049pt>
+[20 <./figures/rf_vip_easy_then_hard.pdf>]
+<figures/lamda_effect.pdf, id=750, 715.45988pt x 714.1049pt>
 File: figures/lamda_effect.pdf Graphic file (type pdf)
 
 <use figures/lamda_effect.pdf>
@@ -855,13 +853,23 @@ Package pdftex.def Info: figures/lamda_effect.pdf used on input line 179.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/semi_inter_vip.pdf, id=808, 715.41025pt x 551.35674pt>
+<figures/semi_inter_vip.pdf, id=751, 715.41025pt x 551.35674pt>
 File: figures/semi_inter_vip.pdf Graphic file (type pdf)
 
 <use figures/semi_inter_vip.pdf>
 Package pdftex.def Info: figures/semi_inter_vip.pdf used on input line 190.
 (pdftex.def)             Requested size: 469.75502pt x 362.02887pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21 <./figures/vip_boost.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -872,9 +880,6 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [22 <./figures/anti_nll.pdf>]
-Underfull \vbox (badness 3679) has occurred while \output is active []
-
-
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -882,6 +887,9 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [23 <./figures/linear.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -889,7 +897,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [24 <./figures/linear_with_cons.pdf>]
-<figures/cnn_vs_rf.pdf, id=981, 715.89644pt x 571.08983pt>
+<figures/cnn_vs_rf.pdf, id=980, 715.89644pt x 571.08983pt>
 File: figures/cnn_vs_rf.pdf Graphic file (type pdf)
 
 <use figures/cnn_vs_rf.pdf>
@@ -906,7 +914,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/cnn_vip.pdf, id=1044, 643.62645pt x 498.65515pt>
+<figures/cnn_vip.pdf, id=1043, 643.62645pt x 498.65515pt>
 File: figures/cnn_vip.pdf Graphic file (type pdf)
 
 <use figures/cnn_vip.pdf>
@@ -916,7 +924,7 @@ Package pdftex.def Info: figures/cnn_vip.pdf used on input line 215.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/cnn_vip_boost.pdf, id=1045, 569.4901pt x 424.5188pt>
+<figures/cnn_vip_boost.pdf, id=1044, 569.4901pt x 424.5188pt>
 File: figures/cnn_vip_boost.pdf Graphic file (type pdf)
 
 <use figures/cnn_vip_boost.pdf>
@@ -926,7 +934,7 @@ Package pdftex.def Info: figures/cnn_vip_boost.pdf used on input line 221.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/cnn_vs_rf_vip.pdf, id=1046, 569.4901pt x 424.5188pt>
+<figures/cnn_vs_rf_vip.pdf, id=1045, 569.4901pt x 424.5188pt>
 File: figures/cnn_vs_rf_vip.pdf Graphic file (type pdf)
 
 <use figures/cnn_vs_rf_vip.pdf>
@@ -1005,12 +1013,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4145 strings out of 495028
- 58200 string characters out of 6181498
- 118319 words of memory out of 5000000
- 7176 multiletter control sequences out of 15000+600000
+ 4149 strings out of 493105
+ 58369 string characters out of 6137072
+ 123606 words of memory out of 5000000
+ 7435 multiletter control sequences out of 15000+600000
  33536 words of font info for 74 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  38i,19n,44p,1822b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive
@@ -1026,9 +1034,9 @@ y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (43 pages, 4727600 bytes).
+Output written on main.pdf (43 pages, 4727328 bytes).
 PDF statistics:
- 1446 PDF objects out of 1728 (max. 8388607)
+ 1445 PDF objects out of 1728 (max. 8388607)
  380 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)

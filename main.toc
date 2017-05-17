@@ -8,10 +8,10 @@
 \contentsline {section}{\numberline {3.1}Random Forest}{11}
 \contentsline {subsection}{\numberline {3.1.1}Where to scribble?}{12}
 \contentsline {subsection}{\numberline {3.1.2}Iterative semi-interactive approach}{14}
-\contentsline {subsection}{\numberline {3.1.3}Uncertainity of classifier}{16}
+\contentsline {subsection}{\numberline {3.1.3}Uncertainity of classifier}{15}
 \contentsline {section}{\numberline {3.2}Bayesian Formulation}{16}
-\contentsline {subsection}{\numberline {3.2.1}Different likelihhood formulations}{19}
+\contentsline {subsection}{\numberline {3.2.1}Different likelihhood formulations}{18}
 \contentsline {subsection}{\numberline {3.2.2}Effect of regularisation parameter}{21}
 \contentsline {section}{\numberline {3.3}Semi-interactive segmentation}{22}
-\contentsline {section}{\numberline {3.4}Training CNN from scribbles}{23}
+\contentsline {section}{\numberline {3.4}Training CNN from scribbles}{22}
 \contentsline {chapter}{\numberline {4}Conclusion}{31}
