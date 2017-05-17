@@ -1,60 +1,126 @@
 \relax 
+\citation{unet}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Electron Microscopy Images}{1}}
+\citation{staple}
 \newlabel{fig:3dstack}{{1}{2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces A 3D image stack, output from a scanning electron microscope. The stacks contains 458 2D images with a resolution of 1890x1952 pixel each.}}{2}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Focus of this thesis}{2}}
-\newlabel{fig:2dslice}{{1.1}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Cropped part of slice 15 and its ground truth annotation by an expert.}}{3}}
-\newlabel{fig:diffexperts}{{1.1}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Upper row: Annotation of an slice by different experts. Bottom row: Multiple annotations of an slice by same expert. One example of difference can be observed in bounding boxes.}}{4}}
-\newlabel{fig:ref}{{1.1}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Grounth truth mask derived from multiple annotaions using 2 different methods}}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Thesis Organization}{5}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Fully annotated segmentation masks}{6}}
+\citation{long:2014}
+\citation{osvos}
+\newlabel{fig:3dstack}{{1}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Example of Manual annotations of different objects in liver tissue.}}{3}}
+\newlabel{fig:2dslice}{{1.1}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Cropped part of slice 15 and its ground truth annotation by an expert.}}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Focus of this thesis}{4}}
+\citation{santner:2009}
+\newlabel{fig:diffexperts}{{1.1}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Upper row: Annotation of an slice by different experts. Bottom row: Multiple annotations of an slice by same expert. One example of difference can be observed in bounding boxes.}}{5}}
+\newlabel{fig:ref}{{1.1}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Grounth truth mask derived from multiple annotaions using 2 different methods}}{5}}
+\citation{santner:2009}
+\citation{ranftl:2014}
+\citation{dominic}
+\citation{dominic}
+\citation{ranftl:2014}
+\citation{riegler:2016}
+\citation{riegler1:2016}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Thesis Organization}{7}}
+\citation{osvos}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Fully annotated segmentation masks}{8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}One shot Video object segmentation (OSVOS)}{6}}
-\newlabel{fig:cnnslices}{{2.1}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Left image:- F-measure computed for different amount of training data; Right image: Predicted mask for one slice}}{7}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Semi-supervised image segmentation}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}One shot Video object segmentation (OSVOS)}{8}}
+\citation{maninis:2016}
+\citation{osvos}
+\newlabel{fig:cnnslices}{{2.1}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Left image: F-measure computed for different amount of training data; Right image: Predicted mask for one slice}}{9}}
+\citation{weka}
+\citation{fiji}
+\citation{dominic}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Semi-supervised image segmentation}{11}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Random Forest}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Where to scribble?}{8}}
-\newlabel{fig:rf_complex}{{3.1}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Plot of segmentation measure vs changing complexity of RF: (a) with features, (b) with trees}}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Iterative semi-interactive approach}{9}}
-\newlabel{fig:scribbles}{{3.1.1}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Manual scribbles in "easy" and "hard" classes}}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Uncertainity of classifier}{10}}
-\newlabel{fig:easy_hard1}{{3.1.1}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Plot of segmentation measure vs annotation budget: (a) Change in segmentation measure with increment of scribbles from "easy" class, and then from "hard" class. (b) Change in segmentation measure with increment of scribbles from "hard" class, starting with different fixed amount of "easy" class}}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Bayesian Formulation}{11}}
-\newlabel{fig:semi-rf}{{3.1.2}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Semi-interactive segmentaion with one iteration}}{12}}
-\newlabel{fig:uncertain}{{3.1.3}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces (a) Histogram of probabilities. (b) Precision-recall curve for varying thresholded RF mask. Different curves for different annotation budget}}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Different likelihhood formulations}{13}}
-\newlabel{fig:rf_vip}{{3.2}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget}}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Effect of regularisation parameter}{14}}
-\newlabel{fig:rf_vip1}{{3.2}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Boost obtained with VIP over RF Segmentation score with RF and prior(TV) for different annotation budget}}{15}}
-\newlabel{fig:rf_vip1}{{3.2.1}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces VIP with different cost functions}}{15}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Semi-interactive segmentation}{15}}
-\newlabel{fig:rf_vip1}{{3.2.2}{16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Segmentation mask for differnt $\lambda $ for 2 crops of image}}{16}}
-\newlabel{fig:semi-rf}{{3.3}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Semi-interactive segmentaion with one iteration (RF+VIP)}}{17}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Training CNN from scribbles}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Random Forest}{11}}
+\newlabel{fig:rf_complex}{{3.1}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Plot of segmentation measure vs changing complexity of RF: (a) with features, (b) with trees}}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Where to scribble?}{12}}
+\newlabel{fig:scribbles}{{3.1.1}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Manual scribbles in "easy" and "hard" classes}}{13}}
+\newlabel{fig:easy_hard1}{{3.1.1}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Plot of segmentation measure vs annotation budget. The black curve shows change in segmentation measure with increment of scribbles from "easy" class. Other curves and show change in segmentation measure with increment of scribbles from "hard" class, starting with different fixed amount of "easy" class.}}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Iterative semi-interactive approach}{14}}
+\newlabel{fig:semi-rf}{{3.1.2}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Semi-interactive segmentaion with one iteration}}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Uncertainity of classifier}{16}}
+\newlabel{fig:uncertain}{{3.1.3}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces (a) Histogram of probabilities. (b) Precision-recall curve for varying thresholded RF mask. Different curves for different annotation budget}}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Bayesian Formulation}{16}}
+\citation{Paul2013}
+\citation{dominic}
+\citation{dominic}
+\citation{dominic}
+\citation{santner:2009}
+\newlabel{fig:rf_vipfull}{{3.2}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget}}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Different likelihhood formulations}{19}}
+\citation{santner:2009}
+\newlabel{fig:rf_vip}{{3.2}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget}}{20}}
+\newlabel{fig:rf_vip1}{{3.2}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Boost obtained with VIP over RF Segmentation score with RF and prior(TV) for different annotation budget}}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Effect of regularisation parameter}{21}}
+\citation{ranftl:2014}
+\citation{taylor:2016}
+\newlabel{fig:rf_vip1}{{3.2.1}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces VIP with different cost functions}}{22}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Semi-interactive segmentation}{22}}
+\newlabel{fig:rf_vip2}{{3.2.1}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces VIP with different cost functions}}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Training CNN from scribbles}{23}}
+\citation{Gonda:2016}
+\citation{Lai:2015}
+\citation{Havaei:2015}
+\newlabel{fig:rf_vip3}{{3.2.1}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces VIP with different cost functions}}{24}}
+\newlabel{fig:rf_vip_diff}{{3.2.1}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces VIP with different cost functions}}{25}}
+\newlabel{fig:effect}{{3.2.2}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Segmentation mask for differnt $\lambda $ for 2 crops of image}}{26}}
+\newlabel{fig:semi-vip}{{3.3}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Semi-interactive segmentation with one iteration (RF+VIP)}}{27}}
+\newlabel{fig:cnnvip}{{3.4}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces F-measure for increasing annotation budget for comparing CNN vs RF}}{28}}
+\newlabel{fig:cnnvip}{{3.4}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace  +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{29}}
+\newlabel{fig:cnnvip}{{3.4}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace  +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{30}}
+\newlabel{fig:cnnvip}{{3.4}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace  +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{30}}
+\citation{ranftl:2014}
+\citation{ochs:2015}
+\citation{riegler:2016}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{31}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibstyle{unsrt}
 \bibdata{references}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{19}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
+\bibcite{unet}{1}
+\bibcite{staple}{2}
+\bibcite{long:2014}{3}
+\bibcite{osvos}{4}
+\bibcite{santner:2009}{5}
+\bibcite{ranftl:2014}{6}
+\bibcite{dominic}{7}
+\bibcite{riegler:2016}{8}
+\bibcite{riegler1:2016}{9}
+\bibcite{maninis:2016}{10}
+\bibcite{weka}{11}
+\bibcite{fiji}{12}
+\bibcite{Paul2013}{13}
+\bibcite{taylor:2016}{14}
+\bibcite{Gonda:2016}{15}
+\bibcite{Lai:2015}{16}
+\bibcite{Havaei:2015}{17}
+\bibcite{ochs:2015}{18}

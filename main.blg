@@ -1,49 +1,50 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: references.bib
-Warning--I didn't find a database entry for "bach"
-Warning--I didn't find a database entry for "sls"
-You've used 0 entries,
+Warning--empty school in dominic
+Warning--empty journal in fiji
+Warning--empty note in Lai:2015
+You've used 18 entries,
             1791 wiz_defined-function locations,
-            447 strings with 3523 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            546 strings with 6822 characters,
+and the built_in function-call counts, 4198 in all, are:
+= -- 361
+> -- 235
+< -- 5
++ -- 85
+- -- 67
+* -- 278
+:= -- 697
+add.period$ -- 57
+call.type$ -- 18
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 21
+duplicate$ -- 190
+empty$ -- 367
+format.name$ -- 67
+if$ -- 927
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 18
+missing$ -- 17
+newline$ -- 94
+num.names$ -- 18
+pop$ -- 40
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 101
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 199
+swap$ -- 52
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There were 2 warnings)
+warning$ -- 3
+while$ -- 37
+width$ -- 20
+write$ -- 201
+(There were 3 warnings)

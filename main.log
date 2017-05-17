@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.7.9)  13 MAY 2017 21:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.7.9)  17 MAY 2017 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -200,6 +200,9 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen121
 \l_MT_below_shortintertext_sep=\dimen122
 )
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
@@ -219,30 +222,36 @@ LaTeX Warning: Unused global option(s):
 
 (./main.aux
 
-LaTeX Warning: Label `fig:rf_vip1' multiply defined.
+LaTeX Warning: Label `fig:3dstack' multiply defined.
 
 
 LaTeX Warning: Label `fig:rf_vip1' multiply defined.
 
 
-LaTeX Warning: Label `fig:semi-rf' multiply defined.
+LaTeX Warning: Label `fig:cnnvip' multiply defined.
+
+
+LaTeX Warning: Label `fig:cnnvip' multiply defined.
+
+
+LaTeX Warning: Label `fig:cnnvip' multiply defined.
 
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 48.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -357,14 +366,17 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 > <./images/cvl_varcity_2013_horiz.png>]) [2
 
 ] (./abstract.tex
+Underfull \vbox (badness 2269) has occurred while \output is active []
+
+ [3
+
+]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
-) (./ack.tex
-[3
+)
+(./ack.tex [4]) [5
 
-] [4
-
-]) [5] [6
+] [6
 
 ] (./main.toc)
 \tf@toc=\write3
@@ -372,17 +384,24 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 
  [1
 
-] (./main.lof)
+] (./main.lof [2
+
+])
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
- [2
 
-] (./intro.tex
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3] (./intro.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
-<figures/3d_stack.png, id=38, 455.45157pt x 351.56343pt>
+<figures/3d_stack.png, id=41, 455.45157pt x 351.56343pt>
 File: figures/3d_stack.png Graphic file (type png)
 
 <use figures/3d_stack.png>
@@ -392,53 +411,25 @@ Package pdftex.def Info: figures/3d_stack.png used on input line 15.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 24.
+<figures/vesicles.png, id=42, 506.6428pt x 529.22719pt>
+File: figures/vesicles.png Graphic file (type png)
+
+<use figures/vesicles.png>
+Package pdftex.def Info: figures/vesicles.png used on input line 21.
+(pdftex.def)             Requested size: 375.80544pt x 392.5668pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 29.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
  [1
 
 ]
-<figures/ex_slice.pdf, id=43, 399.37413pt x 570.41696pt>
-File: figures/ex_slice.pdf Graphic file (type pdf)
-
-<use figures/ex_slice.pdf>
-Package pdftex.def Info: figures/ex_slice.pdf used on input line 33.
-(pdftex.def)             Requested size: 328.82707pt x 469.68588pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/different_expert.pdf, id=44, 1293.57031pt x 320.60895pt>
-File: figures/different_expert.pdf Graphic file (type pdf)
-
-<use figures/different_expert.pdf>
-Package pdftex.def Info: figures/different_expert.pdf used on input line 38.
-(pdftex.def)             Requested size: 469.75502pt x 116.4269pt.
-
-<figures/same_expert.pdf, id=45, 1293.57031pt x 320.60895pt>
-File: figures/same_expert.pdf Graphic file (type pdf)
-
-<use figures/same_expert.pdf>
-Package pdftex.def Info: figures/same_expert.pdf used on input line 39.
-(pdftex.def)             Requested size: 469.75502pt x 116.4269pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 43.
-
-<figures/staple.pdf, id=46, 715.41025pt x 267.69698pt>
-File: figures/staple.pdf Graphic file (type pdf)
-
-<use figures/staple.pdf>
-Package pdftex.def Info: figures/staple.pdf used on input line 44.
-(pdftex.def)             Requested size: 328.82707pt x 123.03998pt.
-
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -446,198 +437,43 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2 <./figures/3d_stack.png>]
+<figures/ex_slice.pdf, id=50, 399.37413pt x 570.41696pt>
+File: figures/ex_slice.pdf Graphic file (type pdf)
 
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[3 <./figures/ex_slice.pdf>]
-Underfull \vbox (badness 1107) has occurred while \output is active []
-
-
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[4 <./figures/different_expert.pdf> <./figures/same_expert.pdf
-
-pdfTeX warning: pdflatex (file ./figures/same_expert.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
-> <./figures/staple.pdf
-
-pdfTeX warning: pdflatex (file ./figures/staple.pdf): PDF inclusion: multiple p
-dfs with page group included in a single page
->]) (./full_annotation.tex
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[5]
-Chapter 2.
-<figures/cnn_diff_slices.pdf, id=128, 425.95384pt x 281.0296pt>
-File: figures/cnn_diff_slices.pdf Graphic file (type pdf)
-
-<use figures/cnn_diff_slices.pdf>
-Package pdftex.def Info: figures/cnn_diff_slices.pdf used on input line 16.
-(pdftex.def)             Requested size: 234.8775pt x 154.96555pt.
-
-<figures/cnn_mask_2slice.pdf, id=129, 377.60825pt x 280.64536pt>
-File: figures/cnn_mask_2slice.pdf Graphic file (type pdf)
-
-<use figures/cnn_mask_2slice.pdf>
-Package pdftex.def Info: figures/cnn_mask_2slice.pdf used on input line 16.
-(pdftex.def)             Requested size: 234.8775pt x 174.56786pt.
-
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 15--18
-[][] 
- []
-
-[6
-
-]) (./partial_annotation.tex
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[7 <./figures/cnn_diff_slices.pdf> <./figures/cnn_mask_2slice.pdf
-
-pdfTeX warning: pdflatex (file ./figures/cnn_mask_2slice.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
->]
-Chapter 3.
-<figures/diff_features.pdf, id=195, 425.93816pt x 281.0296pt>
-File: figures/diff_features.pdf Graphic file (type pdf)
-
-<use figures/diff_features.pdf>
-Package pdftex.def Info: figures/diff_features.pdf used on input line 16.
-(pdftex.def)             Requested size: 211.38832pt x 139.47672pt.
-
-<figures/diff_trees.pdf, id=196, 425.93033pt x 281.0296pt>
-File: figures/diff_trees.pdf Graphic file (type pdf)
-
-<use figures/diff_trees.pdf>
-Package pdftex.def Info: figures/diff_trees.pdf used on input line 16.
-(pdftex.def)             Requested size: 258.36668pt x 170.47581pt.
-
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 15--19
-[][] 
- []
+<use figures/ex_slice.pdf>
+Package pdftex.def Info: figures/ex_slice.pdf used on input line 38.
+(pdftex.def)             Requested size: 328.82707pt x 469.68588pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
-[8
+<figures/different_expert.pdf, id=51, 1293.57031pt x 320.60895pt>
+File: figures/different_expert.pdf Graphic file (type pdf)
 
-] <figures/easy_bg.pdf, id=200, 383.25716pt x 259.46472pt>
-File: figures/easy_bg.pdf Graphic file (type pdf)
+<use figures/different_expert.pdf>
+Package pdftex.def Info: figures/different_expert.pdf used on input line 43.
+(pdftex.def)             Requested size: 469.75502pt x 116.4269pt.
 
-<use figures/easy_bg.pdf>
-Package pdftex.def Info: figures/easy_bg.pdf used on input line 28.
-(pdftex.def)             Requested size: 234.8775pt x 159.0136pt.
+<figures/same_expert.pdf, id=52, 1293.57031pt x 320.60895pt>
+File: figures/same_expert.pdf Graphic file (type pdf)
 
-<figures/hard_bg.pdf, id=201, 383.25716pt x 259.46472pt>
-File: figures/hard_bg.pdf Graphic file (type pdf)
-
-<use figures/hard_bg.pdf>
-Package pdftex.def Info: figures/hard_bg.pdf used on input line 28.
-(pdftex.def)             Requested size: 234.8775pt x 159.0136pt.
-
-<figures/easy_fg.pdf, id=202, 383.25716pt x 259.46472pt>
-File: figures/easy_fg.pdf Graphic file (type pdf)
-
-<use figures/easy_fg.pdf>
-Package pdftex.def Info: figures/easy_fg.pdf used on input line 29.
-(pdftex.def)             Requested size: 234.8775pt x 159.0136pt.
-
-<figures/hard_fg.pdf, id=203, 383.25716pt x 259.46472pt>
-File: figures/hard_fg.pdf Graphic file (type pdf)
-
-<use figures/hard_fg.pdf>
-Package pdftex.def Info: figures/hard_fg.pdf used on input line 29.
-(pdftex.def)             Requested size: 234.8775pt x 159.0136pt.
-
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 27--31
-[][] 
- []
+<use figures/same_expert.pdf>
+Package pdftex.def Info: figures/same_expert.pdf used on input line 44.
+(pdftex.def)             Requested size: 469.75502pt x 116.4269pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/rf_easy_then_hard.pdf, id=204, 353.64464pt x 280.316pt>
-File: figures/rf_easy_then_hard.pdf Graphic file (type pdf)
 
-<use figures/rf_easy_then_hard.pdf>
-Package pdftex.def Info: figures/rf_easy_then_hard.pdf used on input line 37.
-(pdftex.def)             Requested size: 211.38832pt x 167.55785pt.
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 48.
 
-<figures/rf_easy_hard.pdf, id=205, 714.99464pt x 569.396pt>
-File: figures/rf_easy_hard.pdf Graphic file (type pdf)
+<figures/staple.pdf, id=53, 715.41025pt x 267.69698pt>
+File: figures/staple.pdf Graphic file (type pdf)
 
-<use figures/rf_easy_hard.pdf>
-Package pdftex.def Info: figures/rf_easy_hard.pdf used on input line 37.
-(pdftex.def)             Requested size: 258.36668pt x 205.75565pt.
-
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 36--40
-[][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/semi_inter_rf.pdf, id=206, 715.41025pt x 551.35674pt>
-File: figures/semi_inter_rf.pdf Graphic file (type pdf)
-
-<use figures/semi_inter_rf.pdf>
-Package pdftex.def Info: figures/semi_inter_rf.pdf used on input line 51.
-(pdftex.def)             Requested size: 469.75502pt x 362.02887pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[9 <./figures/diff_features.pdf> <./figures/diff_trees.pdf
-
-pdfTeX warning: pdflatex (file ./figures/diff_trees.pdf): PDF inclusion: multip
-le pdfs with page group included in a single page
->]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/hist.pdf, id=271, 425.92249pt x 281.0296pt>
-File: figures/hist.pdf Graphic file (type pdf)
- <use figures/hist.pdf>
-Package pdftex.def Info: figures/hist.pdf used on input line 60.
-(pdftex.def)             Requested size: 234.8775pt x 154.97841pt.
-
-<figures/pr_curve.pdf, id=272, 715.03384pt x 569.396pt>
-File: figures/pr_curve.pdf Graphic file (type pdf)
-
-<use figures/pr_curve.pdf>
-Package pdftex.def Info: figures/pr_curve.pdf used on input line 60.
-(pdftex.def)             Requested size: 234.8775pt x 187.03242pt.
-
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 59--63
-[][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 67.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 67.
+<use figures/staple.pdf>
+Package pdftex.def Info: figures/staple.pdf used on input line 49.
+(pdftex.def)             Requested size: 328.82707pt x 123.03998pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -648,7 +484,178 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10 <./figures/easy_bg.pdf> <./figures/hard_bg.pdf
+[3 <./figures/vesicles.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4 <./figures/ex_slice.pdf>]
+Underfull \vbox (badness 8151) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5 <./figures/different_expert.pdf> <./figures/same_expert.pdf
+
+pdfTeX warning: pdflatex (file ./figures/same_expert.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+> <./figures/staple.pdf
+
+pdfTeX warning: pdflatex (file ./figures/staple.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]) (./full_annotation.tex
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
+Chapter 2.
+[8
+
+] <figures/cnn_diff_slices.pdf, id=141, 425.95384pt x 281.0296pt>
+File: figures/cnn_diff_slices.pdf Graphic file (type pdf)
+
+<use figures/cnn_diff_slices.pdf>
+Package pdftex.def Info: figures/cnn_diff_slices.pdf used on input line 16.
+(pdftex.def)             Requested size: 234.8775pt x 154.96555pt.
+
+<figures/cnn_mask_2slice.pdf, id=142, 377.60825pt x 280.64536pt>
+File: figures/cnn_mask_2slice.pdf Graphic file (type pdf)
+
+<use figures/cnn_mask_2slice.pdf>
+Package pdftex.def Info: figures/cnn_mask_2slice.pdf used on input line 16.
+(pdftex.def)             Requested size: 234.8775pt x 174.56786pt.
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 15--18
+[][] 
+ []
+
+) (./partial_annotation.tex
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9 <./figures/cnn_diff_slices.pdf> <./figures/cnn_mask_2slice.pdf
+
+pdfTeX warning: pdflatex (file ./figures/cnn_mask_2slice.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+Chapter 3.
+[11
+
+] <figures/diff_features.pdf, id=221, 425.95384pt x 281.0296pt>
+File: figures/diff_features.pdf Graphic file (type pdf)
+
+<use figures/diff_features.pdf>
+Package pdftex.def Info: figures/diff_features.pdf used on input line 16.
+(pdftex.def)             Requested size: 211.38832pt x 139.46812pt.
+
+<figures/diff_trees.pdf, id=222, 425.95384pt x 281.0296pt>
+File: figures/diff_trees.pdf Graphic file (type pdf)
+
+<use figures/diff_trees.pdf>
+Package pdftex.def Info: figures/diff_trees.pdf used on input line 16.
+(pdftex.def)             Requested size: 258.36668pt x 170.46724pt.
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 15--19
+[][] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
+<figures/easy_bg.pdf, id=223, 426.34593pt x 286.53053pt>
+File: figures/easy_bg.pdf Graphic file (type pdf)
+
+<use figures/easy_bg.pdf>
+Package pdftex.def Info: figures/easy_bg.pdf used on input line 29.
+(pdftex.def)             Requested size: 234.8775pt x 157.85023pt.
+
+<figures/hard_bg.pdf, id=224, 383.25716pt x 259.46472pt>
+File: figures/hard_bg.pdf Graphic file (type pdf)
+
+<use figures/hard_bg.pdf>
+Package pdftex.def Info: figures/hard_bg.pdf used on input line 29.
+(pdftex.def)             Requested size: 234.8775pt x 159.0136pt.
+
+<figures/easy_fg.pdf, id=225, 383.25716pt x 259.46472pt>
+File: figures/easy_fg.pdf Graphic file (type pdf)
+
+<use figures/easy_fg.pdf>
+Package pdftex.def Info: figures/easy_fg.pdf used on input line 30.
+(pdftex.def)             Requested size: 234.8775pt x 159.0136pt.
+
+<figures/hard_fg.pdf, id=226, 383.25716pt x 259.46472pt>
+File: figures/hard_fg.pdf Graphic file (type pdf)
+
+<use figures/hard_fg.pdf>
+Package pdftex.def Info: figures/hard_fg.pdf used on input line 30.
+(pdftex.def)             Requested size: 234.8775pt x 159.0136pt.
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 28--32
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/rf_easy_hard.pdf, id=227, 860.51486pt x 715.46515pt>
+File: figures/rf_easy_hard.pdf Graphic file (type pdf)
+
+<use figures/rf_easy_hard.pdf>
+Package pdftex.def Info: figures/rf_easy_hard.pdf used on input line 37.
+(pdftex.def)             Requested size: 469.75502pt x 390.57034pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12 <./figures/diff_features.pdf> <./figures/diff_trees.pdf
+
+pdfTeX warning: pdflatex (file ./figures/diff_trees.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13 <./figures/easy_bg.pdf> <./figures/hard_bg.pdf
 
 pdfTeX warning: pdflatex (file ./figures/hard_bg.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
@@ -660,142 +667,11 @@ pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figures/hard_fg.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
->]
+>] <figures/semi_inter_rf.pdf, id=405, 715.41025pt x 551.35674pt>
+File: figures/semi_inter_rf.pdf Graphic file (type pdf)
 
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[11 <./figures/rf_easy_then_hard.pdf> <./figures/rf_easy_hard.pdf
-
-pdfTeX warning: pdflatex (file ./figures/rf_easy_hard.pdf): PDF inclusion: mult
-iple pdfs with page group included in a single page
->]
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[12 <./figures/semi_inter_rf.pdf>]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 101.
-
-<figures/rf_vip_easy_then_hard.pdf, id=525, 714.99464pt x 569.396pt>
-File: figures/rf_vip_easy_then_hard.pdf Graphic file (type pdf)
-
-<use figures/rf_vip_easy_then_hard.pdf>
-Package pdftex.def Info: figures/rf_vip_easy_then_hard.pdf used on input line 1
-04.
-(pdftex.def)             Requested size: 375.80544pt x 299.2849pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/vip_boost.pdf, id=526, 714.99464pt x 569.396pt>
-File: figures/vip_boost.pdf Graphic file (type pdf)
-
-<use figures/vip_boost.pdf>
-Package pdftex.def Info: figures/vip_boost.pdf used on input line 110.
-(pdftex.def)             Requested size: 375.80544pt x 299.2849pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[13 <./figures/hist.pdf> <./figures/pr_curve.pdf
-
-pdfTeX warning: pdflatex (file ./figures/pr_curve.pdf): PDF inclusion: multiple
- pdfs with page group included in a single page
->] <figures/linear.pdf, id=602, 425.8311pt x 277.3079pt>
-File: figures/linear.pdf Graphic file (type pdf)
-
-<use figures/linear.pdf>
-Package pdftex.def Info: figures/linear.pdf used on input line 133.
-(pdftex.def)             Requested size: 155.02pt x 100.94785pt.
-
-<figures/linear_with_cons.pdf, id=603, 425.8311pt x 277.3079pt>
-File: figures/linear_with_cons.pdf Graphic file (type pdf)
-
-<use figures/linear_with_cons.pdf>
-Package pdftex.def Info: figures/linear_with_cons.pdf used on input line 133.
-(pdftex.def)             Requested size: 155.02pt x 100.94785pt.
-
-<figures/anti_nll.pdf, id=604, 425.8311pt x 277.3079pt>
-File: figures/anti_nll.pdf Graphic file (type pdf)
-
-<use figures/anti_nll.pdf>
-Package pdftex.def Info: figures/anti_nll.pdf used on input line 133.
-(pdftex.def)             Requested size: 155.02pt x 100.94785pt.
-
-Overfull \hbox (31.305pt too wide) in paragraph at lines 132--135
-[][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/u_00.pdf, id=605, 358.264pt x 281.32826pt>
-File: figures/u_00.pdf Graphic file (type pdf)
- <use figures/u_00.pdf>
-Package pdftex.def Info: figures/u_00.pdf used on input line 144.
-(pdftex.def)             Requested size: 155.02pt x 121.73288pt.
-
-<figures/u_01.pdf, id=606, 358.264pt x 281.32826pt>
-File: figures/u_01.pdf Graphic file (type pdf)
- <use figures/u_01.pdf>
-Package pdftex.def Info: figures/u_01.pdf used on input line 144.
-(pdftex.def)             Requested size: 155.02pt x 121.73288pt.
-
-<figures/u_02.pdf, id=607, 358.264pt x 281.32826pt>
-File: figures/u_02.pdf Graphic file (type pdf)
- <use figures/u_02.pdf>
-Package pdftex.def Info: figures/u_02.pdf used on input line 144.
-(pdftex.def)             Requested size: 155.02pt x 121.73288pt.
-
-<figures/u_10.pdf, id=608, 379.20953pt x 281.31784pt>
-File: figures/u_10.pdf Graphic file (type pdf)
- <use figures/u_10.pdf>
-Package pdftex.def Info: figures/u_10.pdf used on input line 145.
-(pdftex.def)             Requested size: 155.02pt x 115.00194pt.
-
-<figures/u_11.pdf, id=609, 379.20953pt x 281.31784pt>
-File: figures/u_11.pdf Graphic file (type pdf)
- <use figures/u_11.pdf>
-Package pdftex.def Info: figures/u_11.pdf used on input line 145.
-(pdftex.def)             Requested size: 155.02pt x 115.00194pt.
-
-<figures/u_12.pdf, id=610, 379.20953pt x 281.31784pt>
-File: figures/u_12.pdf Graphic file (type pdf)
- <use figures/u_12.pdf>
-Package pdftex.def Info: figures/u_12.pdf used on input line 145.
-(pdftex.def)             Requested size: 155.02pt x 115.00194pt.
-
-Overfull \hbox (31.305pt too wide) in paragraph at lines 142--147
-[][] 
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[14 <./figures/rf_vip_easy_then_hard.pdf>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/semi_inter_vip.pdf, id=672, 715.41025pt x 551.35674pt>
-File: figures/semi_inter_vip.pdf Graphic file (type pdf)
-
-<use figures/semi_inter_vip.pdf>
-Package pdftex.def Info: figures/semi_inter_vip.pdf used on input line 157.
+<use figures/semi_inter_rf.pdf>
+Package pdftex.def Info: figures/semi_inter_rf.pdf used on input line 49.
 (pdftex.def)             Requested size: 469.75502pt x 362.02887pt.
 
 
@@ -804,19 +680,161 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15 <./figures/vip_boost.pdf> <./figures/linear.pdf
+[14 <./figures/rf_easy_hard.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-pdfTeX warning: pdflatex (file ./figures/linear.pdf): PDF inclusion: multiple p
-dfs with page group included in a single page
-> <./figures/linear_with_cons.pdf
 
-pdfTeX warning: pdflatex (file ./figures/linear_with_cons.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./figures/anti_nll.pdf
 
-pdfTeX warning: pdflatex (file ./figures/anti_nll.pdf): PDF inclusion: multiple
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15 <./figures/semi_inter_rf.pdf>]
+<figures/hist.pdf, id=517, 425.89111pt x 281.0296pt>
+File: figures/hist.pdf Graphic file (type pdf)
+ <use figures/hist.pdf>
+Package pdftex.def Info: figures/hist.pdf used on input line 58.
+(pdftex.def)             Requested size: 234.8775pt x 154.99127pt.
+
+<figures/pr_curve.pdf, id=518, 715.8494pt x 570.92514pt>
+File: figures/pr_curve.pdf Graphic file (type pdf)
+
+<use figures/pr_curve.pdf>
+Package pdftex.def Info: figures/pr_curve.pdf used on input line 58.
+(pdftex.def)             Requested size: 234.8775pt x 187.32564pt.
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 57--61
+[][] 
+ []
+
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 65.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 65.
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16 <./figures/hist.pdf> <./figures/pr_curve.pdf
+
+pdfTeX warning: pdflatex (file ./figures/pr_curve.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
 >]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 100.
+ <figures/rf_vip_easy_hard_full.pdf, id=596, 715.99054pt x 570.92514pt>
+File: figures/rf_vip_easy_hard_full.pdf Graphic file (type pdf)
+
+<use figures/rf_vip_easy_hard_full.pdf>
+Package pdftex.def Info: figures/rf_vip_easy_hard_full.pdf used on input line 1
+04.
+(pdftex.def)             Requested size: 469.75502pt x 374.58159pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/rf_vip_easy_then_hard.pdf, id=597, 715.97487pt x 498.65515pt>
+File: figures/rf_vip_easy_then_hard.pdf Graphic file (type pdf)
+
+<use figures/rf_vip_easy_then_hard.pdf>
+Package pdftex.def Info: figures/rf_vip_easy_then_hard.pdf used on input line 1
+10.
+(pdftex.def)             Requested size: 469.75502pt x 327.16554pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/vip_boost.pdf, id=598, 715.97487pt x 570.21155pt>
+File: figures/vip_boost.pdf Graphic file (type pdf)
+
+<use figures/vip_boost.pdf>
+Package pdftex.def Info: figures/vip_boost.pdf used on input line 116.
+(pdftex.def)             Requested size: 469.75502pt x 374.1134pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19 <./figures/rf_vip_easy_hard_full.pdf>]
+<figures/anti_nll.pdf, id=675, 715.85724pt x 570.21155pt>
+File: figures/anti_nll.pdf Graphic file (type pdf)
+
+<use figures/anti_nll.pdf>
+Package pdftex.def Info: figures/anti_nll.pdf used on input line 139.
+(pdftex.def)             Requested size: 375.80544pt x 299.34814pt.
+
+Underfull \vbox (badness 2608) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20 <./figures/rf_vip_easy_then_hard.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/linear.pdf, id=748, 715.85724pt x 570.21155pt>
+File: figures/linear.pdf Graphic file (type pdf)
+
+<use figures/linear.pdf>
+Package pdftex.def Info: figures/linear.pdf used on input line 146.
+(pdftex.def)             Requested size: 375.80544pt x 299.34814pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/linear_with_cons.pdf, id=749, 715.85724pt x 570.21155pt>
+File: figures/linear_with_cons.pdf Graphic file (type pdf)
+
+<use figures/linear_with_cons.pdf>
+Package pdftex.def Info: figures/linear_with_cons.pdf used on input line 153.
+(pdftex.def)             Requested size: 375.80544pt x 299.34814pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/vip_diff.pdf, id=750, 715.84155pt x 570.92514pt>
+File: figures/vip_diff.pdf Graphic file (type pdf)
+
+<use figures/vip_diff.pdf>
+Package pdftex.def Info: figures/vip_diff.pdf used on input line 161.
+(pdftex.def)             Requested size: 469.75502pt x 374.6687pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -826,60 +844,174 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16 <./figures/u_00.pdf> <./figures/u_01.pdf
+[21 <./figures/vip_boost.pdf>]
+<figures/lamda_effect.pdf, id=807, 715.45988pt x 714.1049pt>
+File: figures/lamda_effect.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./figures/u_01.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
-> <./figures/u_02.pdf
+<use figures/lamda_effect.pdf>
+Package pdftex.def Info: figures/lamda_effect.pdf used on input line 179.
+(pdftex.def)             Requested size: 469.75502pt x 468.86992pt.
 
-pdfTeX warning: pdflatex (file ./figures/u_02.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
-> <./figures/u_10.pdf
 
-pdfTeX warning: pdflatex (file ./figures/u_10.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
-> <./figures/u_11.pdf
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-pdfTeX warning: pdflatex (file ./figures/u_11.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
-> <./figures/u_12.pdf
+<figures/semi_inter_vip.pdf, id=808, 715.41025pt x 551.35674pt>
+File: figures/semi_inter_vip.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./figures/u_12.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
->]
+<use figures/semi_inter_vip.pdf>
+Package pdftex.def Info: figures/semi_inter_vip.pdf used on input line 190.
+(pdftex.def)             Requested size: 469.75502pt x 362.02887pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17 <./figures/semi_inter_vip.pdf>]
+[22 <./figures/anti_nll.pdf>]
+Underfull \vbox (badness 3679) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23 <./figures/linear.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24 <./figures/linear_with_cons.pdf>]
+<figures/cnn_vs_rf.pdf, id=981, 715.89644pt x 571.08983pt>
+File: figures/cnn_vs_rf.pdf Graphic file (type pdf)
+
+<use figures/cnn_vs_rf.pdf>
+Package pdftex.def Info: figures/cnn_vs_rf.pdf used on input line 210.
+(pdftex.def)             Requested size: 469.75502pt x 374.74191pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25 <./figures/vip_diff.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/cnn_vip.pdf, id=1044, 643.62645pt x 498.65515pt>
+File: figures/cnn_vip.pdf Graphic file (type pdf)
+
+<use figures/cnn_vip.pdf>
+Package pdftex.def Info: figures/cnn_vip.pdf used on input line 215.
+(pdftex.def)             Requested size: 375.80544pt x 291.16805pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/cnn_vip_boost.pdf, id=1045, 569.4901pt x 424.5188pt>
+File: figures/cnn_vip_boost.pdf Graphic file (type pdf)
+
+<use figures/cnn_vip_boost.pdf>
+Package pdftex.def Info: figures/cnn_vip_boost.pdf used on input line 221.
+(pdftex.def)             Requested size: 375.80544pt x 280.1444pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/cnn_vs_rf_vip.pdf, id=1046, 569.4901pt x 424.5188pt>
+File: figures/cnn_vs_rf_vip.pdf Graphic file (type pdf)
+
+<use figures/cnn_vs_rf_vip.pdf>
+Package pdftex.def Info: figures/cnn_vs_rf_vip.pdf used on input line 227.
+(pdftex.def)             Requested size: 375.80544pt x 280.1444pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./conclusion.tex
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26 <./figures/lamda_effect.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27 <./figures/semi_inter_vip.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28 <./figures/cnn_vs_rf.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29 <./figures/cnn_vip.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30 <./figures/cnn_vip_boost.pdf> <./figures/cnn_vs_rf_vip.pdf
+
+pdfTeX warning: pdflatex (file ./figures/cnn_vs_rf_vip.pdf): PDF inclusion: mul
+tiple pdfs with page group included in a single page
+>]
 Chapter 4.
-) (./conclusion.tex [18
+)
+Underfull \vbox (badness 7522) has occurred while \output is active []
+
+ [31
 
 ]
-Chapter 5.
-) (./main.bbl [19
+(./main.bbl
 
-]
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
+[32] [33
 
-) [20
+])
 
-] (./main.aux)
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4078 strings out of 495028
- 56968 string characters out of 6181498
- 117871 words of memory out of 5000000
- 7114 multiletter control sequences out of 15000+600000
+ 4145 strings out of 495028
+ 58200 string characters out of 6181498
+ 118319 words of memory out of 5000000
+ 7176 multiletter control sequences out of 15000+600000
  33536 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,19n,43p,1753b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,19n,44p,1822b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
@@ -894,10 +1026,10 @@ y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (28 pages, 3882012 bytes).
+Output written on main.pdf (43 pages, 4727600 bytes).
 PDF statistics:
- 961 PDF objects out of 1000 (max. 8388607)
- 271 compressed objects within 3 object streams
+ 1446 PDF objects out of 1728 (max. 8388607)
+ 380 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,3 +1,111 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{unet}
+O.~Ronneberger, P.Fischer, and T.~Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In {\em Medical Image Computing and Computer-Assisted Intervention
+  (MICCAI)}, volume 9351 of {\em LNCS}, pages 234--241. Springer, 2015.
+\newblock (available on arXiv:1505.04597 [cs.CV]).
+
+\bibitem{staple}
+Simon~K. Warfield, Kelly~H. Zou, and William~M. Wells.
+\newblock Simultaneous truth and performance level estimation (staple): An
+  algorithm for the validation of image segmentation.
+\newblock {\em IEEE TRANS. MED. IMAG}, 23:903--921, 2004.
+
+\bibitem{long:2014}
+Jonathan Long, Evan Shelhamer, and Trevor Darrell.
+\newblock Fully convolutional networks for semantic segmentation.
+\newblock {\em CoRR}, abs/1411.4038, 2014.
+
+\bibitem{osvos}
+Sergi Caelles, Kevis{-}Kokitsi Maninis, Jordi Pont{-}Tuset, Laura
+  Leal{-}Taix{\'{e}}, Daniel Cremers, and Luc~Van Gool.
+\newblock One-shot video object segmentation.
+\newblock {\em CoRR}, abs/1611.05198, 2016.
+
+\bibitem{santner:2009}
+Jakob Santner, Markus Unger, Thomas Pock, Christian Leistner, Amir Saffari, and
+  Horst Bischof.
+\newblock Interactive texture segmentation using random forests and total
+  variation.
+\newblock In {\em BMVC}, pages 1--12, 2009.
+
+\bibitem{ranftl:2014}
+Ren{\'e} Ranftl and Thomas Pock.
+\newblock {\em A Deep Variational Model for Image Segmentation}, pages
+  107--118.
+\newblock Springer International Publishing, 2014.
+
+\bibitem{dominic}
+Dominic Eugster.
+\newblock Semi-automated 3d object recognition in electron microscopy image
+  data.
+\newblock Master's thesis, 2013.
+
+\bibitem{riegler:2016}
+Gernot Riegler, David Ferstl, Matthias R{\"{u}}ther, and Horst Bischof.
+\newblock A deep primal-dual network for guided depth super-resolution.
+\newblock {\em CoRR}, abs/1607.08569, 2016.
+
+\bibitem{riegler1:2016}
+Gernot Riegler, Matthias R{\"{u}}ther, and Horst Bischof.
+\newblock Atgv-net: Accurate depth super-resolution.
+\newblock {\em CoRR}, abs/1607.07988, 2016.
+
+\bibitem{maninis:2016}
+Kevis{-}Kokitsi Maninis, Jordi Pont{-}Tuset, Pablo~Andr{\'{e}}s Arbel{\'{a}}ez,
+  and Luc J.~Van Gool.
+\newblock Deep retinal image understanding.
+\newblock {\em CoRR}, abs/1609.01103, 2016.
+
+\bibitem{weka}
+Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
+  and Ian~H. Witten.
+\newblock The weka data mining software: An update.
+\newblock {\em SIGKDD Explor. Newsl.}, 11(1):10--18, November 2009.
+
+\bibitem{fiji}
+J.~Schindelin, I.~Arganda-Carreras, and E.~Frise.
+\newblock Fiji: an open-source platform for biological-image analysis.
+\newblock 9(7):676--682, 2012.
+
+\bibitem{Paul2013}
+Gr{\'e}gory Paul, Janick Cardinale, and Ivo~F. Sbalzarini.
+\newblock Coupling image restoration and segmentation: A generalized linear
+  model/bregman perspective.
+\newblock {\em International Journal of Computer Vision}, 104(1):69--93, 2013.
+
+\bibitem{taylor:2016}
+Gavin Taylor, Ryan Burmeister, Zheng Xu, Bharat Singh, Ankit Patel, and Tom
+  Goldstein.
+\newblock Training neural networks without gradients: {A} scalable {ADMM}
+  approach.
+\newblock {\em CoRR}, abs/1605.02026, 2016.
+
+\bibitem{Gonda:2016}
+Felix Gonda, Ray~Thouis Verena~Kaynig, Toufiq~Parag Daniel~Haehn,
+  Jeff~Lichtman, and Hanspeter Pfister.
+\newblock Icon: An interactive approach to train deep neural networks for
+  segmentation of neuronal structures.
+\newblock {\em CoRR}, abs/1610.09032, 2016.
+
+\bibitem{Lai:2015}
+Matthew Lai.
+\newblock Deep learning for medical image segmentation.
+\newblock 2015.
+
+\bibitem{Havaei:2015}
+Mohammad Havaei, David~Warde{-}Farley Axel~Davy, Aaron C.~Courville
+  Antoine~Biard, Chris~Pal Yoshua~Bengio, and Hugo~Larochelle
+  Pierre{-}Marc~Jodoin.
+\newblock Brain tumor segmentation with deep neural networks.
+\newblock {\em CoRR}, abs/1505.03540, 2015.
+
+\bibitem{ochs:2015}
+Peter Ochs, Ren{\'e} Ranftl, Thomas Brox, and Thomas Pock.
+\newblock Bilevel optimization with nonsmooth lower level problems.
+\newblock In {\em International Conference on Scale Space and Variational
+  Methods in Computer Vision}, pages 654--665. Springer, 2015.
 
 \end{thebibliography}
