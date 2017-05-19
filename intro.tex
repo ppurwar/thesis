@@ -12,12 +12,14 @@
 The task of image segmentation into binary classes is very useful in different cases in biomedical tasks. It can be used for detection of diseases, shape analysis etc. The methods to solve the segmentation problem has evolved along two lines: 1) level of interaction: from semi-interactive to fully automatic, and 2) level of classification: pixels to complete images. Nowadays, with the use of fully-convolutional networks, the segmentation can be obtained for a complete image in one forward pass. This helps in using the local as well as contextual information for segmentation. Currently, the benchmark performance in terms of accuracy is achieved by the use of convolutional neural networks (CNN). The neural networks are specialized to learn feature maps from the examples provided and specific to the task at hand. These networks require a huge amount of training data: images and ground truth i.e. label for each pixel in the input image; to train the network from scratch. In literature, we can find different architectures of neural networks specially designed for the task of segmentation, one of the popular architecture is U-Net \cite{unet}. This approach works well for tasks where we can find a significant number of images and can train a neural network. However, this poses a difficulty when we are trying to segment objects in microscopic images.
 
 \begin{figure}[h!] \label{fig:3dstack}
+\centering
  \includegraphics[width=0.8\linewidth]{figures/3d_stack.png}
 \caption{A 3D image stack, output from a scanning electron microscope.
 The stacks contains 458 2D images with a resolution of 1890x1952 pixel each.}
 \end{figure}
 
 \begin{figure}[h!] \label{fig:3dstack}
+\centering
  \includegraphics[width=0.8\linewidth]{figures/vesicles.png}
 \caption{Example of Manual annotations of different objects in liver tissue.}
 \end{figure}
@@ -35,6 +37,7 @@ These characteristics of EM images make it very difficult to fully annotate each
 
 
 \begin{figure}[h!] \label{fig:2dslice}
+\centering
  \includegraphics[width=0.7\linewidth]{figures/ex_slice.pdf}
 \caption{Cropped part of slice 15 and its ground truth annotation by an expert.}
 \end{figure}
@@ -46,6 +49,7 @@ These characteristics of EM images make it very difficult to fully annotate each
 \end{figure}
 
 \begin{figure}[] \label{fig:ref}
+\centering
  \includegraphics[width=0.7\linewidth]{figures/staple.pdf}
 \caption{Grounth truth mask derived from multiple annotaions using 2 different methods}
 \end{figure}
