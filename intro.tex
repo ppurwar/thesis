@@ -7,16 +7,21 @@
 
 
 \chapter{Introduction}
-
-
-The task of image segmentation into binary classes is very useful in different cases in biomedical tasks. It can be used for detection of diseases, shape analysis etc. The methods to solve the segmentation problem has evolved along two lines: 1) level of interaction: from semi-interactive to fully automatic, and 2) level of classification: pixels to complete images. Nowadays, with the use of fully-convolutional networks, the segmentation can be obtained for a complete image in one forward pass. This helps in using the local as well as contextual information for segmentation. Currently, the benchmark performance in terms of accuracy is achieved by the use of convolutional neural networks (CNN). The neural networks are specialized to learn feature maps from the examples provided and specific to the task at hand. These networks require a huge amount of training data: images and ground truth i.e. label for each pixel in the input image; to train the network from scratch. In literature, we can find different architectures of neural networks specially designed for the task of segmentation, one of the popular architecture is U-Net \cite{unet}. This approach works well for tasks where we can find a significant number of images and can train a neural network. However, this poses a difficulty when we are trying to segment objects in microscopic images.
+Image segmentation is a central task in biomedical image processing and image analysis. It can be used for detecting various diseases, shape diagnosis etc. The dataset which we are trying to segment is electron microscopic (EM) images of liver tissue. The dataset consists of a 3D stack of 2D slices of liver tissue as shown in figure 1.1. The image stack was generated at EMEZ (Electron Microscopy ETH Zürich) autonomously by iter-
+atively cutting off a slice of the sample and scanning the cut face. With very little
+interaction, the apparatus produced an output of 458 slices in 20 hours. The focus of this thesis to compare and analyze different segmentaion methods to segment objects in histology images. In the following section, we describe the difficulties faced in segmentation of the histology images and give an overview of the methods used for segmentation. 
 
 \begin{figure}[h!] \label{fig:3dstack}
 \centering
  \includegraphics[width=0.8\linewidth]{figures/3d_stack.png}
-\caption{A 3D image stack, output from a scanning electron microscope.
+\caption{A 3D image stack of liver tissue, output from a scanning electron microscope.
 The stacks contains 458 2D images with a resolution of 1890x1952 pixel each.}
 \end{figure}
+
+
+
+ Nowadays, with the use of fully-convolutional networks, the segmentation can be obtained for a complete image in one forward pass. This helps in using the local as well as contextual information for segmentation. Currently, the benchmark performance in terms of accuracy is achieved by the use of convolutional neural networks (CNN). The neural networks are specialized to learn feature maps from the examples provided and specific to the task at hand. These networks require a huge amount of training data: images and ground truth i.e. label for each pixel in the input image; to train the network from scratch. In literature, we can find different architectures of neural networks specially designed for the task of segmentation, one of the popular architecture is U-Net \cite{unet}. This approach works well for tasks where we can find a significant number of images and can train a neural network. However, this poses a difficulty when we are trying to segment objects in microscopic images.
+
 
 \begin{figure}[h!] \label{fig:3dstack}
 \centering
@@ -25,8 +30,8 @@ The stacks contains 458 2D images with a resolution of 1890x1952 pixel each.}
 \end{figure}
 
 
-\section{Electron Microscopy Images}
-The dataset which we are trying to segment is electron microscopic (EM) images of liver tissue. The dataset consists of a 3D stack of 2D slices of liver tissue as shown in figure 1.1. The dataset can be considered as a single 3D stack or multiple 2D slices for our task. We can observe following traits in EM images:
+\section{Segmentation of Histology Images}
+ We can observe following traits in EM images:
 \begin{itemize}
 \item High variability between images: The images to be segmented may be entirely different i.e. having fixed objects as in liver tissue or having layers to segments as in neuron tissue. The objects to be segmented may differ completely from being smooth (round vesicles) to branched (neurons). This prohibits the use of one dataset to train a network for another dataset and thus, restricting the availability of images.
 \item High variability between objects to segment: The objects to be segmented vary significantly in shape, size, and texture in different images. We can observe few objects of interest in figure 1.2.
