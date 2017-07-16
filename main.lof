@@ -1,28 +1,34 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces A 3D image stack, output from a scanning electron microscope. The stacks contains 458 2D images with a resolution of 1890x1952 pixel each.}}{2}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Example of Manual annotations of different objects in liver tissue.}}{3}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Cropped part of slice 15 and its ground truth annotation by an expert.}}{4}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Upper row: Annotation of an slice by different experts. Bottom row: Multiple annotations of an slice by same expert. One example of difference can be observed in bounding boxes.}}{5}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Grounth truth mask derived from multiple annotaions using 2 different methods}}{5}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces A 3D image stack of liver tissue, output from a scanning electron microscope. The stacks contains 458 2D images with a resolution of 1890x1952 pixel each.}}{2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces EM image of the liver tissue showing different objects of interest to experts.}}{3}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces An example of the 2D slice and its segmentation mask showing vesicles as Foreground. Foreground: Purple, Background: Yellow}}{4}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Segmentation mask for a slice annotated by different experts. The part of the mask bounded by red rectangles shows some of major differences.}}{5}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Segmentation mask for a slice annotated by same expert at different times.The part of the mask bounded by red rectangles shows some of major differences.}}{5}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Grounth truth segmentation mask derived from multiple annotaions using 2 different methods (STAPLE and union).}}{5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Left image: F-measure computed for different amount of training data; Right image: Predicted mask for one slice}}{9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Example result of OSVOS \cite {osvos}: The segmentation of the first frame (red) is used to learn semantics of interested object, whicich is segmented in the rest of the frames independently (green).}}{10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Overview of OSVOS \cite {osvos}: (1) Pre-trained base CNN; its results in terms of segmen- tation. (2) Training of network for task of object segmentation, parent network. (3) By fine-tuning on a segmentation example for the specific object in first frame, the network rapidly adopts to focus on that target. }}{11}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Predicted segmentaion mask for part of slice 45}}{12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Segmentation accuracy for different amount of training data (Number of slices)}}{13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Plot of segmentation measure vs changing complexity of RF: (a) with features, (b) with trees}}{12}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Manual scribbles in "easy" and "hard" classes}}{13}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Plot of segmentation measure vs annotation budget. The black curve shows change in segmentation measure with increment of scribbles from "easy" class. Other curves and show change in segmentation measure with increment of scribbles from "hard" class, starting with different fixed amount of "easy" class.}}{14}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Semi-interactive segmentaion with one iteration}}{15}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces (a) Histogram of probabilities. (b) Precision-recall curve for varying thresholded RF mask. Different curves for different annotation budget}}{16}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget}}{19}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget}}{20}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Boost obtained with VIP over RF Segmentation score with RF and prior(TV) for different annotation budget}}{21}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces VIP with different cost functions}}{22}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces VIP with different cost functions}}{23}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces VIP with different cost functions}}{24}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces VIP with different cost functions}}{25}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Segmentation mask for differnt $\lambda $ for 2 crops of image}}{26}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Semi-interactive segmentation with one iteration (RF+VIP)}}{27}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces F-measure for increasing annotation budget for comparing CNN vs RF}}{28}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{29}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{30}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{30}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Plot of segmentation measure vs changing complexity of RF: (a) with features, (b) with trees}}{16}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Manual scribbles in "easy" and "hard" annotation classes}}{17}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Plot of segmentation measure vs annotation budget. The black curve shows the increment of scribbles from the "easy" annotaion class. The pink curve shows the addition of scribbles from the "hard" annotaion class. The percentage in x-axix corresponds to amount of pixels w.r.t. to total pixels in image.}}{19}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Plot of segmentation measure vs annotation budget. Different curves show addition of scribbles from "hard" annotaion class, starting with different fixed amount of "easy" annotation class.}}{20}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Semi-interactive segmentaion with one interaction. The bottom-left image shows scribbles added after first interaction using previously generated mask. Red: foregroud, Blue: background}}{21}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces (a) Histogram of predicted foreground probabilities using RF. (b) Precision-recall curve for varying thresholded RF mask. Different curves correspond to different annotation budget}}{22}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Anti-log cost function}}{25}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget}}{26}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget (removing very annotation budgets)}}{27}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Segmentation mask for differnt $\lambda $ for 2 crops of image}}{28}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Segmentation accuracy vs annotation budget for \textit {anti-log} cost function.}}{29}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Segmentation accuracy vs annotation budget for \textit {linear} cost function.}}{30}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Segmentation accuracy vs annotation budget for \textit {linear} cost function with constraints.}}{31}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Comparison of different cost functions for higher annotation budgets.}}{32}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Semi-interactive segmentation with one iteration (RF+VIP)}}{33}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces F-measure for increasing annotation budget for comparing CNN vs RF}}{36}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{37}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{38}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{38}
 \addvspace {10\p@ }

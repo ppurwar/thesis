@@ -1,0 +1,160 @@
+\documentclass[pdftex,11pt,openright,headsepline]{book}
+
+\usepackage{paralist}		% List environment
+\usepackage{color}		% For colored text
+\usepackage{times}
+\usepackage{amsfonts}		% Additional math fonts
+\usepackage{amsmath}		% Math symbols
+\usepackage{latexsym}
+\usepackage{graphicx}		% For including images
+%\usepackage{listings}		% If listings are needed
+%\usepackage{mydefs}		% Some of our own definitions
+% \usepackage{wrapfig}		% To wrap images
+% \usepackage{algorithmic}	% Nice algorithm environment
+% \usepackage{algorithm}
+\usepackage{fancyhdr}		% Produce the nice header
+\usepackage{fullpage}           % Use the full page
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xspace}
+\usepackage{etoolbox}
+
+\input{math_macros_local.tex}
+
+\begin{document}
+
+% slide 1.
+
+
+% 1. Discretization of solution space: according to IFGT
+% 2. Selection and fitting at the same time : choose a sparse solution by making weights zero
+% 3. Optimal trade off between accuracy and efficiency
+
+
+% slide 2.
+
+% \textbf{Primal updates}:
+
+% \vec{w}^{k+1}\,=\,\arg\inf_{\w}{\mathrm{AS}(\vec{w},\vv^k_1,\vv^k_2,\vv^k_3,\vb^k)} 
+% \vv_1^{k+1}\,=\,\arg\inf_{\vv_1}{\mathrm{AS}(\vec{w}^{k+1},\vv_1,\vv^k_2,\vv^k_3,\vb^k)} 
+% \vv_2^{k+1}\,=\,\arg\inf_{\vv_2}{\mathrm{AS}(\vec{w}^{k+1},\vv^{k+1}_1,\vv_2,\vv^k_3,\vb^k)} 
+% \vv_3^{k+1}\,=\,\arg\inf_{\vv_3}{\mathrm{AS}(\vec{w}^{k+1},\vv^{k+1}_1,\vv^{k+1}_2,\vv_3,\vb^k)} 
+% \textbf{Dual updates}:
+
+% \vb_1^{k+1}\,=\,\vb_1^k + \mat{D}\w^{k+1} - \vv_1^{k+1} 
+% \vb_2^{k+1}\,=\,\vb_2^k + \vec{w}^{k+1} - \vv_2^{k+1} 
+% \vb_3^{k+1}\,=\,\vb_3^k + \vec{w}^{k+1} - \vv_3^{k+1}
+
+
+
+
+
+% \begin{equation*}
+% \fPhotonFlux (\x, t) = \Big(\phi_{\x, t} \conv \PSF \Big) (\x, t) \eqend
+% \end{equation*}
+
+
+
+% \begin{equation*}
+% \fPhotonFlux (\x, t)
+% = \Big(\phi\,\fdirac{\x_s(t)} \conv f \Big) (\x, t) \eqend
+% \end{equation*}
+
+
+% \begin{equation*}
+% \fPhotonFlux (\x, t)
+% = \Big(\phi\,\fdirac{\x_s} \conv \PSF \Big) (\x, t) 
+% \end{equation*}
+
+
+% \begin{equation*}
+% \fPhotonFlux (\x, t)
+% = \Big(\phi\,\fdirac{\x_s} \conv \PSF \Big) (\x, t) 
+% \end{equation*}
+
+
+% \begin{equation*}
+% % Photons\,in\,region\,A = \int_{0}^{T_a} \int_{A}  \phi \ f(x-x_0) \,dxdt
+% \mu(\x_q) = \int_{\Pixel \times \TInterval} \fPhotonFlux({\dx \times \dt})\  \eqend
+% \end{equation*}
+
+
+% \begin{align*}
+% \vec{m^*}\,=\,\arg\max_{\m\in \vec{M}}{P(? | \m)} \quad.
+% \end{align*}
+
+
+% \begin{align*}
+% \m^*\,=\,\arg\inf_{\m\in \vec{M}}{\big(\nll( \y | \m)\, -\log(P(\m))\big)}
+% \end{align*}
+
+
+% \begin{equation} \label{eq:fwdProb}
+% {\mu(\x_q)} = \phi\, \ensuremath{A}\, \T\, \PSF(\x_q - \x_s) \eqcont 
+% \end{equation}
+
+
+% \begin{equation} \label{eq:fwdProb}
+% {\mu(\x_q)} = \phi\, \ensuremath{A}\, \T\,\sum_{k=1}^N\,w_k\,f_k(\x_q-\x_s)
+% \end{equation}
+
+
+% \begin{equation*}
+% P(y_q) = \frac{({\mu(\x_q)})^{y_q}}{y_q!}\exp(-{\mu(\x_q)}) \quad,
+% \end{equation*}
+
+\begin{equation*}\label{eq:nll_gen}
+\mathcal{L} = \sum_{p\in\,\mathcal{P}}{\ell_{p}}
+\end{equation*}
+
+a \newline
+
+\begin{equation*}\label{eq:nll_gen}
+\mathcal{L}_{\rm{scribble}} = \sum_{p\in\,\mathcal{P}}{w_{p}\, \ell_{p}} \quad \text{where,} \quad  w_{p} = 
+\begin{cases}
+  1, & \text{if}\ \ p \in \mathcal{S}  \\
+  0, & \text{else.}
+\end{cases}
+\end{equation*}
+
+
+
+a \newline
+
+
+\begin{equation*}
+\mat{M^*} = \arg\max_{\mat{M}}\,{\p(\mat{M}) \p(\mat{I}|\mat{M})}
+\end{equation*}
+
+\begin{align*}
+\funop{E}(\mat{M}) &= \funop{E_d}(\mat{I}, \mat{M}) + \funop{E_r} (\mat{M}) \\
+&= <\funop{C}(\p), \mat{M}> + \lambda\, \funop{TV}(\mat{M}) + \mathrm{i}_{[0,1]}(\mat{M}) \eqcont 
+\end{align*}
+
+
+\begin{align*}
+\funop{E}(\mat{M}) &=\, - \, \log(\p(\mat{I}, \mat{M})) = -\, \log(\p(\mat{I}|\mat{M})) - \log(\p(\mat{M})) \\
+&= \funop{E_d}(\mat{I}, \mat{M}) + \funop{E_r} (\mat{M})\\
+&= \langle\mathcal{C}(\mat{P}), \mat{M}\rangle + \lambda\, \funop{TV}(\mat{M}) + \iota_{[0,1]}(\mat{M})
+\end{align*}
+
+
+
+\begin{align*}
+\mathcal{C}(\widehat{\mat{P}}(x_{p})) =
+\begin{cases}
+  0, & \text{if}\ x_p \in \mathcal{S}  \\
+  -\log \frac{\widehat{\mat{P}}(x_{p})}{1-\widehat{\mat{P}}(x_{p})}, & \text{else}
+\end{cases}
+\end{align*} 
+
+
+
+\begin{align*}
+\funop{E}(\mat{M}) = \langle\mathcal{C}(\mat{P}), \mat{M}\rangle + \lambda\, \funop{TV}(\mat{M}) + \iota_{[0,1]}(\mat{M}) + \iota_{\rm{FG}}(\mat{M})  + \iota_{\rm{BG}}(\mat{M}) 
+\end{align*}
+
+
+\end{document}
+

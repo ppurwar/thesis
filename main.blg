@@ -6,45 +6,45 @@ Database file #1: references.bib
 Warning--empty school in dominic
 Warning--empty journal in fiji
 Warning--empty note in Lai:2015
-You've used 18 entries,
+You've used 19 entries,
             1791 wiz_defined-function locations,
-            546 strings with 6822 characters,
-and the built_in function-call counts, 4198 in all, are:
-= -- 361
-> -- 235
+            550 strings with 6939 characters,
+and the built_in function-call counts, 4349 in all, are:
+= -- 374
+> -- 243
 < -- 5
-+ -- 85
-- -- 67
-* -- 278
-:= -- 697
-add.period$ -- 57
-call.type$ -- 18
-change.case$ -- 17
++ -- 88
+- -- 69
+* -- 284
+:= -- 725
+add.period$ -- 60
+call.type$ -- 19
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 190
-empty$ -- 367
-format.name$ -- 67
-if$ -- 927
+cite$ -- 22
+duplicate$ -- 198
+empty$ -- 381
+format.name$ -- 69
+if$ -- 960
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 17
-newline$ -- 94
-num.names$ -- 18
-pop$ -- 40
+int.to.str$ -- 19
+missing$ -- 18
+newline$ -- 99
+num.names$ -- 19
+pop$ -- 41
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 101
+skip$ -- 106
 stack$ -- 0
 substring$ -- 199
-swap$ -- 52
+swap$ -- 53
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 37
-width$ -- 20
-write$ -- 201
+while$ -- 38
+width$ -- 21
+write$ -- 212
 (There were 3 warnings)

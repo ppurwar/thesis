@@ -1,28 +1,16 @@
 \begin{thebibliography}{10}
 
-\bibitem{unet}
-O.~Ronneberger, P.Fischer, and T.~Brox.
-\newblock U-net: Convolutional networks for biomedical image segmentation.
-\newblock In {\em Medical Image Computing and Computer-Assisted Intervention
-  (MICCAI)}, volume 9351 of {\em LNCS}, pages 234--241. Springer, 2015.
-\newblock (available on arXiv:1505.04597 [cs.CV]).
+\bibitem{osvos}
+Sergi Caelles, Kevis{-}Kokitsi Maninis, Jordi Pont{-}Tuset, Laura
+  Leal{-}Taix{\'{e}}, Daniel Cremers, and Luc~Van Gool.
+\newblock One-shot video object segmentation.
+\newblock {\em CoRR}, abs/1611.05198, 2016.
 
 \bibitem{staple}
 Simon~K. Warfield, Kelly~H. Zou, and William~M. Wells.
 \newblock Simultaneous truth and performance level estimation (staple): An
   algorithm for the validation of image segmentation.
 \newblock {\em IEEE TRANS. MED. IMAG}, 23:903--921, 2004.
-
-\bibitem{long:2014}
-Jonathan Long, Evan Shelhamer, and Trevor Darrell.
-\newblock Fully convolutional networks for semantic segmentation.
-\newblock {\em CoRR}, abs/1411.4038, 2014.
-
-\bibitem{osvos}
-Sergi Caelles, Kevis{-}Kokitsi Maninis, Jordi Pont{-}Tuset, Laura
-  Leal{-}Taix{\'{e}}, Daniel Cremers, and Luc~Van Gool.
-\newblock One-shot video object segmentation.
-\newblock {\em CoRR}, abs/1611.05198, 2016.
 
 \bibitem{santner:2009}
 Jakob Santner, Markus Unger, Thomas Pock, Christian Leistner, Amir Saffari, and
@@ -31,17 +19,17 @@ Jakob Santner, Markus Unger, Thomas Pock, Christian Leistner, Amir Saffari, and
   variation.
 \newblock In {\em BMVC}, pages 1--12, 2009.
 
-\bibitem{ranftl:2014}
-Ren{\'e} Ranftl and Thomas Pock.
-\newblock {\em A Deep Variational Model for Image Segmentation}, pages
-  107--118.
-\newblock Springer International Publishing, 2014.
-
 \bibitem{dominic}
 Dominic Eugster.
 \newblock Semi-automated 3d object recognition in electron microscopy image
   data.
 \newblock Master's thesis, 2013.
+
+\bibitem{ranftl:2014}
+Ren{\'e} Ranftl and Thomas Pock.
+\newblock {\em A Deep Variational Model for Image Segmentation}, pages
+  107--118.
+\newblock Springer International Publishing, 2014.
 
 \bibitem{riegler:2016}
 Gernot Riegler, David Ferstl, Matthias R{\"{u}}ther, and Horst Bischof.
@@ -53,11 +41,28 @@ Gernot Riegler, Matthias R{\"{u}}ther, and Horst Bischof.
 \newblock Atgv-net: Accurate depth super-resolution.
 \newblock {\em CoRR}, abs/1607.07988, 2016.
 
+\bibitem{unet}
+O.~Ronneberger, P.Fischer, and T.~Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In {\em Medical Image Computing and Computer-Assisted Intervention
+  (MICCAI)}, volume 9351 of {\em LNCS}, pages 234--241. Springer, 2015.
+\newblock (available on arXiv:1505.04597 [cs.CV]).
+
+\bibitem{long:2014}
+Jonathan Long, Evan Shelhamer, and Trevor Darrell.
+\newblock Fully convolutional networks for semantic segmentation.
+\newblock {\em CoRR}, abs/1411.4038, 2014.
+
 \bibitem{maninis:2016}
 Kevis{-}Kokitsi Maninis, Jordi Pont{-}Tuset, Pablo~Andr{\'{e}}s Arbel{\'{a}}ez,
   and Luc J.~Van Gool.
 \newblock Deep retinal image understanding.
 \newblock {\em CoRR}, abs/1609.01103, 2016.
+
+\bibitem{vgg}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock {\em CoRR}, abs/1409.1556, 2014.
 
 \bibitem{weka}
 Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
