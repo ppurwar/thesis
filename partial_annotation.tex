@@ -5,7 +5,7 @@
 % Extended 13/02/2009 by Jan Lesniak - jlesniak@vision.ee.ethz.ch
 %% ----------------------------------------------------------------------------
 \newpage
-\chapter{Semi-supervised image segmentation using RFs in a Bayesian framework }
+\chapter{Semi-supervised image segmentation using RFs in a Bayesian framework}
 The philosophy behind semi-supervised learning is to propagate the label information from labeled to unlabeled data. Image segmentation can be seen as a classification problem which consists of assigning a class label to each pixel. For our task of binary segmentation, this means classifying each pixel as foreground or background. For our task of image segmentation, we make use of the partial annotations as \textit{scribbles}. Scribbles are pixels in the image annotated by experts as foreground or background. In this chapter, we use the Random forests for our segmentation task. We train the Random forests using scribbles and try to achieve similar accuracy as we obtained with CNNs in previous chapter. One major contribution of this chapter is analysis of effect of scribbles on accuracy. We designed few experiments to train RF with varying quality and quantity of scribbles, and observed the effect of these variations on segmentation accuracy. In addition, we improve the accuracy of RF by use of variational methods.
 
 \section{Random Forest}
@@ -59,7 +59,9 @@ We observed the need of using our annotation budget intelligently to get the bes
 \caption{Semi-interactive segmentaion with one interaction. The bottom-left image shows scribbles added after first interaction using previously generated mask. Red: foregroud, Blue: background}
 \end{figure}
 
-The use of iterative semi-interactivity gives the best result for given annotation budget, but there is a limit on accuracy that can be achieved by using only RFs. The output mask of RF is noisy and uncertain. The uncertainty lies in the inability to classify maximum of pixels as foreground and background, as shown in figure 3.5(a). The histogram shows the distribution of probability of pixel to be foreground values for the complete image. It can be seen that a large number of pixels are not given a probability of 0 (background) or 1 (foreground). In figure 3.5(b), we can observe varying results for different threshold applied on probability mask obtained from RF. RF acts as a classifier and classifies each pixel but we need to group these pixels into objects for segmentation. 
+\subsection{Limitation of RF}
+
+The use of iterative semi-interactivity gives the best result for given annotation budget, but there is a limit on accuracy that can be achieved by using only RFs. The output mask of RF is noisy and uncertain. The uncertainty lies in the inability to classify maximum of pixels as foreground and background, as shown in figure 3.6(a). The histogram shows the distribution of probability of pixel to be foreground values for the complete image. It can be seen that a large number of pixels are not given a probability of 0 (background) or 1 (foreground). In figure 3.6(b), we can observe varying results for different threshold applied on probability mask obtained from RF. RF acts as a classifier and classifies each pixel but we need to group these pixels into objects for segmentation. 
 \begin{figure}[h!] \label{fig:uncertain}
 \begin{tabular}{cc}
  \includegraphics[width=0.5\linewidth]{figures/hist.pdf} & \includegraphics[width=0.5\linewidth]{figures/pr_curve.pdf} \\
@@ -94,39 +96,39 @@ The total energy, $\funop{E}$, that we want to minimize can be considered as lin
 \begin{equation*}
 \mat{M^*} = \arg\min_{\mat{M}}{\funop{E_d}(\mat{I}, \mat{M}) + \funop{E_r} (\mat{M})} \eqend
 \end{equation*}
-To obtain MAP estimate, we need to formulate likelihood term and prior term. We formulate the prior using Total variation(TV). We can find use of different TV priors such as Wulff shapes etc. In our thesis, as the objects we need to segment are smooth and shaped like a circle, we make use of isotropic total variation, $\funop{TV}$. Also, we can try to use isotropic total variation in 2D or 3D as the data we are trying to segment is a 3D stack. For likelihood term, G. Paul et al.\cite{Paul2013} proposed an energy formulation which is not derived from a statistical model but learnt from training set. This gives the advantage of combining example-based and model-based approaches. Similar to Eugster \cite{dominic}, we formulate the likelihood term using a cost function, $\funop{C}$. The likelihood term is formulated as a product of cost function and mask. The cost function assigns a cost depending on predicted foreground probabilities obtained from RF. Let $\p$ be the probability of pixel being foreground (learnt from RF), and $\mat{M}$ be the optimal mask to be estimated, the energy minimization problems becomes:
+To obtain MAP estimate, we need to formulate likelihood term and prior term. We formulate the prior using Total variation(TV). We can find use of different TV priors such as Wulff shapes etc. In our thesis, as the objects we need to segment are smooth and shaped like a circle, we make use of isotropic total variation, $\funop{TV}$. Also, we can try to use isotropic total variation in 2D or 3D as the data we are trying to segment is a 3D stack. For likelihood term, G. Paul et al.\cite{Paul2013} proposed an energy formulation which is not derived from a statistical model but learnt from training set. This gives the advantage of combining example-based and model-based approaches. Similar to Eugster \cite{dominic}, we formulate the likelihood term using a cost function, $\funop{C}$. The likelihood term is formulated as a product of cost function and mask. The cost function assigns a cost depending on predicted foreground probabilities obtained from RF. Let $p$ be the probability of pixel being foreground (learnt from RF), and $\mat{M}$ be the optimal mask to be estimated, the energy minimization problems becomes:
 
 \begin{align*}
-\funop{E}(\mat{M}) &=\, - \, \log(\p(\mat{I}, \mat{M})) = -\, \log(\p(\mat{I}|\mat{M})) - \log(\p(\mat{M})) \\
+\funop{E}(\mat{M}) &=\, - \, \log(p(\mat{I}, \mat{M})) = -\, \log(p(\mat{I}|\mat{M})) - \log(p(\mat{M})) \\
 &= \funop{E_d}(\mat{I}, \mat{M}) + \funop{E_r} (\mat{M})\\
-&= \langle\mathcal{C}(\p), \mat{M}\rangle + \lambda\, \funop{TV}(\mat{M}) + \iota_{[0,1]}(\mat{M}) \numberthis \label{eqn}
+&= \langle\mathcal{C}(p), \mat{M}\rangle + \lambda\, \funop{TV}(\mat{M}) + \iota_{[0,1]}(\mat{M}) \numberthis \label{eqn}
 \end{align*}
 
 where $\mathrm{i}_{[0,1]}(\mat{M})$ is an indicator function to ensure values of $\mat{M}$ remain in [0,1]. In addition to use of cost function as explained in Eugster \cite{dominic}, we enforce a constraint in our energy minimization problem to obtain correct mask values for the pixels annotated by experts as foreground and background. This constraint was not enforced by Eugster \cite{dominic}. We used an indicator function, $\mathrm{i}_{\mathcal{FG}}(\mat{M})$, to ensure pixels in foreground scribbles have value of 1 in mask, and indicator function, $\mathrm{i}_{\mathcal{BG}}(\mat{M})$, to ensure pixels in background scribbles have value of 0 in mask. Using discrete implementaion of TV, the final energy minimization problem becomes:
 
 \begin{align}
-\funop{E}(\mat{M}) = \langle\mathcal{C}(\mat{P}), \mat{M}\rangle + \lambda\, \funop{TV}(\mat{M}) + \iota_{[0,1]}(\mat{M}) + \iota_{\mathcal{FG}}(\mat{M})  + \iota_{\mathcal{BG}}(\mat{M}) 
+\funop{E}(\mat{M}) = \langle\mathcal{C}(p), \mat{M}\rangle + \lambda\, \funop{TV}(\mat{M}) + \iota_{[0,1]}(\mat{M}) + \iota_{\mathcal{FG}}(\mat{M})  + \iota_{\mathcal{BG}}(\mat{M}) 
 \end{align}
 The optimization problem is solved using Alternating Split Bregman method (ASB), as described in Eugster \cite{dominic}. The advantage of using ASB is that it splits the above problem into subproblems. Each subproblem is easy to solve and can be solved independently. Due to this reason, the new constraints for scribbles can be easily coupled with one of the subproblem or can be solved separately. For our formulation, we are able to couple the new constraints with constraint on mask values. The final solution to the problem is obtained by iterating updates. The details of implementation and solution can be obtained from Eugster \cite{dominic}. 
 
 
-\subsection{Anti-log cost functions}
-The cost function has to be defined such that it assigns a positive cost to probabilities less than 0.5 and negative cost to probabilities greater than 0.5. This ensures that the pixels with low probability get a mask value of 0 and reverse for pixels with high probability. We make use of use of \textit{anti-log} cost function explained by Eugster \cite{dominic} and conduct different experiments. The \textit{anti-log} cost function is defined as:
+\subsection{Anti-log likelihood cost function}
+The cost function has to be defined such that it assigns a positive cost to probabilities less than 0.5 and negative cost to probabilities greater than 0.5. This ensures that the pixels with low probability get a mask value of 0 and reverse for pixels with high probability. We make use of use of \textit{anti-log likelihood} cost function explained by Eugster \cite{dominic} and conduct different experiments. The \textit{anti-log likelihood} cost function is defined as:
 
 \begin{align*}
 \mathcal{C}(\widehat{p}(x_{k})) =
 \begin{cases}
   0, & \text{if}\ x_k \in \mathcal{S}  \\
-  -\log \frac{\widehat{\p}(x_{k})}{1-\widehat{\p}(x_{k})}, & \text{else} 
+  -\log \frac{\widehat{p}(x_{k})}{1-\widehat{p}(x_{k})}, & \text{else} 
 \end{cases} \eqcont
 \end{align*} 
 
-where $\mathcal{S}$ corresponds to set of annotated pixels and $\widehat{p}(x_{k})$ is the probability learnt from RF at pixel, $x_k$. The plot of \textit{anti-log} cost function can be seen in figure 3.7. We can observe that cost tends to positive infinity for probablity values close to 0 and, to negative infinity for probablity close to 1. The pixels with values exactly equal to 0 and 1 are given cost of zero and added to $\iota_{\mathcal{FG}}(\mat{M})$ and $\iota_{\mathcal{BG}}(\mat{M})$ respectively for implementation purpose.
+where $\mathcal{S}$ corresponds to set of annotated pixels and $\widehat{p}(x_{k})$ is the probability learnt from RF at pixel, $x_k$. The plot of \textit{anti-log likelihood} cost function can be seen in figure 3.7. We can observe that cost tends to positive infinity for probablity values close to 0 and, to negative infinity for probablity close to 1. The pixels with values exactly equal to 0 and 1 are given cost of zero and added to $\iota_{\mathcal{FG}}(\mat{M})$ and $\iota_{\mathcal{BG}}(\mat{M})$ respectively for implementation purpose.
 
 \begin{figure}[h!] \label{fig:nll}
 \centering
  \includegraphics[width=0.75\linewidth]{figures/nll_func.pdf}
-\caption{Anti-log cost function}
+\caption{Anti-log likelihood cost function}
 \end{figure}
 
 To observe the effect of using prior, we repeated the previous experiment of addition of "easy" scribbles and "hard" scribbles in steps. But instead of measuring segmentation accuracy on thresholded RF output mask, we used the predicted RF probabilities to obtain a cost function and obtain the MAP estimate solving equation 3.2. The experiment was conducted for a range of regularization parameter ($\lambda$).
@@ -144,13 +146,13 @@ To observe the effect of using prior, we repeated the previous experiment of add
 \caption{Segmentation score with RF and prior(TV) for different annotation budget (removing very annotation budgets)}
 \end{figure}
 
-The results for RF with variational image processing (VIP) can be seen in figure 3.8. We can observe an improvement due to the use of the variational method. Even for very small annotation budget as 0.1\%, we observe an improvement with the use of VIP. Figure 3.9 shows the improvement more clearly for different values of $\lambda$. We can observe that the value of $\lambda$ giving maximum improvement is different for different annotation budgets. 
-
-The use of prior information boosts up the performance but we get different boost for different value of $\lambda$. The regularisation parameter decides the weight of TV cost. One expects smooth boundaries in segmentation mask for high values, but this also effect mask for small objects. We can observe this in figure 3.9. The upper row shows that for larger vesicles, the boundary gets smooth for higher values of $\lambda$, while the bottom row shows that tiny vesicles in image tend to diminish for high values of $\lambda$. This shows that the ideal case will be to choose different $\lambda$ for different part of images or to combine results for different $\lambda$. 
+The results for RF with variational image processing (VIP) can be seen in figure 3.8. We can observe an improvement due to the use of the variational method. Even for very small annotation budget as 0.1\%, we observe an improvement with the use of VIP. Figure 3.9 shows the improvement more clearly for different values of $\lambda$. We can observe that the value of $\lambda$ giving maximum improvement is different for different annotation budgets. The use of prior information boosts up the performance but we get different boost for different values of $\lambda$. The regularisation parameter ($\lambda$) decides the weight of TV prior term. Thus, it becomes important to choose an appropriate value of $\lambda$ to obtain best results. We generate results for 2 extreme values of $\lambda$ (0.001 and 100) and try to visualize their effect in figure 3.10. 
+For $\lambda$=0.001, the value of $\lambda$ is too small and the prior term in getting MAP estimate, tend to become insignificant. We can observe that for such a small value of $\lambda$, the VIP is unable to remove noi se from mask obtained from RF and does not smoothen the boundaries (bottom-left image in figure 3.10). While, choosing a large value of $\lambda$ (100) generates smooth boundaries and removes noise, but also deteriorates the mask for small vesicles (bottom-right image in figure 3.10). The small vesicles around the large vesicle tend to diminish with large value of $\lambda$. This points to the fact that there may not be a single appropriate value of $\lambda$ for the whole image. Instead, it will be ideal to choose different $\lambda$ for different part of images or to combine results for different $\lambda$. 
 
 \begin{figure}[h!] \label{fig:effect}
- \includegraphics[width=1.0\linewidth]{figures/lamda_effect.pdf}
-\caption{Segmentation mask for differnt $\lambda$ for 2 crops of image}
+\centering
+ \includegraphics[width=0.8\linewidth]{figures/lamda_effect.pdf}
+\caption{Segmentation mask for $\lambda$ = 0.001, 100 for a small part image}
 \end{figure}
 
 
@@ -160,14 +162,18 @@ Santner \cite{santner:2009} makes use a linear cost function to formulate likeli
 \begin{align*}
 \funop{C_l}(\mat{P}) = -4\,(\mat{p}-0.5) \eqend
 \end{align*}
-The above function is chosen to show a behaviour similar to \textit{anti-log} cost function at probablity of 0.5. The slope of 4 is selected to match the slope of \textit{anti-log} cost function at 0.5. In addition to the cost function, Santner \cite{santner:2009} mentioned use of hard constraint for pixels in foreground or background scribbles i.e. using cost of $-\infty$ for foreground scribbles and $\infty$ for background scribbles. They didn't show a way to enforce this constraint with \textit{linear} cost function. We enforce this constraint with use of indicator functions, $\iota_{\mathcal{FG}}(\mat{M})$ and $\iota_{\mathcal{BG}}(\mat{M})$. \par
-To compare results of these different cost functions, we designed a similar experiment to observe effect of annotation budget on their usage. Instead of choosing pixels from scribbles, we select the annotated pixels randomly from fully annotated ground truth segmentation mask. We increased the annotation budget from using few pixels to using all pixels for training RF. We generate results to compare 3 cost functions: \textit{anti-log}, \textit{linear} and \textit{linear} (with constraints). The results for these different functions can be observed in figure 3.11, 3.12 and 3.13. The blue dotted line in all these figures shows the accuracy obtained for thresholded RF output mask.
+The above function is chosen to show a behaviour similar to \textit{anti-log likelihood} cost function at probablity of 0.5. The slope of 4 is selected to match the slope of \textit{anti-log likelihood} cost function at 0.5. In addition to the cost function, Santner \cite{santner:2009} mentioned use of hard constraint for pixels in foreground or background scribbles i.e. using cost of $-\infty$ for foreground scribbles and $\infty$ for background scribbles. They didn't show a way to enforce this constraint with \textit{linear} cost function. We enforce this constraint with use of indicator functions, $\iota_{\mathcal{FG}}(\mat{M})$ and $\iota_{\mathcal{BG}}(\mat{M})$. \par
+To compare results of these different cost functions, we designed a similar experiment to observe effect of annotation budget on their usage. Instead of choosing pixels from scribbles, we select the annotated pixels randomly from fully annotated ground truth segmentation mask. We increased the annotation budget from using few pixels to using all pixels for training RF. We generate results to compare 3 cost functions: \textit{anti-log likelihood}, \textit{linear} and \textit{linear} (with constraints). The results for these different functions can be observed in figure 3.11, 3.12 and 3.13. The blue dotted line in all these figures shows the accuracy obtained for thresholded RF output mask.
 
 \begin{figure}[h!] \label{fig:nll}
 \centering
  \includegraphics[width=0.75\linewidth]{figures/anti_nll.pdf}
-\caption{Segmentation accuracy vs annotation budget for \textit{anti-log} cost function.}
+\caption{Segmentation accuracy vs annotation budget for \textit{anti-log likelihood} cost function.}
 \end{figure}
+
+
+
+Figure 3.11 shows that for all values of $\lambda$, the \textit{anti-log likelihood} cost function does not decrease the segmentation accuracy. Only for very low annotation budget (< 0.1\%), the accuracy decreases by a small amount. Else, the use of \textit{anti-log likelihood} cost function ensures that the use of VIP does not decrease the accuracy and thus, always improving the output mask obtained from RF. Especially for the higher annotation budgets (> 50\%), the use of constraints does not allow VIP to change mask value for annotated pixels. This shows the robustness of cost function and allows the user to choose values of $\lambda$ freely in a reasonable range. 
 
 \begin{figure}[h!] \label{fig:rf_vip2}
 \centering
@@ -175,14 +181,18 @@ To compare results of these different cost functions, we designed a similar expe
 \caption{Segmentation accuracy vs annotation budget for \textit{linear} cost function.}
 \end{figure}
 
+
+
+From figure 3.12, we can observe that \textit{linear} cost function does not work well with large values of $\lambda$ and also significanty deteriorates the mask obtained from RF. Even for $\lambda$ equal to 10, the accuracy drop significantly in comparison to accuracy obtained from thresholded RF mask. This shows that while using \textit{linear} cost function, the value of $\lambda$ is to be chosen carefuly. 
+
+
 \begin{figure}[h!] \label{fig:rf_vip3}
 \centering
  \includegraphics[width=0.75\linewidth]{figures/linear_with_cons.pdf}
 \caption{Segmentation accuracy vs annotation budget for \textit{linear} cost function with constraints.}
 \end{figure}
 
-
-Figure 3.11 shows that for all values of $\lambda$, the \textit{anti-log} cost function does not decrease the segmentation accuracy. Only for very low annotation budget (< 0.1\%), the accuracy decreases by a small amount. Else, the use of \textit{anti-log} cost function ensures that the use of VIP does not decrease the accuracy and thus, always improving the output mask obtained from RF. Especially for the higher annotation budgets (> 50\%), the use of constraints does not allow VIP to change mask value for annotated pixels. This shows the robustness of cost function and allows the user to choose values of $\lambda$ freely in a reasonable range. From figure 3.12, we can observe that \textit{linear} cost function does not work well with large values of $\lambda$ and also significanty deteriorates the mask obtained from RF. Even for $\lambda$ equal to 10, the accuracy drop significantly in comparison to accuracy obtained from thresholded RF mask. This shows that while using \textit{linear} cost function, the value of $\lambda$ is to be chosen carefuly. Contrary to results for \textit{linear} cost function, the results for the \textit{linear} cost function with constraints in figure 3.13 is almost similar to the results for \textit{anti-log} cost function. The use of constraints makes it robust and avoids corruption of the mask obtained from RF. In figure 3.14, we foucus on higher values of annotation budgets. It can be seen that the segmentation accuracy for all cost functions converge to 1 with the increment of annotation budget to 100\% i.e. using all pixels in the image for training. The difference can be seen in convergence for the 3 different cost functions. These cost functions shows different amount of improvement for same annotation budget. The effect of the same value of $\lambda$ is also different for these cost functions. It can be seen that \textit{anti-log} and \textit{linear} (with constraints) show maximum and almost same improvement for $\lambda$equal to 100.
+Contrary to results for \textit{linear} cost function, the results for the \textit{linear} cost function with constraints in figure 3.13 is almost similar to the results for \textit{anti-log likelihood} cost function. The use of constraints makes it robust and avoids corruption of the mask obtained from RF. In figure 3.14, we foucus on higher values of annotation budgets. It can be seen that the segmentation accuracy for all cost functions converge to 1 with the increment of annotation budget to 100\% i.e. using all pixels in the image for training. The difference can be seen in convergence for the 3 different cost functions. These cost functions shows different amount of improvement for same annotation budget. The effect of the same value of $\lambda$ is also different for these cost functions. It can be seen that \textit{anti-log likelihood} and \textit{linear} (with constraints) show maximum and almost same improvement for $\lambda$ equal to 100.
 
 
 
@@ -194,13 +204,9 @@ Figure 3.11 shows that for all values of $\lambda$, the \textit{anti-log} cost f
 \end{figure}
 
 
-
-% \subsection{2D vs 3D Total Variation}
-% We observed the boost due to use to isotropic TV in 2D. Since the slices form a 3D stack, it is usual to try 3D isotropic TV. We can observe the boost in figure 3.10
-
-\section{Semi-interactive segmentation}
-We realized the need for iterative semi-interactive segmentation in section 3.1.2. With 1 iteration of interactive segmentation, we were able to improve f-measure results. Now, we combine semi-interactive annotation with the use of variational segmentation. We take segmentation mask obtained from variational segmentation and add scribbles to image where the RF and VIP together are unable to segment correctly. Then, we retrain Random forest and generate new mask using variational segmentation. The image, mask, and scribbles are shown in figure 3.10. We can observe the improvement in the mask with an addition of only 5000 pixels (less 0.2\% of pixels in the image).
+\subsection{Semi-interactive segmentation using VIP}
+We realized the need for iterative semi-interactive segmentation in section 3.2.2. With 1 iteration of interactive annotation, we were able to improve f-measure results significantly. Now, we combine semi-interactive annotation with the use of variational segmentation. We take segmentation mask obtained from VIP and add scribbles manually to image where the RF and VIP together are unable to predict correctly. Then, we retrain Random forest and generate new mask using variational segmentation. The image, mask, and scribbles are shown in figure 3.15. The f-measure improves from 0.79 to 0.86 with an addition of only 3000 pixels (less than 0.17\% of pixels in the image). In comparison to figure 3.5, where we add scribbles on thresholded output from RF, we can observe that the noise is completely removed by VIP. Also, the use of VIP smoothens the boundary of vesicles. This enables us to use our annotation budget more effectively and trying to correct boundaries and other pixels which are difficult for RF to classify.
 \begin{figure}[h!] \label{fig:semi-vip}
  \includegraphics[width=1.0\linewidth]{figures/semi_inter_vip.pdf}
-\caption{Semi-interactive segmentation with one iteration (RF+VIP)}
+\caption{Semi-interactive segmentation with one interaction (RF+VIP). The bottom-left image shows scribbles added after first interaction using previously generated mask. Red: foregroud, Blue: background}
 \end{figure}

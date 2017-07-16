@@ -61,7 +61,7 @@
 \citation{weka}
 \citation{fiji}
 \citation{dominic}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Semi-supervised image segmentation using RFs in a Bayesian framework }{15}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Semi-supervised image segmentation using RFs in a Bayesian framework}{15}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Random Forest}{15}}
@@ -78,7 +78,8 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Iterative semi-interactive approach}{20}}
 \newlabel{fig:semi-rf}{{3.2.2}{21}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Semi-interactive segmentaion with one interaction. The bottom-left image shows scribbles added after first interaction using previously generated mask. Red: foregroud, Blue: background}}{21}}
-\newlabel{fig:uncertain}{{3.2.2}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Limitation of RF}{21}}
+\newlabel{fig:uncertain}{{3.2.3}{22}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces (a) Histogram of predicted foreground probabilities using RF. (b) Precision-recall curve for varying thresholded RF mask. Different curves correspond to different annotation budget}}{22}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Bayesian Formulation of segmentation problem}{22}}
 \citation{Paul2013}
@@ -89,30 +90,30 @@
 \citation{dominic}
 \citation{dominic}
 \newlabel{eqn}{{{3.2}}{24}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Anti-log cost functions}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Anti-log likelihood cost function}{24}}
 \newlabel{fig:nll}{{3.3.1}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Anti-log cost function}}{25}}
-\citation{santner:2009}
-\citation{santner:2009}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Anti-log likelihood cost function}}{25}}
 \newlabel{fig:rf_vip}{{3.3.1}{26}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget}}{26}}
+\citation{santner:2009}
+\citation{santner:2009}
 \citation{santner:2009}
 \newlabel{fig:rf_vip}{{3.3.1}{27}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget (removing very annotation budgets)}}{27}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Comparing different cost functions}{27}}
 \newlabel{fig:effect}{{3.3.1}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Segmentation mask for differnt $\lambda $ for 2 crops of image}}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Segmentation mask for $\lambda $ = 0.001, 100 for a small part image}}{28}}
 \newlabel{fig:nll}{{3.3.2}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Segmentation accuracy vs annotation budget for \textit  {anti-log} cost function.}}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Segmentation accuracy vs annotation budget for \textit  {anti-log likelihood} cost function.}}{29}}
 \newlabel{fig:rf_vip2}{{3.3.2}{30}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Segmentation accuracy vs annotation budget for \textit  {linear} cost function.}}{30}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Semi-interactive segmentation}{30}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Semi-interactive segmentation using VIP}{30}}
 \newlabel{fig:rf_vip3}{{3.3.2}{31}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Segmentation accuracy vs annotation budget for \textit  {linear} cost function with constraints.}}{31}}
 \newlabel{fig:rf_vip_diff}{{3.3.2}{32}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Comparison of different cost functions for higher annotation budgets.}}{32}}
-\newlabel{fig:semi-vip}{{3.4}{33}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Semi-interactive segmentation with one iteration (RF+VIP)}}{33}}
+\newlabel{fig:semi-vip}{{3.3.3}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Semi-interactive segmentation with one interaction (RF+VIP). The bottom-left image shows scribbles added after first interaction using previously generated mask. Red: foregroud, Blue: background}}{33}}
 \citation{ranftl:2014}
 \citation{taylor:2016}
 \citation{Gonda:2016}

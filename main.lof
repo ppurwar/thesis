@@ -17,15 +17,15 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Plot of segmentation measure vs annotation budget. Different curves show addition of scribbles from "hard" annotaion class, starting with different fixed amount of "easy" annotation class.}}{20}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Semi-interactive segmentaion with one interaction. The bottom-left image shows scribbles added after first interaction using previously generated mask. Red: foregroud, Blue: background}}{21}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces (a) Histogram of predicted foreground probabilities using RF. (b) Precision-recall curve for varying thresholded RF mask. Different curves correspond to different annotation budget}}{22}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Anti-log cost function}}{25}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Anti-log likelihood cost function}}{25}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget}}{26}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Segmentation score with RF and prior(TV) for different annotation budget (removing very annotation budgets)}}{27}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Segmentation mask for differnt $\lambda $ for 2 crops of image}}{28}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Segmentation accuracy vs annotation budget for \textit {anti-log} cost function.}}{29}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Segmentation mask for $\lambda $ = 0.001, 100 for a small part image}}{28}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Segmentation accuracy vs annotation budget for \textit {anti-log likelihood} cost function.}}{29}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Segmentation accuracy vs annotation budget for \textit {linear} cost function.}}{30}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Segmentation accuracy vs annotation budget for \textit {linear} cost function with constraints.}}{31}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Comparison of different cost functions for higher annotation budgets.}}{32}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Semi-interactive segmentation with one iteration (RF+VIP)}}{33}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Semi-interactive segmentation with one interaction (RF+VIP). The bottom-left image shows scribbles added after first interaction using previously generated mask. Red: foregroud, Blue: background}}{33}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces F-measure for increasing annotation budget for comparing CNN vs RF}}{36}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{37}

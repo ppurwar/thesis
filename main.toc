@@ -8,15 +8,16 @@
 \contentsline {section}{\numberline {2.3}One shot Video object segmentation (OSVOS)}{10}
 \contentsline {section}{\numberline {2.4}Motivation for using OSVOS}{11}
 \contentsline {section}{\numberline {2.5}Experiment and results}{12}
-\contentsline {chapter}{\numberline {3}Semi-supervised image segmentation using RFs in a Bayesian framework }{15}
+\contentsline {chapter}{\numberline {3}Semi-supervised image segmentation using RFs in a Bayesian framework}{15}
 \contentsline {section}{\numberline {3.1}Random Forest}{15}
 \contentsline {section}{\numberline {3.2}Best use of annotaion budget}{16}
 \contentsline {subsection}{\numberline {3.2.1}Where and how much to scribble?}{17}
 \contentsline {subsection}{\numberline {3.2.2}Iterative semi-interactive approach}{20}
+\contentsline {subsection}{\numberline {3.2.3}Limitation of RF}{21}
 \contentsline {section}{\numberline {3.3}Bayesian Formulation of segmentation problem}{22}
-\contentsline {subsection}{\numberline {3.3.1}Anti-log cost functions}{24}
+\contentsline {subsection}{\numberline {3.3.1}Anti-log likelihood cost function}{24}
 \contentsline {subsection}{\numberline {3.3.2}Comparing different cost functions}{27}
-\contentsline {section}{\numberline {3.4}Semi-interactive segmentation}{30}
+\contentsline {subsection}{\numberline {3.3.3}Semi-interactive segmentation using VIP}{30}
 \contentsline {chapter}{\numberline {4}Semi-supervised image segmentation using CNNs in a Bayesian framework}{34}
 \contentsline {section}{\numberline {4.1}Training CNN from scribbles}{34}
 \contentsline {chapter}{\numberline {5}Conclusion}{39}
