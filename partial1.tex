@@ -51,7 +51,7 @@ Although, when CNN is trained using full annotations, it is expected to produce 
 
 For lower annotation budgets in our segmentation task, RF performs significantly better than CNN. We can expect this for CNN due to significantly less training data. The weights and biases in multiple layers of OSVOS are not able to adapt much and converge properly. But as the annotation budget becomer more than 1.2\%, the CNN outperforms RF. With significant amount of scribbles, it also tries to learn the shape and the size of vesicles. The CNN is able to achieve a segmentation accuracy of 0.86 with only 1.3\% of pixels used for training. Also, the intersection (red and blue curve in figure 4.3) can be seen as a boundary to choose RF or CNN for a given annotation budget. \par
 
-Finally, we compare the results of RF and CNN in a Bayesian framework. Using the masks obtained from RF and CNN for a certain annotation budget, we use VIP to obtain an optimal mask. The results is figure 4.4 show improvement for different $\lambda$. For annotation budget of around 1.3\% and use of VIP, RF is able to achieve accuracy close to that obtained from CNN and VIP. 
+Finally, we compare the results of RF and CNN in a Bayesian framework. Using the masks obtained from RF and CNN for a certain annotation budget, we use VIP to obtain an optimal mask. The results is figure 4.4 show improvement for different $\lambda$. For annotation budget of around 1.3\% and use of VIP, RF is able to achieve accuracy close to that obtained from CNN and VIP.
 
 
 \begin{figure}[h!] \label{fig:cnnvip}
@@ -59,3 +59,4 @@ Finally, we compare the results of RF and CNN in a Bayesian framework. Using the
  \includegraphics[width=0.8\linewidth]{figures/cnn_vs_rf_vip.pdf} 
 \caption{Segmentation accuracy for mask obtained from RF and CNN, both with VIP}
 \end{figure}
+
