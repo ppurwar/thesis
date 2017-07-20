@@ -27,8 +27,8 @@
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Comparison of different cost functions for higher annotation budgets.}}{32}
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Semi-interactive segmentation with one interaction (RF+VIP). The bottom-left image shows scribbles added after first interaction using previously generated mask. Red: foregroud, Blue: background}}{33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces F-measure for increasing annotation budget for comparing CNN vs RF}}{36}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{37}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{38}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces (a) CNN with VIP (different $\lambda $)\tmspace +\thinmuskip {.1667em} (b) CNN vs RF with VIP}}{38}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Segmentation mask generated using OSVOS and $\mathcal {L}_{\rm {scribble}}$. Left-most image shows foreground (violet) and background (yellow) scribbles}}{37}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Segmentation accuracy for CNN with VIP (different $\lambda $)}}{38}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Segmentation accuracy for mask obtained from RF and CNN, after thresholding}}{39}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Segmentation accuracy for mask obtained from RF and CNN, both with VIP}}{40}
 \addvspace {10\p@ }

@@ -19,5 +19,8 @@
 \contentsline {subsection}{\numberline {3.3.2}Comparing different cost functions}{27}
 \contentsline {subsection}{\numberline {3.3.3}Semi-interactive segmentation using VIP}{30}
 \contentsline {chapter}{\numberline {4}Semi-supervised image segmentation using CNNs in a Bayesian framework}{34}
-\contentsline {section}{\numberline {4.1}Training CNN from scribbles}{34}
-\contentsline {chapter}{\numberline {5}Conclusion}{39}
+\contentsline {section}{\numberline {4.1}Motivation for replacing RFs}{34}
+\contentsline {section}{\numberline {4.2}Training CNN from scribbles}{35}
+\contentsline {subsection}{\numberline {4.2.1}Cross entropy scribble loss function}{36}
+\contentsline {section}{\numberline {4.3}Experiments and results}{36}
+\contentsline {chapter}{\numberline {5}Conclusion}{41}
